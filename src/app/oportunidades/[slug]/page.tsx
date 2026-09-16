@@ -1,12 +1,41 @@
 import { notFound } from 'next/navigation'
 import oportunidades from '../../../data/oportunidades.json'
 import Link from 'next/link'
+import Script from 'next/script'
 import { ArrowLeft, Download, Calculator, MapPin, Building, AlertTriangle, ShieldCheck, CheckCircle } from 'lucide-react'
+import type { Metadata } from 'next'
 
 export function generateStaticParams() {
   return oportunidades.map((op) => ({
     slug: op.id,
   }))
+}
+
+// Dynamically generate metadata for each opportunity for Google/AI bots
+export async function generateMetadata(
+  { params }: { params: { slug: string } }
+
+): Promise<Metadata> {
+  const op = oportunidades.find(o => o.id === params.slug)
+  if (!op) return {}
+
+  const title = `Oportunidade de Retrofit em SP: ${op.endereco}`
+  const description = `Análise de viabilidade para subvenção econômica de retrofit no Centro de São Paulo. Imóvel em ${op.regiao} com ${op.area}m² e score de viabilidade ${op.score}/100. ${op.motivo}`
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary',
+      title,
+      description,
+    }
+  }
 }
 
 export default function OportunidadeDossier({ params }: { params: { slug: string } }) {
@@ -20,8 +49,42 @@ export default function OportunidadeDossier({ params }: { params: { slug: string
     return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(val);
   }
 
+  // Inject RealEstateListing Schema for AI bots to parse the financial data structuredly
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'RealEstateListing',
+    name: `Oportunidade de Retrofit: ${op.endereco}`,
+    description: op.motivo,
+    datePosted: new Date().toISOString(),
+    offers: {
+      '@type': 'Offer',
+      price: op.financeiro?.estimativaCustoObra || 0,
+      priceCurrency: 'BRL',
+      description: 'Estimativa de custo de obra para retrofit'
+    },
+    accommodationCategory: op.usoConhecido,
+    floorSize: {
+      '@type': 'QuantitativeValue',
+      value: op.area,
+      unitCode: 'MTK' // Square meters
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'São Paulo',
+      addressRegion: 'SP',
+      addressCountry: 'BR',
+      streetAddress: op.endereco
+    }
+  }
+
   return (
     <div className="max-w-5xl mx-auto space-y-8 pb-12">
+      <Script
+        id={`json-ld-opportunity-${op.id}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <div className="flex justify-between items-center">
         <Link href="/oportunidades" className="text-blue-600 hover:text-blue-800 flex items-center gap-2 text-sm font-medium">
           <ArrowLeft size={16} /> Voltar ao Radar
