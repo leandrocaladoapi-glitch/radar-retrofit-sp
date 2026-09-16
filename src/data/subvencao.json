@@ -1,0 +1,29 @@
+{
+  "chamamentoAtual": {
+    "nome": "4º Chamamento Público de Subvenção Econômica (Estimado)",
+    "numero": "01/2026/SMUL",
+    "orgao": "Prefeitura de São Paulo / SMUL",
+    "abertura": "2026-08-01",
+    "encerramento": "2026-10-31",
+    "orcamento": 200000000,
+    "percentualMaximo": 25,
+    "categorias": [
+      "HIS-1",
+      "HIS-2",
+      "HMP",
+      "R2v",
+      "nR"
+    ],
+    "perimetro": "AIU Setor Central / Requalifica Centro",
+    "situacao": "Em andamento"
+  },
+  "indicadores": {
+    "orcamentoDisponivel": 200000000,
+    "projetosConhecidos": 12,
+    "imoveisMonitorados": 45,
+    "recursosConcedidos": 85000000,
+    "recursosPagos": 25000000,
+    "oportunidadesIdentificadas": 15,
+    "ultimaAtualizacao": "2026-09-16T18:34:38.982Z"
+  }
+}

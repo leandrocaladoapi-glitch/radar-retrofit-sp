@@ -1,0 +1,27 @@
+
+> radar-retrofit@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 1828ms
+ ○ Compiling / ...
+ ✓ Compiled / in 7s (567 modules)
+ ✓ Compiled in 604ms (264 modules)
+ GET / 200 in 7707ms
+ ○ Compiling /oportunidades ...
+ ✓ Compiled /oportunidades in 3.2s (550 modules)
+ GET /oportunidades 200 in 3418ms
+ ✓ Compiled /oportunidades/[slug] in 312ms (564 modules)
+ ✓ Compiled /chamamento-atual in 323ms (571 modules)
+ ✓ Compiled /projetos in 244ms (577 modules)
+ ○ Compiling /mapa ...
+ ✓ Compiled /mapa in 1643ms (705 modules)
+ ✓ Compiled in 1386ms (320 modules)
+ ✓ Compiled in 190ms (320 modules)
+ ✓ Compiled in 286ms (595 modules)
+ ✓ Compiled in 567ms (609 modules)
+ ✓ Compiled in 308ms (320 modules)
+ ✓ Compiled in 183ms (320 modules)

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "nome": "Edifício Virgínia",
+    "endereco": "Rua Martins Fontes, 137",
+    "distrito": "República",
+    "chamamento": "1º Chamamento",
+    "empresa": "Somauma",
+    "uso": "Residencial / HIS",
+    "valorObra": 15000000,
+    "valorSolicitado": 3500000,
+    "valorAprovado": 3500000,
+    "percentual": 23.3,
+    "situacao": "Em execução",
+    "lat": -23.5489,
+    "lng": -46.6432
+  },
+  {
+    "id": "2",
+    "nome": "Edifício Copan (Blocos X e Y)",
+    "endereco": "Av. Ipiranga, 200",
+    "distrito": "República",
+    "chamamento": "3º Chamamento",
+    "empresa": "Condomínio Edifício Copan",
+    "uso": "Residencial",
+    "valorObra": null,
+    "valorSolicitado": null,
+    "valorAprovado": null,
+    "percentual": null,
+    "situacao": "Credenciado",
+    "lat": -23.5465,
+    "lng": -46.6449
+  },
+  {
+    "id": "3",
+    "nome": "Edifício Martinelli",
+    "endereco": "Rua São Bento, 405",
+    "distrito": "Sé",
+    "chamamento": "3º Chamamento",
+    "empresa": "Não divulgado",
+    "uso": "Não Residencial",
+    "valorObra": null,
+    "valorSolicitado": null,
+    "valorAprovado": null,
+    "percentual": null,
+    "situacao": "Credenciado",
+    "lat": -23.546,
+    "lng": -46.634
+  }
+]

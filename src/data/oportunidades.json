@@ -1,0 +1,39 @@
+[
+  {
+    "id": "op-1",
+    "endereco": "Rua Direita, 100",
+    "regiao": "Sé",
+    "idade": 60,
+    "usoConhecido": "Comercial subutilizado",
+    "area": 4500,
+    "zoneamento": "ZC",
+    "protecao": "Tombado nível 3",
+    "riscos": [
+      "Processo de inventário longo",
+      "Complexidade estrutural"
+    ],
+    "motivo": "Elevada vacância, compatível com HIS na AIU",
+    "lat": -23.5482,
+    "lng": -46.6348,
+    "score": 85,
+    "confidence": 80
+  },
+  {
+    "id": "op-2",
+    "endereco": "Av. São João, 1200",
+    "regiao": "República",
+    "idade": 55,
+    "usoConhecido": "Uso misto",
+    "area": 8000,
+    "zoneamento": "ZEU",
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Regularização de titularidade"
+    ],
+    "motivo": "Grande área na AIU Setor Central, próximo ao metrô",
+    "lat": -23.5395,
+    "lng": -46.6435,
+    "score": 92,
+    "confidence": 95
+  }
+]
