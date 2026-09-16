@@ -1,74 +1,42 @@
-import oportunidadesData from '../../data/oportunidades.json'
 import Link from 'next/link'
-import { ArrowRight, ShieldAlert,  } from 'lucide-react'
+import oportunidades from '../../data/oportunidades.json'
 
 export default function OportunidadesPage() {
   return (
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold text-slate-900 mb-2">Radar de Oportunidades</h1>
-        <p className="text-slate-600">Imóveis identificados com características compatíveis para potencial análise de retrofit e subvenção.</p>
-      </div>
-
-      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-        <div className="flex items-start">
-          <div className="flex-shrink-0">
-            <ShieldAlert className="h-5 w-5 text-yellow-400" aria-hidden="true" />
-          </div>
-          <div className="ml-3">
-            <p className="text-sm text-yellow-700">
-              <strong>Atenção:</strong> Estes dados são indicativos e gerados a partir de bases públicas. A presença nesta lista NÃO garante elegibilidade à subvenção. Cada caso exige análise técnica e jurídica detalhada.
-            </p>
-          </div>
-        </div>
+        <p className="text-slate-600">Imóveis identificados algoritimicamente com potencial de requalificação e subvenção. <strong className="text-blue-700">Análise indicativa, não substitui diligência oficial.</strong></p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {oportunidadesData.map((op) => (
-          <div key={op.id} className="bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition flex flex-col overflow-hidden">
-            <div className="p-5 border-b border-slate-100 bg-slate-50 flex justify-between items-start">
-              <div>
-                <h3 className="font-semibold text-lg text-slate-900">{op.endereco}</h3>
-                <p className="text-sm text-slate-500">{op.regiao}</p>
-              </div>
-              <div className="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded-full flex flex-col items-center">
-                <span>Score</span>
-                <span className="text-sm">{op.score}</span>
-              </div>
-            </div>
-
-            <div className="p-5 flex-grow space-y-3">
-              <div>
-                <span className="text-xs font-semibold text-slate-500 uppercase">Motivo Principal</span>
-                <p className="text-sm text-slate-800">{op.motivo}</p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-2 text-sm">
-                <div>
-                  <span className="text-xs font-semibold text-slate-500 block">Área</span>
-                  <span>{op.area} m²</span>
+        {oportunidades.map(op => (
+          <Link href={`/oportunidades/${op.id}`} key={op.id} className="block group">
+            <div className="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-400 hover:shadow-md transition-all h-full flex flex-col">
+              <div className="flex justify-between items-start mb-4">
+                <div className="bg-blue-50 text-blue-800 text-xs font-bold px-2 py-1 rounded">
+                  Score: {op.score}/100
                 </div>
-                <div>
-                  <span className="text-xs font-semibold text-slate-500 block">Zoneamento</span>
-                  <span>{op.zoneamento}</span>
+                <div className="text-xs text-slate-500">
+                  Confiança: {op.confidence}%
                 </div>
               </div>
 
-              <div className="pt-2">
-                <span className="text-xs font-semibold text-slate-500 uppercase block mb-1">Confiança dos Dados</span>
-                <div className="w-full bg-slate-200 rounded-full h-2">
-                  <div className="bg-green-500 h-2 rounded-full" style={{ width: `${op.confidence}%` }}></div>
+              <h3 className="font-bold text-lg text-slate-900 group-hover:text-blue-700 transition-colors">{op.endereco}</h3>
+              <p className="text-sm text-slate-500 mb-4">{op.regiao} • {op.usoConhecido} • {op.area}m²</p>
+
+              <div className="mt-auto space-y-2">
+                <div className="text-sm border-t border-slate-100 pt-3">
+                  <span className="font-semibold text-slate-700">Motivo:</span> <span className="text-slate-600 line-clamp-2">{op.motivo}</span>
                 </div>
-                <div className="text-right text-xs text-slate-500 mt-1">{op.confidence}%</div>
+                <div className="flex flex-wrap gap-1 pt-2">
+                  {op.perimetros?.map((per, idx) => (
+                    <span key={idx} className="bg-slate-100 text-slate-600 text-[10px] uppercase px-2 py-0.5 rounded">{per}</span>
+                  ))}
+                </div>
               </div>
             </div>
-
-            <div className="p-4 border-t border-slate-100 bg-white">
-              <Link href={`/oportunidades/${op.id}`} className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center justify-center gap-1 w-full">
-                Ver dossiê completo <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
