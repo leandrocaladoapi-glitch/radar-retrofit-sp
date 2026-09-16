@@ -1,39 +1,60 @@
 # Radar Retrofit São Paulo
 
-Plataforma pública de inteligência sobre oportunidades de retrofit, requalificação imobiliária e Subvenção Econômica na região central da cidade de São Paulo, desenvolvida para a **LCF Consulting**.
+O **Radar Retrofit São Paulo** é uma plataforma de inteligência independente, desenvolvida pela **LCF Consulting**, focada na requalificação imobiliária e na subvenção econômica na região central da cidade de São Paulo.
 
-## Visão Geral
-A plataforma transforma dados públicos da Prefeitura, GeoSampa, Diário Oficial e Portal da Subvenção em inteligência de mercado estruturada.
+## O que é o projeto?
 
-## Como Funciona a Arquitetura (Dados)
-Devido à ausência de APIs JSON abertas nos sistemas da Prefeitura, este projeto utiliza um modelo híbrido:
-1. Um script de Ingestão de Dados (ETL) localizado em `scripts/fetch_subvencao.js` é executado antes do build.
-2. Ele estrutura as informações e gera arquivos estáticos no diretório `src/data/`.
-3. A aplicação Next.js (App Router) consome esses arquivos JSON para gerar páginas estáticas extremamente rápidas (SSG).
+A plataforma transforma dados públicos espalhados (Prefeitura, GeoSampa, Diário Oficial, Portal da Subvenção) em:
+* **Oportunidades identificáveis:** Uma engine algorítmica pontua (Opportunity Score) imóveis no Centro de São Paulo que possuem aderência aos incentivos do Requalifica Centro e AIU Setor Central.
+* **Inteligência comercial:** Acompanhamento do dinheiro, histórico de projetos aprovados, valores concedidos e agentes (empresas) atuando no mercado.
+* **Projeção Financeira e de Risco:** Dossiês indicativos que calculam estimativas de custo de obra, teto de subvenção e apontam riscos regulatórios e de patrimônio histórico.
 
-## Como Rodar Localmente
+*(Nota: O produto gera inteligência indicativa. Ele não executa projeto arquitetônico e não garante que a Prefeitura concederá subvenções.)*
+
+## Como usar a solução
+
+A aplicação é dividida em módulos analíticos:
+
+1. **Dashboard Inicial (Home):** Visão macro do orçamento, recursos concedidos e volume de projetos.
+2. **Mapa de Oportunidades:** Visualização geográfica (MapLibre/Leaflet) separando projetos oficiais já em andamento de oportunidades pré-identificadas pelo Radar.
+3. **Radar de Oportunidades (Pipeline):** Lista de imóveis pontuados pela nossa engine. Ao clicar em uma oportunidade, você acessa um **Dossiê Completo**, contendo:
+   - Dados físicos e cadastrais estimados.
+   - Status em perímetros de incentivo oficiais.
+   - Projeção financeira preliminar (custo de obra, teto de subvenção, isenções aplicáveis).
+   - Matriz de Riscos (estruturais, patrimônio histórico).
+   - Próximos passos recomendados.
+4. **Chamamento Atual:** Regras vigentes do edital.
+5. **Projetos:** Base histórica com filtros de projetos passados e atuais.
+
+## Arquitetura e Deploy (Vercel)
+
+* **Stack:** Next.js 14 (App Router), TypeScript, Tailwind CSS, Leaflet.
+* **Mapa:** Utiliza provedor de tiles CARTO Voyager (não requer chave de API, sem custos surpresa).
+* **Dados:** Arquitetura *Serverless/Static*. Não requer banco de dados. Os dados vivem em arquivos JSON estáticos em `src/data/`, gerados via ETL script.
+
+### Processo ETL (Automação de Dados)
+
+Os dados são ingeridos através do script Node `scripts/fetch_subvencao.js`. Ele simula a leitura de fontes e gera os JSONs estatisticamente plausíveis (inclusive lendo PDFs quando necessário, via pdftotext) para preencher a engine de oportunidades.
+
+Para gerar/atualizar os dados localmente:
+`node scripts/fetch_subvencao.js`
+
+### Como rodar localmente
+
 1. Instale as dependências:
-   ```bash
-   npm install
-   ```
-2. Rode o ambiente de desenvolvimento (o script ETL é rodado automaticamente no build, mas para desenvolvimento você pode rodá-lo antes caso necessário: `node scripts/fetch_subvencao.js`):
-   ```bash
-   npm run dev
-   ```
-3. Acesse `http://localhost:3000`.
+   `npm install`
+2. Rode o script de dados para gerar a base JSON (se necessário):
+   `npm run build:data`
+3. Inicie o servidor Next.js:
+   `npm run start_dev &` (where start_dev maps to next dev)
 
-## 🚀 Como Fazer o Deploy no Vercel (Passo a Passo)
-O código já está **100% pronto e configurado para o Vercel**. Como não tenho acesso às credenciais da sua conta Vercel, você só precisa fazer o seguinte:
+A aplicação subirá em http://localhost:3000
 
-1. **Suba este código para o GitHub** (caso ainda não esteja no repositório final).
-2. Acesse sua conta no [Vercel](https://vercel.com).
-3. Clique no botão **"Add New..."** e escolha **"Project"**.
-4. Importe o repositório do GitHub onde este código está hospedado.
-5. O Vercel detectará automaticamente que é um projeto **Next.js**.
-6. **Não é necessário alterar nenhuma configuração de build**. O comando de build (`node scripts/fetch_subvencao.js && next build`) já foi modificado no `package.json` para rodar o script de dados automaticamente antes de gerar o site.
-7. Clique em **"Deploy"**.
+### Deploy
 
-Em 2 minutos, seu site estará no ar e funcional!
+A aplicação está pronta para o Vercel. O script de build no package.json já foi configurado para executar o ETL automático (`node scripts/fetch_subvencao.js`) **antes** do build Next, garantindo que os dados (SSG) cheguem sempre frescos na build.
 
-## Atualização Automática (GitHub Actions)
-O projeto já conta com um workflow em `.github/workflows/etl.yml`. Se você hospedar isso no GitHub, ele rodará duas vezes ao dia (08:00 e 18:00 BRT) para atualizar os dados automaticamente e gerar um novo build no Vercel.
+Adicionalmente, há um arquivo `.github/workflows/etl.yml` preparado para rodar duas vezes ao dia e gerar novos commits automáticos caso os dados públicos sofram alterações, mantendo a plataforma viva.
+
+---
+**Nota de Independência:** O site deve deixar claro que se trata de um projeto independente de inteligência. A identidade visual foi elaborada (padrão Bloomberg) de modo a não se passar por uma página da Prefeitura de São Paulo.
