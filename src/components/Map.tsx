@@ -17,21 +17,20 @@ export default function RetrofitMap() {
 
   useEffect(() => {
     setMounted(true);
-    // Fix leafet icon paths if needed, though we're using CircleMarkers here
   }, []);
 
   if (!mounted) {
     return <div className="h-[600px] w-full bg-slate-100 animate-pulse rounded-xl flex items-center justify-center">Carregando mapa...</div>;
   }
 
-  const center: [number, number] = [-23.545, -46.638]; // Center of SP
+  const center: [number, number] = [-23.542, -46.638]; // Center of SP
 
   return (
     <div className="h-[600px] w-full rounded-xl overflow-hidden border border-slate-200 shadow-sm relative z-0">
-      <MapContainer center={center} zoom={15} style={{ height: '100%', width: '100%' }}>
+      <MapContainer center={center} zoom={14} style={{ height: '100%', width: '100%' }}>
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+          attribution='&copy; <a href="https://carto.com/">CARTO</a>'
+          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
         />
 
         {/* Render Projetos */}
@@ -39,13 +38,13 @@ export default function RetrofitMap() {
           <CircleMarker
             key={proj.id}
             center={[proj.lat, proj.lng]}
-            radius={8}
-            pathOptions={{ color: '#2563eb', fillColor: '#3b82f6', fillOpacity: 0.7 }}
+            radius={7}
+            pathOptions={{ color: '#1d4ed8', fillColor: '#3b82f6', fillOpacity: 0.9, weight: 2 }}
           >
             <Popup>
               <div className="text-sm">
-                <strong className="block mb-1">{proj.nome}</strong>
-                <p className="text-slate-600 mb-1">{proj.endereco}</p>
+                <strong className="block mb-1">{proj.empresa}</strong>
+                <p className="text-slate-600 mb-1">{proj.chamamento}</p>
                 <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded">{proj.situacao}</span>
               </div>
             </Popup>
@@ -57,8 +56,8 @@ export default function RetrofitMap() {
           <CircleMarker
             key={op.id}
             center={[op.lat, op.lng]}
-            radius={6}
-            pathOptions={{ color: '#f59e0b', fillColor: '#fbbf24', fillOpacity: 0.8 }}
+            radius={5}
+            pathOptions={{ color: '#d97706', fillColor: '#f59e0b', fillOpacity: 0.6, weight: 1 }}
           >
             <Popup>
                <div className="text-sm">
@@ -76,11 +75,11 @@ export default function RetrofitMap() {
         <h4 className="text-xs font-bold text-slate-700 mb-2">Legenda</h4>
         <div className="flex items-center gap-2 mb-1">
           <div className="w-3 h-3 rounded-full bg-blue-500"></div>
-          <span className="text-xs text-slate-600">Projetos Oficiais</span>
+          <span className="text-xs text-slate-600">Projetos Oficiais ({projetosData.length})</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-amber-400"></div>
-          <span className="text-xs text-slate-600">Oportunidades (Radar)</span>
+          <span className="text-xs text-slate-600">Oportunidades ({oportunidadesData.length})</span>
         </div>
       </div>
     </div>
