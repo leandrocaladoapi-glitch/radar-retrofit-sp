@@ -47,3 +47,18 @@ jobs:
           git add src/data/*.json data-internal/*.json
           git diff --staged --quiet || git commit -m "chore(etl): atualização automática da base de oportunidades reais"
           git push origin arena/01a0ad21-radar-retrofit-sp
+
+  build:
+    runs-on: ubuntu-latest
+    needs: etl
+    if: always()
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/01a0ad21-radar-retrofit-sp
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Build Next.js
+        run: npx next build
