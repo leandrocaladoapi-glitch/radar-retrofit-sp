@@ -1,37 +1,35 @@
 [
   {
     "id": "op-1",
-    "endereco": "Imóvel Potencial 1 (SQL 728-19)",
-    "regiao": "Sé",
-    "idade": 52,
-    "usoConhecido": "HIS",
-    "area": 1321,
-    "zoneamento": "ZC",
+    "endereco": "Imóvel Potencial 1 (SQL 185-14)",
+    "regiao": "República",
+    "idade": 62,
+    "usoConhecido": "Residencial",
+    "area": 7310,
+    "zoneamento": "ZEIS",
     "perimetros": [
-      "AIU Setor Central",
       "Requalifica Centro"
     ],
-    "protecao": "Tombado/Inventário",
+    "protecao": "Nenhuma",
     "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
     ],
     "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
     "financeiro": {
-      "estimativaCustoObra": 3999409.2217776594,
-      "potencialMaximoSubvencao": 999852.3054444148,
-      "vgvPotencialEstimado": 9584028.908036683,
+      "estimativaCustoObra": 19141357.22895731,
+      "potencialMaximoSubvencao": 4785339.307239328,
+      "vgvPotencialEstimado": 29289537.57268877,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.52961131448494,
-    "lng": -46.63415041941891,
-    "score": 65,
-    "confidence": 61,
+    "lat": -23.53917224458066,
+    "lng": -46.65231379965474,
+    "score": 58,
+    "confidence": 65,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
       "Estudo de Massa e Viabilidade Financeira detalhada.",
@@ -41,14 +39,13 @@
   },
   {
     "id": "op-2",
-    "endereco": "Imóvel Potencial 2 (SQL 35-51)",
-    "regiao": "Santa Cecília",
-    "idade": 52,
-    "usoConhecido": "Residencial",
-    "area": 3162,
-    "zoneamento": "ZM",
+    "endereco": "Imóvel Potencial 2 (SQL 276-6)",
+    "regiao": "Bela Vista",
+    "idade": 70,
+    "usoConhecido": "HIS",
+    "area": 3200,
+    "zoneamento": "ZEIS",
     "perimetros": [
-      "AIU Setor Central",
       "Requalifica Centro"
     ],
     "protecao": "Nenhuma",
@@ -56,21 +53,21 @@
       "Necessidade de reforço estrutural",
       "Atualização de PPCI (Bombeiros)"
     ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
     "financeiro": {
-      "estimativaCustoObra": 12506514.469294792,
-      "potencialMaximoSubvencao": 3126628.617323698,
-      "vgvPotencialEstimado": 19145025.645118117,
+      "estimativaCustoObra": 12582547.517579582,
+      "potencialMaximoSubvencao": 3145636.8793948954,
+      "vgvPotencialEstimado": 20210116.862815768,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.530987128610615,
-    "lng": -46.6317799090335,
-    "score": 85,
-    "confidence": 62,
+    "lat": -23.53564876465884,
+    "lng": -46.63574421703861,
+    "score": 68,
+    "confidence": 67,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
       "Estudo de Massa e Viabilidade Financeira detalhada.",
@@ -80,36 +77,35 @@
   },
   {
     "id": "op-3",
-    "endereco": "Imóvel Potencial 3 (SQL 384-21)",
-    "regiao": "Consolação",
-    "idade": 84,
-    "usoConhecido": "HIS",
-    "area": 4129,
+    "endereco": "Imóvel Potencial 3 (SQL 901-23)",
+    "regiao": "Santa Cecília",
+    "idade": 69,
+    "usoConhecido": "Uso Misto",
+    "area": 8023,
     "zoneamento": "ZEU",
     "perimetros": [
       "Requalifica Centro"
     ],
-    "protecao": "Tombado/Inventário",
+    "protecao": "Nenhuma",
     "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
     ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
     "financeiro": {
-      "estimativaCustoObra": 14334321.568171246,
-      "potencialMaximoSubvencao": 3583580.3920428115,
-      "vgvPotencialEstimado": 31195438.119445965,
+      "estimativaCustoObra": 21682572.8397462,
+      "potencialMaximoSubvencao": 5420643.20993655,
+      "vgvPotencialEstimado": 31298992.0021033,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.539293079378208,
-    "lng": -46.630310340153585,
-    "score": 90,
-    "confidence": 72,
+    "lat": -23.53723539356971,
+    "lng": -46.63534725048785,
+    "score": 94,
+    "confidence": 60,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
       "Estudo de Massa e Viabilidade Financeira detalhada.",
@@ -119,1143 +115,12 @@
   },
   {
     "id": "op-4",
-    "endereco": "Imóvel Potencial 4 (SQL 841-6)",
-    "regiao": "Bela Vista",
-    "idade": 62,
-    "usoConhecido": "Residencial",
-    "area": 1861,
-    "zoneamento": "ZM",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
-    "financeiro": {
-      "estimativaCustoObra": 6655902.837137329,
-      "potencialMaximoSubvencao": 1663975.7092843323,
-      "vgvPotencialEstimado": 8635219.860181924,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.539109678156063,
-    "lng": -46.65496283914461,
-    "score": 58,
-    "confidence": 68,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-5",
-    "endereco": "Imóvel Potencial 5 (SQL 954-59)",
-    "regiao": "Santa Cecília",
-    "idade": 27,
-    "usoConhecido": "Não Residencial",
-    "area": 1445,
-    "zoneamento": "ZM",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 5125665.889005474,
-      "potencialMaximoSubvencao": 1281416.4722513685,
-      "vgvPotencialEstimado": 6212634.073958598,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.543126482207906,
-    "lng": -46.63859884026155,
-    "score": 57,
-    "confidence": 86,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-6",
-    "endereco": "Imóvel Potencial 6 (SQL 654-50)",
-    "regiao": "República",
-    "idade": 42,
-    "usoConhecido": "Não Residencial",
-    "area": 5100,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
-    "financeiro": {
-      "estimativaCustoObra": 18942506.431679375,
-      "potencialMaximoSubvencao": 4735626.607919844,
-      "vgvPotencialEstimado": 27460683.82471444,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.553343342983386,
-    "lng": -46.63974060022616,
-    "score": 89,
-    "confidence": 85,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-7",
-    "endereco": "Imóvel Potencial 7 (SQL 415-74)",
-    "regiao": "Sé",
-    "idade": 57,
-    "usoConhecido": "Não Residencial",
-    "area": 4971,
-    "zoneamento": "ZEIS",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
-    "financeiro": {
-      "estimativaCustoObra": 13078096.063843366,
-      "potencialMaximoSubvencao": 3269524.0159608414,
-      "vgvPotencialEstimado": 30352933.788733296,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.554884278665266,
-    "lng": -46.638277055013866,
-    "score": 89,
-    "confidence": 65,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-8",
-    "endereco": "Imóvel Potencial 8 (SQL 188-24)",
-    "regiao": "Consolação",
-    "idade": 80,
-    "usoConhecido": "Residencial",
-    "area": 9836,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-    "financeiro": {
-      "estimativaCustoObra": 25568173.077750072,
-      "potencialMaximoSubvencao": 6392043.269437518,
-      "vgvPotencialEstimado": 32224308.81076833,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.535505256823352,
-    "lng": -46.63097274891284,
-    "score": 72,
-    "confidence": 62,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-9",
-    "endereco": "Imóvel Potencial 9 (SQL 216-55)",
-    "regiao": "Santa Cecília",
-    "idade": 61,
-    "usoConhecido": "HIS",
-    "area": 1373,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
-    "financeiro": {
-      "estimativaCustoObra": 4105449.2859586934,
-      "potencialMaximoSubvencao": 1026362.3214896733,
-      "vgvPotencialEstimado": 6751548.544855008,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.530162702572568,
-    "lng": -46.653543232276554,
-    "score": 85,
-    "confidence": 73,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-10",
-    "endereco": "Imóvel Potencial 10 (SQL 678-74)",
-    "regiao": "Bela Vista",
-    "idade": 63,
-    "usoConhecido": "Não Residencial",
-    "area": 2345,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
-    "financeiro": {
-      "estimativaCustoObra": 6550766.687393236,
-      "potencialMaximoSubvencao": 1637691.671848309,
-      "vgvPotencialEstimado": 15874106.697095608,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.538890809153955,
-    "lng": -46.63912877383203,
-    "score": 62,
-    "confidence": 66,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-11",
-    "endereco": "Imóvel Potencial 11 (SQL 102-51)",
-    "regiao": "Sé",
-    "idade": 67,
-    "usoConhecido": "HIS",
-    "area": 753,
-    "zoneamento": "ZEIS",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
-    "financeiro": {
-      "estimativaCustoObra": 1995826.3231041033,
-      "potencialMaximoSubvencao": 498956.58077602583,
-      "vgvPotencialEstimado": 5077726.988988401,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.53650224713429,
-    "lng": -46.62648563862913,
-    "score": 86,
-    "confidence": 85,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-12",
-    "endereco": "Imóvel Potencial 12 (SQL 207-57)",
-    "regiao": "República",
-    "idade": 20,
-    "usoConhecido": "Residencial",
-    "area": 3845,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
-    "financeiro": {
-      "estimativaCustoObra": 13502970.87213765,
-      "potencialMaximoSubvencao": 3375742.7180344127,
-      "vgvPotencialEstimado": 22403622.6737383,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.52642247590696,
-    "lng": -46.64596534946975,
-    "score": 90,
-    "confidence": 64,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-13",
-    "endereco": "Imóvel Potencial 13 (SQL 498-17)",
-    "regiao": "República",
-    "idade": 34,
-    "usoConhecido": "Não Residencial",
-    "area": 1684,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
-    "financeiro": {
-      "estimativaCustoObra": 6528750.592566319,
-      "potencialMaximoSubvencao": 1632187.6481415797,
-      "vgvPotencialEstimado": 11160462.655048233,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.539097253374972,
-    "lng": -46.640315117113424,
-    "score": 83,
-    "confidence": 74,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-14",
-    "endereco": "Imóvel Potencial 14 (SQL 293-54)",
-    "regiao": "Consolação",
-    "idade": 69,
-    "usoConhecido": "HIS",
-    "area": 6544,
-    "zoneamento": "ZEIS",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 19506763.488455515,
-      "potencialMaximoSubvencao": 4876690.872113879,
-      "vgvPotencialEstimado": 52180307.47459764,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.53372317501157,
-    "lng": -46.6524826579778,
-    "score": 63,
-    "confidence": 64,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-15",
-    "endereco": "Imóvel Potencial 15 (SQL 208-33)",
-    "regiao": "República",
-    "idade": 33,
-    "usoConhecido": "Residencial",
-    "area": 1712,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
-    "financeiro": {
-      "estimativaCustoObra": 4594435.391911263,
-      "potencialMaximoSubvencao": 1148608.8479778157,
-      "vgvPotencialEstimado": 6378240.396620635,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.552944601761144,
-    "lng": -46.644340020054415,
-    "score": 87,
-    "confidence": 80,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-16",
-    "endereco": "Imóvel Potencial 16 (SQL 169-78)",
-    "regiao": "Santa Cecília",
-    "idade": 67,
-    "usoConhecido": "Residencial",
-    "area": 4509,
-    "zoneamento": "ZM",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-    "financeiro": {
-      "estimativaCustoObra": 13740725.429487016,
-      "potencialMaximoSubvencao": 3435181.357371754,
-      "vgvPotencialEstimado": 24596461.73541882,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.532000759877505,
-    "lng": -46.63410097916798,
-    "score": 93,
-    "confidence": 81,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-17",
-    "endereco": "Imóvel Potencial 17 (SQL 273-54)",
-    "regiao": "Santa Cecília",
-    "idade": 26,
-    "usoConhecido": "Uso Misto",
-    "area": 4018,
-    "zoneamento": "ZEIS",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-    "financeiro": {
-      "estimativaCustoObra": 11013320.431875015,
-      "potencialMaximoSubvencao": 2753330.1079687537,
-      "vgvPotencialEstimado": 18254682.594467934,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.525873821791087,
-    "lng": -46.635521101137186,
-    "score": 76,
-    "confidence": 63,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-18",
-    "endereco": "Imóvel Potencial 18 (SQL 130-81)",
-    "regiao": "Consolação",
-    "idade": 29,
-    "usoConhecido": "Não Residencial",
-    "area": 7869,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
-    "financeiro": {
-      "estimativaCustoObra": 21561753.819009747,
-      "potencialMaximoSubvencao": 5390438.454752437,
-      "vgvPotencialEstimado": 26977316.32038834,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.550935299306843,
-    "lng": -46.63311959196474,
-    "score": 93,
-    "confidence": 83,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-19",
-    "endereco": "Imóvel Potencial 19 (SQL 876-42)",
-    "regiao": "República",
-    "idade": 45,
-    "usoConhecido": "Uso Misto",
-    "area": 4218,
-    "zoneamento": "ZEIS",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
-    "financeiro": {
-      "estimativaCustoObra": 12106579.533860512,
-      "potencialMaximoSubvencao": 3026644.883465128,
-      "vgvPotencialEstimado": 26759340.92966848,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.549147802379377,
-    "lng": -46.628456616055665,
-    "score": 90,
-    "confidence": 76,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-20",
-    "endereco": "Imóvel Potencial 20 (SQL 536-77)",
-    "regiao": "Sé",
-    "idade": 45,
-    "usoConhecido": "HIS",
-    "area": 7681,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 27147617.128039706,
-      "potencialMaximoSubvencao": 6786904.282009927,
-      "vgvPotencialEstimado": 40399224.56408433,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.531135207517565,
-    "lng": -46.635482634733194,
-    "score": 70,
-    "confidence": 78,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-21",
-    "endereco": "Imóvel Potencial 21 (SQL 669-3)",
-    "regiao": "República",
-    "idade": 28,
-    "usoConhecido": "HIS",
-    "area": 639,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
-    "financeiro": {
-      "estimativaCustoObra": 2042772.8909862267,
-      "potencialMaximoSubvencao": 510693.2227465567,
-      "vgvPotencialEstimado": 4053986.1591054485,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.554237341522114,
-    "lng": -46.65310456259391,
-    "score": 76,
-    "confidence": 63,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-22",
-    "endereco": "Imóvel Potencial 22 (SQL 220-5)",
-    "regiao": "Consolação",
-    "idade": 68,
-    "usoConhecido": "Não Residencial",
-    "area": 4817,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-    "financeiro": {
-      "estimativaCustoObra": 12455481.867287325,
-      "potencialMaximoSubvencao": 3113870.466821831,
-      "vgvPotencialEstimado": 15351615.75730592,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.52542809340593,
-    "lng": -46.635545690270185,
-    "score": 93,
-    "confidence": 86,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-23",
-    "endereco": "Imóvel Potencial 23 (SQL 36-50)",
-    "regiao": "Santa Cecília",
-    "idade": 75,
-    "usoConhecido": "Não Residencial",
-    "area": 7288,
-    "zoneamento": "ZM",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-    "financeiro": {
-      "estimativaCustoObra": 22603664.604308028,
-      "potencialMaximoSubvencao": 5650916.151077007,
-      "vgvPotencialEstimado": 27288823.185596243,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.551496083527976,
-    "lng": -46.6282092949147,
-    "score": 62,
-    "confidence": 61,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-24",
-    "endereco": "Imóvel Potencial 24 (SQL 709-1)",
-    "regiao": "Bela Vista",
-    "idade": 84,
-    "usoConhecido": "Não Residencial",
-    "area": 3612,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
-    "financeiro": {
-      "estimativaCustoObra": 11723674.559500346,
-      "potencialMaximoSubvencao": 2930918.6398750865,
-      "vgvPotencialEstimado": 31169314.534951907,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.527335618263454,
-    "lng": -46.62514111241178,
-    "score": 71,
-    "confidence": 83,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-25",
-    "endereco": "Imóvel Potencial 25 (SQL 205-16)",
-    "regiao": "Sé",
-    "idade": 60,
-    "usoConhecido": "Não Residencial",
-    "area": 5273,
-    "zoneamento": "ZM",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
-    "financeiro": {
-      "estimativaCustoObra": 19745506.572229113,
-      "potencialMaximoSubvencao": 4936376.643057278,
-      "vgvPotencialEstimado": 52904676.359777324,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.534991325040494,
-    "lng": -46.64175064880916,
-    "score": 57,
-    "confidence": 73,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-26",
-    "endereco": "Imóvel Potencial 26 (SQL 782-93)",
-    "regiao": "República",
-    "idade": 68,
-    "usoConhecido": "Uso Misto",
-    "area": 7201,
-    "zoneamento": "ZM",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 22143962.774194416,
-      "potencialMaximoSubvencao": 5535990.693548604,
-      "vgvPotencialEstimado": 40906838.152312174,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.549533402931438,
-    "lng": -46.63346109654266,
-    "score": 72,
-    "confidence": 80,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-27",
-    "endereco": "Imóvel Potencial 27 (SQL 516-59)",
-    "regiao": "Sé",
-    "idade": 44,
-    "usoConhecido": "HIS",
-    "area": 3637,
-    "zoneamento": "ZM",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
-    "financeiro": {
-      "estimativaCustoObra": 12802034.369599978,
-      "potencialMaximoSubvencao": 3200508.5923999944,
-      "vgvPotencialEstimado": 18752692.113987375,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.539614622854906,
-    "lng": -46.638924152932965,
-    "score": 68,
-    "confidence": 63,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-28",
-    "endereco": "Imóvel Potencial 28 (SQL 84-31)",
-    "regiao": "Santa Cecília",
-    "idade": 30,
-    "usoConhecido": "Uso Misto",
-    "area": 5876,
-    "zoneamento": "ZEIS",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-    "financeiro": {
-      "estimativaCustoObra": 17287990.93793411,
-      "potencialMaximoSubvencao": 4321997.734483528,
-      "vgvPotencialEstimado": 37165997.405648485,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.5281495262986,
-    "lng": -46.643661627842256,
-    "score": 68,
-    "confidence": 88,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-29",
-    "endereco": "Imóvel Potencial 29 (SQL 590-26)",
-    "regiao": "República",
-    "idade": 76,
-    "usoConhecido": "Residencial",
-    "area": 10140,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
-    "financeiro": {
-      "estimativaCustoObra": 32302661.116829827,
-      "potencialMaximoSubvencao": 8075665.279207457,
-      "vgvPotencialEstimado": 56285503.845490314,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.544119365342716,
-    "lng": -46.638659331283876,
-    "score": 91,
-    "confidence": 88,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-30",
-    "endereco": "Imóvel Potencial 30 (SQL 935-41)",
-    "regiao": "Sé",
-    "idade": 37,
-    "usoConhecido": "Não Residencial",
-    "area": 2082,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
-    "financeiro": {
-      "estimativaCustoObra": 7960682.152532909,
-      "potencialMaximoSubvencao": 1990170.5381332273,
-      "vgvPotencialEstimado": 12406778.141300378,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.529825169620118,
-    "lng": -46.640217951425264,
-    "score": 62,
-    "confidence": 70,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-31",
-    "endereco": "Imóvel Potencial 31 (SQL 245-97)",
-    "regiao": "República",
-    "idade": 72,
-    "usoConhecido": "HIS",
-    "area": 8578,
-    "zoneamento": "ZEIS",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-    "financeiro": {
-      "estimativaCustoObra": 29480297.508937478,
-      "potencialMaximoSubvencao": 7370074.3772343695,
-      "vgvPotencialEstimado": 70940048.01292281,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.54231317626532,
-    "lng": -46.6394339832955,
-    "score": 57,
-    "confidence": 89,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-32",
-    "endereco": "Imóvel Potencial 32 (SQL 356-51)",
+    "endereco": "Imóvel Potencial 4 (SQL 536-28)",
     "regiao": "Sé",
     "idade": 81,
-    "usoConhecido": "Não Residencial",
-    "area": 5338,
-    "zoneamento": "ZM",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-    "financeiro": {
-      "estimativaCustoObra": 15085963.438872874,
-      "potencialMaximoSubvencao": 3771490.8597182184,
-      "vgvPotencialEstimado": 21909537.683541074,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.552595292330285,
-    "lng": -46.64682711364675,
-    "score": 81,
-    "confidence": 75,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-33",
-    "endereco": "Imóvel Potencial 33 (SQL 119-0)",
-    "regiao": "Bela Vista",
-    "idade": 68,
-    "usoConhecido": "Não Residencial",
-    "area": 2386,
-    "zoneamento": "ZEIS",
+    "usoConhecido": "Residencial",
+    "area": 5214,
+    "zoneamento": "ZEU",
     "perimetros": [
       "AIU Setor Central",
       "Requalifica Centro"
@@ -1266,871 +131,20 @@
       "Custos de restauro elevados e imprevisíveis",
       "Restrições de fachada"
     ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-    "financeiro": {
-      "estimativaCustoObra": 8094091.038009924,
-      "potencialMaximoSubvencao": 2023522.759502481,
-      "vgvPotencialEstimado": 16163438.210277209,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.543194431157772,
-    "lng": -46.653865068204574,
-    "score": 80,
-    "confidence": 64,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-34",
-    "endereco": "Imóvel Potencial 34 (SQL 585-94)",
-    "regiao": "Santa Cecília",
-    "idade": 44,
-    "usoConhecido": "HIS",
-    "area": 537,
-    "zoneamento": "ZM",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
     "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
     "financeiro": {
-      "estimativaCustoObra": 1441551.6265617348,
-      "potencialMaximoSubvencao": 360387.9066404337,
-      "vgvPotencialEstimado": 3078322.2223363933,
+      "estimativaCustoObra": 13812532.1367055,
+      "potencialMaximoSubvencao": 3453133.034176375,
+      "vgvPotencialEstimado": 27367223.405303698,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.527109970749486,
-    "lng": -46.63692995309281,
+    "lat": -23.53762733801416,
+    "lng": -46.64945167648906,
     "score": 77,
-    "confidence": 69,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-35",
-    "endereco": "Imóvel Potencial 35 (SQL 872-24)",
-    "regiao": "Consolação",
-    "idade": 43,
-    "usoConhecido": "Residencial",
-    "area": 9665,
-    "zoneamento": "ZM",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 37942519.46656498,
-      "potencialMaximoSubvencao": 9485629.866641246,
-      "vgvPotencialEstimado": 61903107.9687583,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.55041239629275,
-    "lng": -46.64718726455595,
-    "score": 58,
-    "confidence": 77,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-36",
-    "endereco": "Imóvel Potencial 36 (SQL 371-69)",
-    "regiao": "República",
-    "idade": 49,
-    "usoConhecido": "Uso Misto",
-    "area": 6066,
-    "zoneamento": "ZM",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 18740117.005734332,
-      "potencialMaximoSubvencao": 4685029.251433583,
-      "vgvPotencialEstimado": 44135730.14716254,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.526884332632623,
-    "lng": -46.648008460027036,
-    "score": 66,
-    "confidence": 60,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-37",
-    "endereco": "Imóvel Potencial 37 (SQL 14-75)",
-    "regiao": "Santa Cecília",
-    "idade": 23,
-    "usoConhecido": "Não Residencial",
-    "area": 8098,
-    "zoneamento": "ZEIS",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 25243648.464013185,
-      "potencialMaximoSubvencao": 6310912.116003296,
-      "vgvPotencialEstimado": 35284699.57442164,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.549280577408332,
-    "lng": -46.633628403433356,
-    "score": 83,
-    "confidence": 82,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-38",
-    "endereco": "Imóvel Potencial 38 (SQL 432-41)",
-    "regiao": "Sé",
-    "idade": 82,
-    "usoConhecido": "HIS",
-    "area": 4106,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-    "financeiro": {
-      "estimativaCustoObra": 11692840.174868368,
-      "potencialMaximoSubvencao": 2923210.043717092,
-      "vgvPotencialEstimado": 16885375.75971416,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.546518468044155,
-    "lng": -46.633209093137715,
-    "score": 90,
-    "confidence": 60,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-39",
-    "endereco": "Imóvel Potencial 39 (SQL 665-14)",
-    "regiao": "Bela Vista",
-    "idade": 37,
-    "usoConhecido": "HIS",
-    "area": 2047,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
-    "financeiro": {
-      "estimativaCustoObra": 6897831.241329044,
-      "potencialMaximoSubvencao": 1724457.810332261,
-      "vgvPotencialEstimado": 13591990.065780766,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.534733492217057,
-    "lng": -46.62849215994897,
-    "score": 68,
-    "confidence": 84,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-40",
-    "endereco": "Imóvel Potencial 40 (SQL 916-56)",
-    "regiao": "República",
-    "idade": 30,
-    "usoConhecido": "Uso Misto",
-    "area": 10126,
-    "zoneamento": "ZM",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
-    "financeiro": {
-      "estimativaCustoObra": 26703100.51003647,
-      "potencialMaximoSubvencao": 6675775.127509117,
-      "vgvPotencialEstimado": 42033045.088222094,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.526321294124838,
-    "lng": -46.64136596568354,
-    "score": 79,
-    "confidence": 80,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-41",
-    "endereco": "Imóvel Potencial 41 (SQL 332-31)",
-    "regiao": "Sé",
-    "idade": 62,
-    "usoConhecido": "Residencial",
-    "area": 2173,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 6581198.662972071,
-      "potencialMaximoSubvencao": 1645299.6657430178,
-      "vgvPotencialEstimado": 12999315.80357997,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.52705887163785,
-    "lng": -46.64014505338658,
-    "score": 82,
-    "confidence": 87,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-42",
-    "endereco": "Imóvel Potencial 42 (SQL 925-38)",
-    "regiao": "República",
-    "idade": 27,
-    "usoConhecido": "Residencial",
-    "area": 5926,
-    "zoneamento": "ZM",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
-    "financeiro": {
-      "estimativaCustoObra": 16214104.875784114,
-      "potencialMaximoSubvencao": 4053526.2189460285,
-      "vgvPotencialEstimado": 25383788.48090166,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.535255229874608,
-    "lng": -46.633007735180655,
-    "score": 94,
-    "confidence": 72,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-43",
-    "endereco": "Imóvel Potencial 43 (SQL 276-26)",
-    "regiao": "República",
-    "idade": 70,
-    "usoConhecido": "Residencial",
-    "area": 5727,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 18930185.3437257,
-      "potencialMaximoSubvencao": 4732546.335931425,
-      "vgvPotencialEstimado": 45799402.016112626,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.53886874043194,
-    "lng": -46.65429956834324,
-    "score": 66,
-    "confidence": 68,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-44",
-    "endereco": "Imóvel Potencial 44 (SQL 46-29)",
-    "regiao": "Sé",
-    "idade": 30,
-    "usoConhecido": "Não Residencial",
-    "area": 2522,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-    "financeiro": {
-      "estimativaCustoObra": 6570043.741967341,
-      "potencialMaximoSubvencao": 1642510.9354918352,
-      "vgvPotencialEstimado": 15725544.3716177,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.552751063886305,
-    "lng": -46.65148352639055,
-    "score": 70,
-    "confidence": 77,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-45",
-    "endereco": "Imóvel Potencial 45 (SQL 984-16)",
-    "regiao": "Santa Cecília",
-    "idade": 87,
-    "usoConhecido": "Residencial",
-    "area": 7215,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
-    "financeiro": {
-      "estimativaCustoObra": 19993376.27701029,
-      "potencialMaximoSubvencao": 4998344.069252573,
-      "vgvPotencialEstimado": 27080970.96868683,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.547942997914646,
-    "lng": -46.65374298586263,
-    "score": 93,
-    "confidence": 73,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-46",
-    "endereco": "Imóvel Potencial 46 (SQL 321-4)",
-    "regiao": "Sé",
-    "idade": 69,
-    "usoConhecido": "HIS",
-    "area": 4200,
-    "zoneamento": "ZEIS",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 14152210.88110503,
-      "potencialMaximoSubvencao": 3538052.7202762575,
-      "vgvPotencialEstimado": 27191583.464479152,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.52635884467414,
-    "lng": -46.642727363369026,
-    "score": 66,
-    "confidence": 72,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-47",
-    "endereco": "Imóvel Potencial 47 (SQL 33-29)",
-    "regiao": "Consolação",
-    "idade": 31,
-    "usoConhecido": "Residencial",
-    "area": 2523,
-    "zoneamento": "ZEIS",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-    "financeiro": {
-      "estimativaCustoObra": 6456089.103471584,
-      "potencialMaximoSubvencao": 1614022.275867896,
-      "vgvPotencialEstimado": 16764432.272590803,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.550105733816046,
-    "lng": -46.64245977454354,
-    "score": 63,
-    "confidence": 82,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-48",
-    "endereco": "Imóvel Potencial 48 (SQL 557-1)",
-    "regiao": "Sé",
-    "idade": 34,
-    "usoConhecido": "Residencial",
-    "area": 2385,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
-    "financeiro": {
-      "estimativaCustoObra": 8143904.513655894,
-      "potencialMaximoSubvencao": 2035976.1284139736,
-      "vgvPotencialEstimado": 16378062.466311337,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.530024527988186,
-    "lng": -46.62871089717276,
-    "score": 67,
-    "confidence": 79,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-49",
-    "endereco": "Imóvel Potencial 49 (SQL 533-77)",
-    "regiao": "Bela Vista",
-    "idade": 59,
-    "usoConhecido": "HIS",
-    "area": 10344,
-    "zoneamento": "ZEIS",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 36353937.43875514,
-      "potencialMaximoSubvencao": 9088484.359688785,
-      "vgvPotencialEstimado": 61507713.175825834,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.541997582198558,
-    "lng": -46.6404605755812,
-    "score": 70,
-    "confidence": 77,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-50",
-    "endereco": "Imóvel Potencial 50 (SQL 663-9)",
-    "regiao": "Consolação",
-    "idade": 55,
-    "usoConhecido": "HIS",
-    "area": 1710,
-    "zoneamento": "ZEIS",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 5248344.792420667,
-      "potencialMaximoSubvencao": 1312086.1981051667,
-      "vgvPotencialEstimado": 6709265.194648593,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.52970012016175,
-    "lng": -46.652502375868046,
-    "score": 86,
-    "confidence": 87,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-51",
-    "endereco": "Imóvel Potencial 51 (SQL 142-61)",
-    "regiao": "Bela Vista",
-    "idade": 44,
-    "usoConhecido": "Residencial",
-    "area": 2265,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-    "financeiro": {
-      "estimativaCustoObra": 6000781.923100117,
-      "potencialMaximoSubvencao": 1500195.4807750292,
-      "vgvPotencialEstimado": 12014418.098444398,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.531075178642894,
-    "lng": -46.63015646111287,
-    "score": 68,
-    "confidence": 72,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-52",
-    "endereco": "Imóvel Potencial 52 (SQL 809-5)",
-    "regiao": "República",
-    "idade": 82,
-    "usoConhecido": "Residencial",
-    "area": 5437,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-    "financeiro": {
-      "estimativaCustoObra": 19194310.87304956,
-      "potencialMaximoSubvencao": 4798577.71826239,
-      "vgvPotencialEstimado": 41926345.66794929,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.52780652817574,
-    "lng": -46.648006584454805,
-    "score": 86,
-    "confidence": 76,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-53",
-    "endereco": "Imóvel Potencial 53 (SQL 581-56)",
-    "regiao": "República",
-    "idade": 28,
-    "usoConhecido": "Não Residencial",
-    "area": 8714,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
-    "financeiro": {
-      "estimativaCustoObra": 28130738.682725307,
-      "potencialMaximoSubvencao": 7032684.670681327,
-      "vgvPotencialEstimado": 36684669.32546651,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.532404525703203,
-    "lng": -46.63123454986771,
-    "score": 75,
-    "confidence": 78,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-54",
-    "endereco": "Imóvel Potencial 54 (SQL 194-36)",
-    "regiao": "Santa Cecília",
-    "idade": 42,
-    "usoConhecido": "Uso Misto",
-    "area": 3705,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
-    "financeiro": {
-      "estimativaCustoObra": 14351979.517736418,
-      "potencialMaximoSubvencao": 3587994.8794341045,
-      "vgvPotencialEstimado": 23670797.42471646,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.544831125835973,
-    "lng": -46.631587580297314,
-    "score": 75,
-    "confidence": 66,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-55",
-    "endereco": "Imóvel Potencial 55 (SQL 666-38)",
-    "regiao": "Sé",
-    "idade": 50,
-    "usoConhecido": "Uso Misto",
-    "area": 5774,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
-    "financeiro": {
-      "estimativaCustoObra": 20818668.3210781,
-      "potencialMaximoSubvencao": 5204667.080269525,
-      "vgvPotencialEstimado": 43697458.75979392,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.545269725648534,
-    "lng": -46.627114229698755,
-    "score": 70,
     "confidence": 71,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
@@ -2140,54 +154,14 @@
     ]
   },
   {
-    "id": "op-56",
-    "endereco": "Imóvel Potencial 56 (SQL 931-16)",
-    "regiao": "República",
-    "idade": 22,
-    "usoConhecido": "Não Residencial",
-    "area": 8470,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
-    "financeiro": {
-      "estimativaCustoObra": 22618256.4678967,
-      "potencialMaximoSubvencao": 5654564.116974175,
-      "vgvPotencialEstimado": 58152259.35637576,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.5505892247951,
-    "lng": -46.62951056496665,
-    "score": 62,
-    "confidence": 61,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-57",
-    "endereco": "Imóvel Potencial 57 (SQL 4-66)",
+    "id": "op-5",
+    "endereco": "Imóvel Potencial 5 (SQL 448-66)",
     "regiao": "Consolação",
-    "idade": 49,
-    "usoConhecido": "Não Residencial",
-    "area": 4047,
+    "idade": 81,
+    "usoConhecido": "HIS",
+    "area": 525,
     "zoneamento": "ZM",
     "perimetros": [
-      "AIU Setor Central",
       "Requalifica Centro"
     ],
     "protecao": "Nenhuma",
@@ -2197,19 +171,19 @@
     ],
     "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
     "financeiro": {
-      "estimativaCustoObra": 13200181.014232583,
-      "potencialMaximoSubvencao": 3300045.253558146,
-      "vgvPotencialEstimado": 27224969.00107145,
+      "estimativaCustoObra": 1512944.9520394076,
+      "potencialMaximoSubvencao": 378236.2380098519,
+      "vgvPotencialEstimado": 2979859.751493155,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.546186299031614,
-    "lng": -46.653200369059405,
-    "score": 80,
-    "confidence": 82,
+    "lat": -23.525111797871162,
+    "lng": -46.6307502544267,
+    "score": 64,
+    "confidence": 83,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
       "Estudo de Massa e Viabilidade Financeira detalhada.",
@@ -2218,89 +192,12 @@
     ]
   },
   {
-    "id": "op-58",
-    "endereco": "Imóvel Potencial 58 (SQL 90-60)",
-    "regiao": "Bela Vista",
-    "idade": 76,
-    "usoConhecido": "Uso Misto",
-    "area": 4090,
-    "zoneamento": "ZM",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
-    "financeiro": {
-      "estimativaCustoObra": 14481861.930893337,
-      "potencialMaximoSubvencao": 3620465.4827233343,
-      "vgvPotencialEstimado": 33209119.04306733,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.529401241235337,
-    "lng": -46.637575594385595,
-    "score": 56,
-    "confidence": 70,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-59",
-    "endereco": "Imóvel Potencial 59 (SQL 887-18)",
+    "id": "op-6",
+    "endereco": "Imóvel Potencial 6 (SQL 718-85)",
     "regiao": "Sé",
-    "idade": 35,
+    "idade": 62,
     "usoConhecido": "Residencial",
-    "area": 1779,
-    "zoneamento": "ZEIS",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 4827547.302867375,
-      "potencialMaximoSubvencao": 1206886.8257168438,
-      "vgvPotencialEstimado": 8671227.792573908,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.55344736102166,
-    "lng": -46.62964972908877,
-    "score": 86,
-    "confidence": 77,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-60",
-    "endereco": "Imóvel Potencial 60 (SQL 813-70)",
-    "regiao": "Santa Cecília",
-    "idade": 34,
-    "usoConhecido": "Residencial",
-    "area": 9471,
+    "area": 3922,
     "zoneamento": "ZC",
     "perimetros": [
       "Requalifica Centro"
@@ -2310,21 +207,21 @@
       "Necessidade de reforço estrutural",
       "Atualização de PPCI (Bombeiros)"
     ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
     "financeiro": {
-      "estimativaCustoObra": 24653558.692223016,
-      "potencialMaximoSubvencao": 6163389.673055754,
-      "vgvPotencialEstimado": 41148647.77472642,
+      "estimativaCustoObra": 14867665.450799007,
+      "potencialMaximoSubvencao": 3716916.3626997517,
+      "vgvPotencialEstimado": 24422252.428873826,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.533752180603045,
-    "lng": -46.63803529006816,
-    "score": 62,
-    "confidence": 89,
+    "lat": -23.527267403179327,
+    "lng": -46.64857619498267,
+    "score": 90,
+    "confidence": 79,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
       "Estudo de Massa e Viabilidade Financeira detalhada.",
@@ -2333,13 +230,93 @@
     ]
   },
   {
-    "id": "op-61",
-    "endereco": "Imóvel Potencial 61 (SQL 487-36)",
+    "id": "op-7",
+    "endereco": "Imóvel Potencial 7 (SQL 267-59)",
     "regiao": "República",
-    "idade": 77,
-    "usoConhecido": "Não Residencial",
-    "area": 4011,
+    "idade": 53,
+    "usoConhecido": "Uso Misto",
+    "area": 8924,
     "zoneamento": "ZM",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Tombado/Inventário",
+    "riscos": [
+      "Aprovação complexa no CONPRESP/CONDEPHAAT",
+      "Custos de restauro elevados e imprevisíveis",
+      "Restrições de fachada"
+    ],
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "financeiro": {
+      "estimativaCustoObra": 32167519.378003407,
+      "potencialMaximoSubvencao": 8041879.844500852,
+      "vgvPotencialEstimado": 61221473.92331025,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.541169939383323,
+    "lng": -46.64514112754859,
+    "score": 71,
+    "confidence": 62,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-8",
+    "endereco": "Imóvel Potencial 8 (SQL 695-53)",
+    "regiao": "Santa Cecília",
+    "idade": 63,
+    "usoConhecido": "HIS",
+    "area": 2903,
+    "zoneamento": "ZEIS",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Tombado/Inventário",
+    "riscos": [
+      "Aprovação complexa no CONPRESP/CONDEPHAAT",
+      "Custos de restauro elevados e imprevisíveis",
+      "Restrições de fachada"
+    ],
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "financeiro": {
+      "estimativaCustoObra": 9250154.363949459,
+      "potencialMaximoSubvencao": 2312538.5909873648,
+      "vgvPotencialEstimado": 23070738.606867857,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.55494751646656,
+    "lng": -46.6393431820445,
+    "score": 79,
+    "confidence": 79,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-9",
+    "endereco": "Imóvel Potencial 9 (SQL 0-51)",
+    "regiao": "Santa Cecília",
+    "idade": 22,
+    "usoConhecido": "Residencial",
+    "area": 8887,
+    "zoneamento": "ZEU",
     "perimetros": [
       "Requalifica Centro"
     ],
@@ -2350,57 +327,18 @@
     ],
     "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
     "financeiro": {
-      "estimativaCustoObra": 13225451.133655107,
-      "potencialMaximoSubvencao": 3306362.7834137767,
-      "vgvPotencialEstimado": 16134654.773908196,
+      "estimativaCustoObra": 33274581.971196443,
+      "potencialMaximoSubvencao": 8318645.492799111,
+      "vgvPotencialEstimado": 56791731.497848116,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.529055789502607,
-    "lng": -46.65359976474142,
-    "score": 87,
-    "confidence": 66,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-62",
-    "endereco": "Imóvel Potencial 62 (SQL 243-18)",
-    "regiao": "Bela Vista",
-    "idade": 60,
-    "usoConhecido": "HIS",
-    "area": 2537,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Tombado/Inventário",
-    "riscos": [
-      "Aprovação complexa no CONPRESP/CONDEPHAAT",
-      "Custos de restauro elevados e imprevisíveis",
-      "Restrições de fachada"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 9280056.59034986,
-      "potencialMaximoSubvencao": 2320014.147587465,
-      "vgvPotencialEstimado": 16747457.74000279,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.546523780527334,
-    "lng": -46.65029077999379,
-    "score": 56,
+    "lat": -23.53647624745642,
+    "lng": -46.633373221694114,
+    "score": 72,
     "confidence": 65,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
@@ -2410,13 +348,53 @@
     ]
   },
   {
-    "id": "op-63",
-    "endereco": "Imóvel Potencial 63 (SQL 3-37)",
-    "regiao": "Sé",
-    "idade": 48,
-    "usoConhecido": "Residencial",
-    "area": 2852,
-    "zoneamento": "ZM",
+    "id": "op-10",
+    "endereco": "Imóvel Potencial 10 (SQL 852-98)",
+    "regiao": "Bela Vista",
+    "idade": 84,
+    "usoConhecido": "Uso Misto",
+    "area": 5484,
+    "zoneamento": "ZC",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Tombado/Inventário",
+    "riscos": [
+      "Aprovação complexa no CONPRESP/CONDEPHAAT",
+      "Custos de restauro elevados e imprevisíveis",
+      "Restrições de fachada"
+    ],
+    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
+    "financeiro": {
+      "estimativaCustoObra": 20596914.417552333,
+      "potencialMaximoSubvencao": 5149228.604388083,
+      "vgvPotencialEstimado": 44949693.404654704,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.55022826283987,
+    "lng": -46.638115717647445,
+    "score": 61,
+    "confidence": 76,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-11",
+    "endereco": "Imóvel Potencial 11 (SQL 484-22)",
+    "regiao": "Bela Vista",
+    "idade": 57,
+    "usoConhecido": "HIS",
+    "area": 6246,
+    "zoneamento": "ZEIS",
     "perimetros": [
       "AIU Setor Central",
       "Requalifica Centro"
@@ -2428,19 +406,19 @@
     ],
     "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
     "financeiro": {
-      "estimativaCustoObra": 10094726.512217395,
-      "potencialMaximoSubvencao": 2523681.6280543488,
-      "vgvPotencialEstimado": 24966957.86819541,
+      "estimativaCustoObra": 22047363.79730154,
+      "potencialMaximoSubvencao": 5511840.949325385,
+      "vgvPotencialEstimado": 37767794.46651942,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.546598991005943,
-    "lng": -46.651839429872815,
-    "score": 91,
-    "confidence": 80,
+    "lat": -23.550502076505435,
+    "lng": -46.63316572767586,
+    "score": 89,
+    "confidence": 69,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
       "Estudo de Massa e Viabilidade Financeira detalhada.",
@@ -2449,52 +427,13 @@
     ]
   },
   {
-    "id": "op-64",
-    "endereco": "Imóvel Potencial 64 (SQL 102-28)",
-    "regiao": "República",
-    "idade": 48,
-    "usoConhecido": "Não Residencial",
-    "area": 4787,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 17744728.641248666,
-      "potencialMaximoSubvencao": 4436182.160312166,
-      "vgvPotencialEstimado": 42419566.65632905,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.529436879397075,
-    "lng": -46.631627875401435,
-    "score": 93,
-    "confidence": 82,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-65",
-    "endereco": "Imóvel Potencial 65 (SQL 44-7)",
+    "id": "op-12",
+    "endereco": "Imóvel Potencial 12 (SQL 177-3)",
     "regiao": "Consolação",
-    "idade": 61,
-    "usoConhecido": "HIS",
-    "area": 5038,
-    "zoneamento": "ZEU",
+    "idade": 84,
+    "usoConhecido": "Não Residencial",
+    "area": 1244,
+    "zoneamento": "ZC",
     "perimetros": [
       "AIU Setor Central",
       "Requalifica Centro"
@@ -2506,19 +445,19 @@
     ],
     "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
     "financeiro": {
-      "estimativaCustoObra": 18620582.43361662,
-      "potencialMaximoSubvencao": 4655145.608404155,
-      "vgvPotencialEstimado": 30552407.524855822,
+      "estimativaCustoObra": 4964244.078523771,
+      "potencialMaximoSubvencao": 1241061.0196309427,
+      "vgvPotencialEstimado": 7327296.949549826,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.533630111313524,
-    "lng": -46.64131140539267,
-    "score": 92,
-    "confidence": 79,
+    "lat": -23.54356415182641,
+    "lng": -46.639363466332036,
+    "score": 79,
+    "confidence": 88,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
       "Estudo de Massa e Viabilidade Financeira detalhada.",
@@ -2527,12 +466,52 @@
     ]
   },
   {
-    "id": "op-66",
-    "endereco": "Imóvel Potencial 66 (SQL 770-79)",
+    "id": "op-13",
+    "endereco": "Imóvel Potencial 13 (SQL 415-33)",
     "regiao": "Sé",
-    "idade": 29,
+    "idade": 43,
+    "usoConhecido": "Não Residencial",
+    "area": 6027,
+    "zoneamento": "ZEU",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Tombado/Inventário",
+    "riscos": [
+      "Aprovação complexa no CONPRESP/CONDEPHAAT",
+      "Custos de restauro elevados e imprevisíveis",
+      "Restrições de fachada"
+    ],
+    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
+    "financeiro": {
+      "estimativaCustoObra": 15639782.371919893,
+      "potencialMaximoSubvencao": 3909945.592979973,
+      "vgvPotencialEstimado": 22555921.039333504,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.543632536906788,
+    "lng": -46.64041577133003,
+    "score": 77,
+    "confidence": 78,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-14",
+    "endereco": "Imóvel Potencial 14 (SQL 3-35)",
+    "regiao": "Sé",
+    "idade": 23,
     "usoConhecido": "Uso Misto",
-    "area": 6701,
+    "area": 4293,
     "zoneamento": "ZEIS",
     "perimetros": [
       "AIU Setor Central",
@@ -2543,58 +522,19 @@
       "Necessidade de reforço estrutural",
       "Atualização de PPCI (Bombeiros)"
     ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
     "financeiro": {
-      "estimativaCustoObra": 24939701.909786217,
-      "potencialMaximoSubvencao": 6234925.477446554,
-      "vgvPotencialEstimado": 37674695.84501666,
+      "estimativaCustoObra": 15792543.704621235,
+      "potencialMaximoSubvencao": 3948135.9261553087,
+      "vgvPotencialEstimado": 28256156.375023015,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.529594779409837,
-    "lng": -46.63534102852915,
-    "score": 83,
-    "confidence": 79,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-67",
-    "endereco": "Imóvel Potencial 67 (SQL 192-56)",
-    "regiao": "República",
-    "idade": 83,
-    "usoConhecido": "HIS",
-    "area": 8689,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
-    "financeiro": {
-      "estimativaCustoObra": 28930554.623781227,
-      "potencialMaximoSubvencao": 7232638.655945307,
-      "vgvPotencialEstimado": 77288107.06575514,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.54360946121332,
-    "lng": -46.627365378849746,
+    "lat": -23.55056082546618,
+    "lng": -46.62598885787458,
     "score": 69,
     "confidence": 80,
     "proximosPassos": [
@@ -2605,13 +545,89 @@
     ]
   },
   {
-    "id": "op-68",
-    "endereco": "Imóvel Potencial 68 (SQL 509-53)",
-    "regiao": "Consolação",
-    "idade": 70,
+    "id": "op-15",
+    "endereco": "Imóvel Potencial 15 (SQL 417-82)",
+    "regiao": "Bela Vista",
+    "idade": 41,
+    "usoConhecido": "Não Residencial",
+    "area": 8914,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "financeiro": {
+      "estimativaCustoObra": 33557732.38295062,
+      "potencialMaximoSubvencao": 8389433.095737655,
+      "vgvPotencialEstimado": 55423675.10543929,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.53478262654006,
+    "lng": -46.63733540213115,
+    "score": 89,
+    "confidence": 68,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-16",
+    "endereco": "Imóvel Potencial 16 (SQL 415-8)",
+    "regiao": "Sé",
+    "idade": 44,
+    "usoConhecido": "Residencial",
+    "area": 8474,
+    "zoneamento": "ZEIS",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
+    "financeiro": {
+      "estimativaCustoObra": 24274820.437870275,
+      "potencialMaximoSubvencao": 6068705.109467569,
+      "vgvPotencialEstimado": 31933222.723208774,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.52804330061653,
+    "lng": -46.62528217422724,
+    "score": 77,
+    "confidence": 80,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-17",
+    "endereco": "Imóvel Potencial 17 (SQL 818-31)",
+    "regiao": "República",
+    "idade": 20,
     "usoConhecido": "HIS",
-    "area": 850,
-    "zoneamento": "ZEU",
+    "area": 10133,
+    "zoneamento": "ZEIS",
     "perimetros": [
       "Requalifica Centro"
     ],
@@ -2623,19 +639,19 @@
     ],
     "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
     "financeiro": {
-      "estimativaCustoObra": 3102967.851947188,
-      "potencialMaximoSubvencao": 775741.962986797,
-      "vgvPotencialEstimado": 4985959.742239407,
+      "estimativaCustoObra": 38857798.47142924,
+      "potencialMaximoSubvencao": 9714449.61785731,
+      "vgvPotencialEstimado": 47937601.422280595,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.543871748329796,
-    "lng": -46.63198480073156,
-    "score": 55,
-    "confidence": 88,
+    "lat": -23.525481807860462,
+    "lng": -46.638288500759835,
+    "score": 94,
+    "confidence": 69,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
       "Estudo de Massa e Viabilidade Financeira detalhada.",
@@ -2644,13 +660,629 @@
     ]
   },
   {
-    "id": "op-69",
-    "endereco": "Imóvel Potencial 69 (SQL 202-81)",
+    "id": "op-18",
+    "endereco": "Imóvel Potencial 18 (SQL 223-79)",
+    "regiao": "Bela Vista",
+    "idade": 54,
+    "usoConhecido": "HIS",
+    "area": 5504,
+    "zoneamento": "ZEIS",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "financeiro": {
+      "estimativaCustoObra": 17372108.5548002,
+      "potencialMaximoSubvencao": 4343027.13870005,
+      "vgvPotencialEstimado": 33854682.671931714,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.54799670013659,
+    "lng": -46.65163977340206,
+    "score": 63,
+    "confidence": 66,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-19",
+    "endereco": "Imóvel Potencial 19 (SQL 265-35)",
+    "regiao": "República",
+    "idade": 78,
+    "usoConhecido": "Residencial",
+    "area": 9837,
+    "zoneamento": "ZEIS",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "financeiro": {
+      "estimativaCustoObra": 36399745.762630045,
+      "potencialMaximoSubvencao": 9099936.440657511,
+      "vgvPotencialEstimado": 46835680.6652051,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.552784266052782,
+    "lng": -46.63972979189966,
+    "score": 80,
+    "confidence": 68,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-20",
+    "endereco": "Imóvel Potencial 20 (SQL 211-73)",
     "regiao": "Santa Cecília",
-    "idade": 22,
+    "idade": 43,
     "usoConhecido": "Uso Misto",
-    "area": 6466,
+    "area": 8541,
+    "zoneamento": "ZC",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
+    "financeiro": {
+      "estimativaCustoObra": 23592264.736549817,
+      "potencialMaximoSubvencao": 5898066.184137454,
+      "vgvPotencialEstimado": 35095279.452531636,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.53850865817629,
+    "lng": -46.633200601980775,
+    "score": 75,
+    "confidence": 74,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-21",
+    "endereco": "Imóvel Potencial 21 (SQL 763-55)",
+    "regiao": "Santa Cecília",
+    "idade": 88,
+    "usoConhecido": "Residencial",
+    "area": 2139,
+    "zoneamento": "ZC",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "financeiro": {
+      "estimativaCustoObra": 6321604.784772719,
+      "potencialMaximoSubvencao": 1580401.1961931798,
+      "vgvPotencialEstimado": 9056788.57994711,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.539603642826332,
+    "lng": -46.636284824385875,
+    "score": 68,
+    "confidence": 73,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-22",
+    "endereco": "Imóvel Potencial 22 (SQL 240-79)",
+    "regiao": "Santa Cecília",
+    "idade": 85,
+    "usoConhecido": "HIS",
+    "area": 6754,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "financeiro": {
+      "estimativaCustoObra": 20268643.34417346,
+      "potencialMaximoSubvencao": 5067160.836043365,
+      "vgvPotencialEstimado": 54024539.534315735,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.535793518386487,
+    "lng": -46.6518841357209,
+    "score": 74,
+    "confidence": 73,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-23",
+    "endereco": "Imóvel Potencial 23 (SQL 428-34)",
+    "regiao": "Sé",
+    "idade": 24,
+    "usoConhecido": "HIS",
+    "area": 2037,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "financeiro": {
+      "estimativaCustoObra": 6052454.7920786785,
+      "potencialMaximoSubvencao": 1513113.6980196696,
+      "vgvPotencialEstimado": 9993782.985407995,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.554529654758365,
+    "lng": -46.63136904210057,
+    "score": 77,
+    "confidence": 71,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-24",
+    "endereco": "Imóvel Potencial 24 (SQL 243-37)",
+    "regiao": "Santa Cecília",
+    "idade": 80,
+    "usoConhecido": "HIS",
+    "area": 5813,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
+    "financeiro": {
+      "estimativaCustoObra": 15628503.743671127,
+      "potencialMaximoSubvencao": 3907125.9359177817,
+      "vgvPotencialEstimado": 22846545.472327687,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.53499138136874,
+    "lng": -46.650503137370755,
+    "score": 93,
+    "confidence": 61,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-25",
+    "endereco": "Imóvel Potencial 25 (SQL 521-13)",
+    "regiao": "Sé",
+    "idade": 27,
+    "usoConhecido": "Não Residencial",
+    "area": 9922,
     "zoneamento": "ZEU",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
+    "financeiro": {
+      "estimativaCustoObra": 37211077.100342065,
+      "potencialMaximoSubvencao": 9302769.275085516,
+      "vgvPotencialEstimado": 79218984.1903602,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.54966750445129,
+    "lng": -46.64029278152197,
+    "score": 83,
+    "confidence": 68,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-26",
+    "endereco": "Imóvel Potencial 26 (SQL 641-0)",
+    "regiao": "Consolação",
+    "idade": 55,
+    "usoConhecido": "Uso Misto",
+    "area": 4640,
+    "zoneamento": "ZEU",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "financeiro": {
+      "estimativaCustoObra": 14931484.600595798,
+      "potencialMaximoSubvencao": 3732871.1501489496,
+      "vgvPotencialEstimado": 39301406.85390485,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.549057108854548,
+    "lng": -46.64373764002152,
+    "score": 78,
+    "confidence": 87,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-27",
+    "endereco": "Imóvel Potencial 27 (SQL 931-96)",
+    "regiao": "Sé",
+    "idade": 20,
+    "usoConhecido": "HIS",
+    "area": 2891,
+    "zoneamento": "ZEIS",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "financeiro": {
+      "estimativaCustoObra": 7926042.934054994,
+      "potencialMaximoSubvencao": 1981510.7335137485,
+      "vgvPotencialEstimado": 12718811.792884642,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.546675863654656,
+    "lng": -46.65068056869195,
+    "score": 57,
+    "confidence": 67,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-28",
+    "endereco": "Imóvel Potencial 28 (SQL 474-61)",
+    "regiao": "Bela Vista",
+    "idade": 72,
+    "usoConhecido": "HIS",
+    "area": 5780,
+    "zoneamento": "ZC",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "financeiro": {
+      "estimativaCustoObra": 14524149.632627072,
+      "potencialMaximoSubvencao": 3631037.408156768,
+      "vgvPotencialEstimado": 27719881.887373593,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.529239504805265,
+    "lng": -46.642042827735764,
+    "score": 67,
+    "confidence": 72,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-29",
+    "endereco": "Imóvel Potencial 29 (SQL 194-34)",
+    "regiao": "República",
+    "idade": 81,
+    "usoConhecido": "Uso Misto",
+    "area": 5177,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
+    "financeiro": {
+      "estimativaCustoObra": 16649270.991039969,
+      "potencialMaximoSubvencao": 4162317.7477599923,
+      "vgvPotencialEstimado": 21742599.752122466,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.553469934930355,
+    "lng": -46.64463060773325,
+    "score": 88,
+    "confidence": 85,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-30",
+    "endereco": "Imóvel Potencial 30 (SQL 361-70)",
+    "regiao": "República",
+    "idade": 75,
+    "usoConhecido": "Não Residencial",
+    "area": 611,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "financeiro": {
+      "estimativaCustoObra": 1809278.1593822055,
+      "potencialMaximoSubvencao": 452319.53984555136,
+      "vgvPotencialEstimado": 3154973.328368867,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.525156362266284,
+    "lng": -46.64232024929537,
+    "score": 72,
+    "confidence": 61,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-31",
+    "endereco": "Imóvel Potencial 31 (SQL 797-44)",
+    "regiao": "Bela Vista",
+    "idade": 38,
+    "usoConhecido": "HIS",
+    "area": 10329,
+    "zoneamento": "ZEIS",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
+    "financeiro": {
+      "estimativaCustoObra": 27334257.813946944,
+      "potencialMaximoSubvencao": 6833564.453486736,
+      "vgvPotencialEstimado": 66014674.99205838,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.551762901285393,
+    "lng": -46.64604343409764,
+    "score": 60,
+    "confidence": 60,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-32",
+    "endereco": "Imóvel Potencial 32 (SQL 946-62)",
+    "regiao": "Bela Vista",
+    "idade": 68,
+    "usoConhecido": "Uso Misto",
+    "area": 7230,
+    "zoneamento": "ZEIS",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "financeiro": {
+      "estimativaCustoObra": 20701980.967503108,
+      "potencialMaximoSubvencao": 5175495.241875777,
+      "vgvPotencialEstimado": 43727316.093917936,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.553018590688875,
+    "lng": -46.63174008078051,
+    "score": 74,
+    "confidence": 89,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-33",
+    "endereco": "Imóvel Potencial 33 (SQL 400-28)",
+    "regiao": "Sé",
+    "idade": 89,
+    "usoConhecido": "HIS",
+    "area": 3132,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "financeiro": {
+      "estimativaCustoObra": 10017095.693079649,
+      "potencialMaximoSubvencao": 2504273.923269912,
+      "vgvPotencialEstimado": 24137006.576711748,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.54047147877748,
+    "lng": -46.6342142169156,
+    "score": 87,
+    "confidence": 83,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-34",
+    "endereco": "Imóvel Potencial 34 (SQL 919-38)",
+    "regiao": "República",
+    "idade": 56,
+    "usoConhecido": "Não Residencial",
+    "area": 10041,
+    "zoneamento": "ZC",
     "perimetros": [
       "AIU Setor Central",
       "Requalifica Centro"
@@ -2661,19 +1293,1062 @@
       "Custos de restauro elevados e imprevisíveis",
       "Restrições de fachada"
     ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
     "financeiro": {
-      "estimativaCustoObra": 17682963.60865991,
-      "potencialMaximoSubvencao": 4420740.902164977,
-      "vgvPotencialEstimado": 30039648.200614896,
+      "estimativaCustoObra": 39957061.1604247,
+      "potencialMaximoSubvencao": 9989265.290106175,
+      "vgvPotencialEstimado": 106889997.73967615,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.549710001250222,
-    "lng": -46.654248810277174,
+    "lat": -23.530615895305214,
+    "lng": -46.62979144180494,
+    "score": 94,
+    "confidence": 71,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-35",
+    "endereco": "Imóvel Potencial 35 (SQL 405-48)",
+    "regiao": "Consolação",
+    "idade": 33,
+    "usoConhecido": "Uso Misto",
+    "area": 10417,
+    "zoneamento": "ZEIS",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Tombado/Inventário",
+    "riscos": [
+      "Aprovação complexa no CONPRESP/CONDEPHAAT",
+      "Custos de restauro elevados e imprevisíveis",
+      "Restrições de fachada"
+    ],
+    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
+    "financeiro": {
+      "estimativaCustoObra": 37708869.72392092,
+      "potencialMaximoSubvencao": 9427217.43098023,
+      "vgvPotencialEstimado": 63764033.53700596,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.539961025232817,
+    "lng": -46.651099377888556,
+    "score": 56,
+    "confidence": 84,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-36",
+    "endereco": "Imóvel Potencial 36 (SQL 55-41)",
+    "regiao": "Bela Vista",
+    "idade": 74,
+    "usoConhecido": "Residencial",
+    "area": 6594,
+    "zoneamento": "ZEIS",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "financeiro": {
+      "estimativaCustoObra": 18575728.40915595,
+      "potencialMaximoSubvencao": 4643932.1022889875,
+      "vgvPotencialEstimado": 29133001.42821244,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.544726922876038,
+    "lng": -46.625513484316926,
+    "score": 93,
+    "confidence": 74,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-37",
+    "endereco": "Imóvel Potencial 37 (SQL 271-37)",
+    "regiao": "Consolação",
+    "idade": 54,
+    "usoConhecido": "Residencial",
+    "area": 5828,
+    "zoneamento": "ZEIS",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "financeiro": {
+      "estimativaCustoObra": 18386830.74352107,
+      "potencialMaximoSubvencao": 4596707.685880267,
+      "vgvPotencialEstimado": 39332056.85430918,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.530413361742273,
+    "lng": -46.63512704845369,
+    "score": 78,
+    "confidence": 65,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-38",
+    "endereco": "Imóvel Potencial 38 (SQL 860-84)",
+    "regiao": "Sé",
+    "idade": 29,
+    "usoConhecido": "Não Residencial",
+    "area": 3590,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Tombado/Inventário",
+    "riscos": [
+      "Aprovação complexa no CONPRESP/CONDEPHAAT",
+      "Custos de restauro elevados e imprevisíveis",
+      "Restrições de fachada"
+    ],
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "financeiro": {
+      "estimativaCustoObra": 13097916.58748308,
+      "potencialMaximoSubvencao": 3274479.14687077,
+      "vgvPotencialEstimado": 31963890.447461985,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.545646018081733,
+    "lng": -46.64048255077016,
+    "score": 90,
+    "confidence": 61,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-39",
+    "endereco": "Imóvel Potencial 39 (SQL 565-17)",
+    "regiao": "República",
+    "idade": 63,
+    "usoConhecido": "HIS",
+    "area": 3964,
+    "zoneamento": "ZC",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
+    "financeiro": {
+      "estimativaCustoObra": 10236201.686209865,
+      "potencialMaximoSubvencao": 2559050.421552466,
+      "vgvPotencialEstimado": 16727612.237112045,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.529240915089222,
+    "lng": -46.63478890606248,
+    "score": 85,
+    "confidence": 61,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-40",
+    "endereco": "Imóvel Potencial 40 (SQL 244-38)",
+    "regiao": "Consolação",
+    "idade": 63,
+    "usoConhecido": "Uso Misto",
+    "area": 9235,
+    "zoneamento": "ZEU",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
+    "financeiro": {
+      "estimativaCustoObra": 27007598.825164832,
+      "potencialMaximoSubvencao": 6751899.706291208,
+      "vgvPotencialEstimado": 33200803.905592166,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.537148564009282,
+    "lng": -46.648041753640506,
+    "score": 86,
+    "confidence": 62,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-41",
+    "endereco": "Imóvel Potencial 41 (SQL 982-68)",
+    "regiao": "Consolação",
+    "idade": 78,
+    "usoConhecido": "Não Residencial",
+    "area": 2847,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
+    "financeiro": {
+      "estimativaCustoObra": 8473057.242836636,
+      "potencialMaximoSubvencao": 2118264.310709159,
+      "vgvPotencialEstimado": 13618197.147965066,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.529362487631595,
+    "lng": -46.63382229520221,
+    "score": 77,
+    "confidence": 86,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-42",
+    "endereco": "Imóvel Potencial 42 (SQL 100-65)",
+    "regiao": "Sé",
+    "idade": 58,
+    "usoConhecido": "HIS",
+    "area": 6743,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
+    "financeiro": {
+      "estimativaCustoObra": 21994550.26190743,
+      "potencialMaximoSubvencao": 5498637.565476857,
+      "vgvPotencialEstimado": 38246205.61963552,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.538965565371154,
+    "lng": -46.65433903787212,
+    "score": 89,
+    "confidence": 60,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-43",
+    "endereco": "Imóvel Potencial 43 (SQL 759-91)",
+    "regiao": "Bela Vista",
+    "idade": 21,
+    "usoConhecido": "Não Residencial",
+    "area": 7679,
+    "zoneamento": "ZC",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
+    "financeiro": {
+      "estimativaCustoObra": 20485331.45234262,
+      "potencialMaximoSubvencao": 5121332.863085655,
+      "vgvPotencialEstimado": 46714370.177831076,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.55020920291664,
+    "lng": -46.647765009147705,
+    "score": 76,
+    "confidence": 65,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-44",
+    "endereco": "Imóvel Potencial 44 (SQL 680-88)",
+    "regiao": "Sé",
+    "idade": 30,
+    "usoConhecido": "Residencial",
+    "area": 6513,
+    "zoneamento": "ZEU",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
+    "financeiro": {
+      "estimativaCustoObra": 24043047.336146895,
+      "potencialMaximoSubvencao": 6010761.834036724,
+      "vgvPotencialEstimado": 43364127.666817844,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.527174294122723,
+    "lng": -46.653113563725704,
+    "score": 82,
+    "confidence": 75,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-45",
+    "endereco": "Imóvel Potencial 45 (SQL 5-33)",
+    "regiao": "Santa Cecília",
+    "idade": 38,
+    "usoConhecido": "HIS",
+    "area": 7298,
+    "zoneamento": "ZEIS",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
+    "financeiro": {
+      "estimativaCustoObra": 21082680.523723476,
+      "potencialMaximoSubvencao": 5270670.130930869,
+      "vgvPotencialEstimado": 45839030.92188627,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.536272560191016,
+    "lng": -46.634411346732435,
+    "score": 71,
+    "confidence": 70,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-46",
+    "endereco": "Imóvel Potencial 46 (SQL 679-81)",
+    "regiao": "Sé",
+    "idade": 51,
+    "usoConhecido": "Não Residencial",
+    "area": 3232,
+    "zoneamento": "ZC",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Tombado/Inventário",
+    "riscos": [
+      "Aprovação complexa no CONPRESP/CONDEPHAAT",
+      "Custos de restauro elevados e imprevisíveis",
+      "Restrições de fachada"
+    ],
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "financeiro": {
+      "estimativaCustoObra": 12538804.127168635,
+      "potencialMaximoSubvencao": 3134701.0317921587,
+      "vgvPotencialEstimado": 17505504.881378982,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.54126087680273,
+    "lng": -46.629039288759415,
+    "score": 72,
+    "confidence": 88,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-47",
+    "endereco": "Imóvel Potencial 47 (SQL 730-8)",
+    "regiao": "Sé",
+    "idade": 76,
+    "usoConhecido": "HIS",
+    "area": 3199,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
+    "financeiro": {
+      "estimativaCustoObra": 9629321.152078807,
+      "potencialMaximoSubvencao": 2407330.288019702,
+      "vgvPotencialEstimado": 20561704.42175887,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.542096539905636,
+    "lng": -46.6279751477029,
+    "score": 87,
+    "confidence": 69,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-48",
+    "endereco": "Imóvel Potencial 48 (SQL 921-32)",
+    "regiao": "República",
+    "idade": 57,
+    "usoConhecido": "Não Residencial",
+    "area": 4521,
+    "zoneamento": "ZC",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Tombado/Inventário",
+    "riscos": [
+      "Aprovação complexa no CONPRESP/CONDEPHAAT",
+      "Custos de restauro elevados e imprevisíveis",
+      "Restrições de fachada"
+    ],
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "financeiro": {
+      "estimativaCustoObra": 13997018.677402204,
+      "potencialMaximoSubvencao": 3499254.669350551,
+      "vgvPotencialEstimado": 29735537.110357888,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.55001655684461,
+    "lng": -46.626479858603325,
+    "score": 80,
+    "confidence": 63,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-49",
+    "endereco": "Imóvel Potencial 49 (SQL 705-92)",
+    "regiao": "Sé",
+    "idade": 60,
+    "usoConhecido": "Residencial",
+    "area": 2259,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
+    "financeiro": {
+      "estimativaCustoObra": 7086233.394889708,
+      "potencialMaximoSubvencao": 1771558.348722427,
+      "vgvPotencialEstimado": 11813873.436192276,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.550041115565136,
+    "lng": -46.628908386564554,
+    "score": 81,
+    "confidence": 71,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-50",
+    "endereco": "Imóvel Potencial 50 (SQL 75-10)",
+    "regiao": "Sé",
+    "idade": 70,
+    "usoConhecido": "Residencial",
+    "area": 6154,
+    "zoneamento": "ZC",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
+    "financeiro": {
+      "estimativaCustoObra": 19298435.657292876,
+      "potencialMaximoSubvencao": 4824608.914323219,
+      "vgvPotencialEstimado": 34323665.86444716,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.5371755540733,
+    "lng": -46.650183132310126,
+    "score": 60,
+    "confidence": 87,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-51",
+    "endereco": "Imóvel Potencial 51 (SQL 28-59)",
+    "regiao": "República",
+    "idade": 37,
+    "usoConhecido": "Não Residencial",
+    "area": 6588,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
+    "financeiro": {
+      "estimativaCustoObra": 21507388.370218087,
+      "potencialMaximoSubvencao": 5376847.092554522,
+      "vgvPotencialEstimado": 55945451.70583465,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.534006387662647,
+    "lng": -46.62911365206072,
+    "score": 67,
+    "confidence": 67,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-52",
+    "endereco": "Imóvel Potencial 52 (SQL 942-50)",
+    "regiao": "Sé",
+    "idade": 50,
+    "usoConhecido": "HIS",
+    "area": 1733,
+    "zoneamento": "ZEU",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "financeiro": {
+      "estimativaCustoObra": 6869964.044128328,
+      "potencialMaximoSubvencao": 1717491.011032082,
+      "vgvPotencialEstimado": 13973538.017590886,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.541501559618514,
+    "lng": -46.65280166461358,
+    "score": 57,
+    "confidence": 66,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-53",
+    "endereco": "Imóvel Potencial 53 (SQL 616-74)",
+    "regiao": "Bela Vista",
+    "idade": 71,
+    "usoConhecido": "HIS",
+    "area": 4801,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "financeiro": {
+      "estimativaCustoObra": 12109421.651532117,
+      "potencialMaximoSubvencao": 3027355.4128830293,
+      "vgvPotencialEstimado": 25807549.845791224,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.541324094521553,
+    "lng": -46.6493317110555,
+    "score": 59,
+    "confidence": 88,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-54",
+    "endereco": "Imóvel Potencial 54 (SQL 52-12)",
+    "regiao": "Santa Cecília",
+    "idade": 42,
+    "usoConhecido": "Residencial",
+    "area": 7554,
+    "zoneamento": "ZC",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
+    "financeiro": {
+      "estimativaCustoObra": 20006232.02836072,
+      "potencialMaximoSubvencao": 5001558.00709018,
+      "vgvPotencialEstimado": 27783121.86915367,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.539823963286267,
+    "lng": -46.65189944714286,
+    "score": 82,
+    "confidence": 61,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-55",
+    "endereco": "Imóvel Potencial 55 (SQL 857-90)",
+    "regiao": "Bela Vista",
+    "idade": 83,
+    "usoConhecido": "Uso Misto",
+    "area": 2951,
+    "zoneamento": "ZEU",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
+    "financeiro": {
+      "estimativaCustoObra": 9983479.944592321,
+      "potencialMaximoSubvencao": 2495869.9861480803,
+      "vgvPotencialEstimado": 12347159.481930932,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.544587028382118,
+    "lng": -46.63911189980859,
+    "score": 90,
+    "confidence": 71,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-56",
+    "endereco": "Imóvel Potencial 56 (SQL 366-32)",
+    "regiao": "Bela Vista",
+    "idade": 35,
+    "usoConhecido": "Não Residencial",
+    "area": 10296,
+    "zoneamento": "ZEIS",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Tombado/Inventário",
+    "riscos": [
+      "Aprovação complexa no CONPRESP/CONDEPHAAT",
+      "Custos de restauro elevados e imprevisíveis",
+      "Restrições de fachada"
+    ],
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "financeiro": {
+      "estimativaCustoObra": 26085623.994560968,
+      "potencialMaximoSubvencao": 6521405.998640242,
+      "vgvPotencialEstimado": 65685508.492394485,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.52672361454599,
+    "lng": -46.63176310302188,
+    "score": 93,
+    "confidence": 73,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-57",
+    "endereco": "Imóvel Potencial 57 (SQL 922-24)",
+    "regiao": "Santa Cecília",
+    "idade": 72,
+    "usoConhecido": "Residencial",
+    "area": 3821,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Tombado/Inventário",
+    "riscos": [
+      "Aprovação complexa no CONPRESP/CONDEPHAAT",
+      "Custos de restauro elevados e imprevisíveis",
+      "Restrições de fachada"
+    ],
+    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
+    "financeiro": {
+      "estimativaCustoObra": 12647987.972409341,
+      "potencialMaximoSubvencao": 3161996.9931023354,
+      "vgvPotencialEstimado": 15270475.200862879,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.533435961334533,
+    "lng": -46.638667670749015,
+    "score": 92,
+    "confidence": 80,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-58",
+    "endereco": "Imóvel Potencial 58 (SQL 91-57)",
+    "regiao": "Bela Vista",
+    "idade": 69,
+    "usoConhecido": "Uso Misto",
+    "area": 9515,
+    "zoneamento": "ZC",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
+    "financeiro": {
+      "estimativaCustoObra": 36348433.742792614,
+      "potencialMaximoSubvencao": 9087108.435698153,
+      "vgvPotencialEstimado": 45570791.12824458,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.553182863086057,
+    "lng": -46.63579340893756,
+    "score": 84,
+    "confidence": 76,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-59",
+    "endereco": "Imóvel Potencial 59 (SQL 478-45)",
+    "regiao": "República",
+    "idade": 73,
+    "usoConhecido": "Não Residencial",
+    "area": 2032,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "financeiro": {
+      "estimativaCustoObra": 8021476.376711896,
+      "potencialMaximoSubvencao": 2005369.094177974,
+      "vgvPotencialEstimado": 14572909.250986101,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.542139682714076,
+    "lng": -46.65107033221436,
+    "score": 58,
+    "confidence": 64,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-60",
+    "endereco": "Imóvel Potencial 60 (SQL 457-1)",
+    "regiao": "Sé",
+    "idade": 79,
+    "usoConhecido": "HIS",
+    "area": 9170,
+    "zoneamento": "ZC",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "financeiro": {
+      "estimativaCustoObra": 24012752.20840181,
+      "potencialMaximoSubvencao": 6003188.052100453,
+      "vgvPotencialEstimado": 37122296.67987493,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.548845049081084,
+    "lng": -46.64396889221271,
+    "score": 70,
+    "confidence": 84,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-61",
+    "endereco": "Imóvel Potencial 61 (SQL 697-18)",
+    "regiao": "Consolação",
+    "idade": 74,
+    "usoConhecido": "Não Residencial",
+    "area": 8024,
+    "zoneamento": "ZEU",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "financeiro": {
+      "estimativaCustoObra": 31686108.202697378,
+      "potencialMaximoSubvencao": 7921527.050674344,
+      "vgvPotencialEstimado": 81925142.51968035,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.552697246155663,
+    "lng": -46.648081917836635,
     "score": 92,
     "confidence": 66,
     "proximosPassos": [
@@ -2684,36 +2359,37 @@
     ]
   },
   {
-    "id": "op-70",
-    "endereco": "Imóvel Potencial 70 (SQL 463-64)",
-    "regiao": "Consolação",
-    "idade": 27,
-    "usoConhecido": "Não Residencial",
-    "area": 9726,
-    "zoneamento": "ZM",
+    "id": "op-62",
+    "endereco": "Imóvel Potencial 62 (SQL 627-10)",
+    "regiao": "Bela Vista",
+    "idade": 56,
+    "usoConhecido": "Uso Misto",
+    "area": 6962,
+    "zoneamento": "ZEU",
     "perimetros": [
       "AIU Setor Central",
       "Requalifica Centro"
     ],
-    "protecao": "Nenhuma",
+    "protecao": "Tombado/Inventário",
     "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
+      "Aprovação complexa no CONPRESP/CONDEPHAAT",
+      "Custos de restauro elevados e imprevisíveis",
+      "Restrições de fachada"
     ],
-    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
     "financeiro": {
-      "estimativaCustoObra": 29046965.606544685,
-      "potencialMaximoSubvencao": 7261741.401636171,
-      "vgvPotencialEstimado": 46920259.753875986,
+      "estimativaCustoObra": 21011392.91123388,
+      "potencialMaximoSubvencao": 5252848.22780847,
+      "vgvPotencialEstimado": 48855877.74247113,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.53569351888988,
-    "lng": -46.65355750581741,
-    "score": 56,
+    "lat": -23.54010913831524,
+    "lng": -46.65135621421567,
+    "score": 78,
     "confidence": 70,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
@@ -2723,113 +2399,36 @@
     ]
   },
   {
-    "id": "op-71",
-    "endereco": "Imóvel Potencial 71 (SQL 829-84)",
-    "regiao": "Consolação",
-    "idade": 75,
-    "usoConhecido": "HIS",
-    "area": 2126,
-    "zoneamento": "ZC",
+    "id": "op-63",
+    "endereco": "Imóvel Potencial 63 (SQL 500-81)",
+    "regiao": "Sé",
+    "idade": 53,
+    "usoConhecido": "Uso Misto",
+    "area": 6814,
+    "zoneamento": "ZEIS",
     "perimetros": [
-      "AIU Setor Central",
       "Requalifica Centro"
     ],
-    "protecao": "Nenhuma",
+    "protecao": "Tombado/Inventário",
     "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
+      "Aprovação complexa no CONPRESP/CONDEPHAAT",
+      "Custos de restauro elevados e imprevisíveis",
+      "Restrições de fachada"
     ],
     "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
     "financeiro": {
-      "estimativaCustoObra": 8192732.092729554,
-      "potencialMaximoSubvencao": 2048183.0231823884,
-      "vgvPotencialEstimado": 12492645.198672669,
+      "estimativaCustoObra": 18041321.188557345,
+      "potencialMaximoSubvencao": 4510330.297139336,
+      "vgvPotencialEstimado": 46022796.63640043,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.550966163470086,
-    "lng": -46.634584094871556,
-    "score": 76,
-    "confidence": 62,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-72",
-    "endereco": "Imóvel Potencial 72 (SQL 532-61)",
-    "regiao": "Sé",
-    "idade": 31,
-    "usoConhecido": "Uso Misto",
-    "area": 2057,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 7219787.729595938,
-      "potencialMaximoSubvencao": 1804946.9323989844,
-      "vgvPotencialEstimado": 9128910.815676883,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.531245028905133,
-    "lng": -46.65427026799553,
-    "score": 64,
-    "confidence": 73,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-73",
-    "endereco": "Imóvel Potencial 73 (SQL 605-73)",
-    "regiao": "Consolação",
-    "idade": 30,
-    "usoConhecido": "Uso Misto",
-    "area": 3200,
-    "zoneamento": "ZM",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-    "financeiro": {
-      "estimativaCustoObra": 8926041.671645705,
-      "potencialMaximoSubvencao": 2231510.417911426,
-      "vgvPotencialEstimado": 17878321.200048674,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.529180227844154,
-    "lng": -46.63543617473375,
-    "score": 60,
+    "lat": -23.544064692517416,
+    "lng": -46.628488248896595,
+    "score": 87,
     "confidence": 84,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
@@ -2839,15 +2438,14 @@
     ]
   },
   {
-    "id": "op-74",
-    "endereco": "Imóvel Potencial 74 (SQL 36-56)",
-    "regiao": "Bela Vista",
-    "idade": 59,
-    "usoConhecido": "Não Residencial",
-    "area": 1770,
+    "id": "op-64",
+    "endereco": "Imóvel Potencial 64 (SQL 228-55)",
+    "regiao": "República",
+    "idade": 66,
+    "usoConhecido": "Residencial",
+    "area": 9248,
     "zoneamento": "ZC",
     "perimetros": [
-      "AIU Setor Central",
       "Requalifica Centro"
     ],
     "protecao": "Nenhuma",
@@ -2855,21 +2453,21 @@
       "Necessidade de reforço estrutural",
       "Atualização de PPCI (Bombeiros)"
     ],
-    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
     "financeiro": {
-      "estimativaCustoObra": 5183835.562687822,
-      "potencialMaximoSubvencao": 1295958.8906719554,
-      "vgvPotencialEstimado": 13451963.4552526,
+      "estimativaCustoObra": 31261895.55248191,
+      "potencialMaximoSubvencao": 7815473.888120477,
+      "vgvPotencialEstimado": 65046114.57337089,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.535663814542545,
-    "lng": -46.63129858591177,
-    "score": 75,
-    "confidence": 87,
+    "lat": -23.537582390657466,
+    "lng": -46.635793763791135,
+    "score": 94,
+    "confidence": 79,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
       "Estudo de Massa e Viabilidade Financeira detalhada.",
@@ -2878,15 +2476,14 @@
     ]
   },
   {
-    "id": "op-75",
-    "endereco": "Imóvel Potencial 75 (SQL 178-16)",
-    "regiao": "República",
-    "idade": 86,
+    "id": "op-65",
+    "endereco": "Imóvel Potencial 65 (SQL 319-66)",
+    "regiao": "Santa Cecília",
+    "idade": 73,
     "usoConhecido": "Residencial",
-    "area": 5530,
+    "area": 10380,
     "zoneamento": "ZEIS",
     "perimetros": [
-      "AIU Setor Central",
       "Requalifica Centro"
     ],
     "protecao": "Nenhuma",
@@ -2894,21 +2491,21 @@
       "Necessidade de reforço estrutural",
       "Atualização de PPCI (Bombeiros)"
     ],
-    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
     "financeiro": {
-      "estimativaCustoObra": 18796891.94235054,
-      "potencialMaximoSubvencao": 4699222.985587635,
-      "vgvPotencialEstimado": 27479372.11831316,
+      "estimativaCustoObra": 35784890.88915704,
+      "potencialMaximoSubvencao": 8946222.72228926,
+      "vgvPotencialEstimado": 95592196.19990914,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.549381572161515,
-    "lng": -46.63100798362311,
-    "score": 94,
-    "confidence": 85,
+    "lat": -23.53962426237534,
+    "lng": -46.64394100375787,
+    "score": 62,
+    "confidence": 64,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
       "Estudo de Massa e Viabilidade Financeira detalhada.",
@@ -2917,168 +2514,13 @@
     ]
   },
   {
-    "id": "op-76",
-    "endereco": "Imóvel Potencial 76 (SQL 410-62)",
+    "id": "op-66",
+    "endereco": "Imóvel Potencial 66 (SQL 705-47)",
     "regiao": "Santa Cecília",
-    "idade": 87,
-    "usoConhecido": "HIS",
-    "area": 1742,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-    "financeiro": {
-      "estimativaCustoObra": 4815553.529103518,
-      "potencialMaximoSubvencao": 1203888.3822758796,
-      "vgvPotencialEstimado": 6397756.552579214,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.54256132618304,
-    "lng": -46.6251879466382,
-    "score": 72,
-    "confidence": 74,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-77",
-    "endereco": "Imóvel Potencial 77 (SQL 750-90)",
-    "regiao": "Santa Cecília",
-    "idade": 35,
-    "usoConhecido": "Residencial",
-    "area": 5006,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
-    "financeiro": {
-      "estimativaCustoObra": 12888531.64947849,
-      "potencialMaximoSubvencao": 3222132.9123696224,
-      "vgvPotencialEstimado": 32443270.71854028,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.532399900660902,
-    "lng": -46.626564917645865,
-    "score": 59,
-    "confidence": 78,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-78",
-    "endereco": "Imóvel Potencial 78 (SQL 90-27)",
-    "regiao": "República",
-    "idade": 63,
-    "usoConhecido": "Não Residencial",
-    "area": 4777,
-    "zoneamento": "ZEU",
-    "perimetros": [
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
-    "financeiro": {
-      "estimativaCustoObra": 18266385.924049053,
-      "potencialMaximoSubvencao": 4566596.481012263,
-      "vgvPotencialEstimado": 36177118.464304306,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.545360438224808,
-    "lng": -46.64823115251409,
-    "score": 94,
-    "confidence": 69,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-79",
-    "endereco": "Imóvel Potencial 79 (SQL 648-23)",
-    "regiao": "Consolação",
-    "idade": 58,
-    "usoConhecido": "Não Residencial",
-    "area": 5984,
-    "zoneamento": "ZC",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
-    "financeiro": {
-      "estimativaCustoObra": 20204277.93835457,
-      "potencialMaximoSubvencao": 5051069.484588643,
-      "vgvPotencialEstimado": 25857117.46290379,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.54196383207337,
-    "lng": -46.64262460114925,
-    "score": 64,
-    "confidence": 81,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-80",
-    "endereco": "Imóvel Potencial 80 (SQL 189-83)",
-    "regiao": "Consolação",
-    "idade": 29,
+    "idade": 83,
     "usoConhecido": "Uso Misto",
-    "area": 4442,
-    "zoneamento": "ZM",
+    "area": 5005,
+    "zoneamento": "ZC",
     "perimetros": [
       "Requalifica Centro"
     ],
@@ -3089,18 +2531,18 @@
     ],
     "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
     "financeiro": {
-      "estimativaCustoObra": 13571124.483248796,
-      "potencialMaximoSubvencao": 3392781.120812199,
-      "vgvPotencialEstimado": 17195796.612390444,
+      "estimativaCustoObra": 19401506.504552387,
+      "potencialMaximoSubvencao": 4850376.626138097,
+      "vgvPotencialEstimado": 49708464.99982209,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.545511314300533,
-    "lng": -46.64969887216038,
-    "score": 73,
+    "lat": -23.53801020286914,
+    "lng": -46.62537981764561,
+    "score": 57,
     "confidence": 86,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
@@ -3110,13 +2552,324 @@
     ]
   },
   {
-    "id": "op-81",
-    "endereco": "Imóvel Potencial 81 (SQL 304-57)",
-    "regiao": "Sé",
-    "idade": 75,
-    "usoConhecido": "Uso Misto",
-    "area": 1706,
+    "id": "op-67",
+    "endereco": "Imóvel Potencial 67 (SQL 368-26)",
+    "regiao": "Bela Vista",
+    "idade": 84,
+    "usoConhecido": "Residencial",
+    "area": 5179,
     "zoneamento": "ZC",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
+    "financeiro": {
+      "estimativaCustoObra": 20699206.148438253,
+      "potencialMaximoSubvencao": 5174801.537109563,
+      "vgvPotencialEstimado": 44682855.077746935,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.553621230137978,
+    "lng": -46.642964318267936,
+    "score": 63,
+    "confidence": 64,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-68",
+    "endereco": "Imóvel Potencial 68 (SQL 79-5)",
+    "regiao": "Sé",
+    "idade": 36,
+    "usoConhecido": "HIS",
+    "area": 1663,
+    "zoneamento": "ZEU",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
+    "financeiro": {
+      "estimativaCustoObra": 5355394.972045776,
+      "potencialMaximoSubvencao": 1338848.743011444,
+      "vgvPotencialEstimado": 8867007.949901631,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.542993279155926,
+    "lng": -46.652722599571014,
+    "score": 89,
+    "confidence": 78,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-69",
+    "endereco": "Imóvel Potencial 69 (SQL 526-30)",
+    "regiao": "Sé",
+    "idade": 88,
+    "usoConhecido": "Uso Misto",
+    "area": 6606,
+    "zoneamento": "ZC",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "financeiro": {
+      "estimativaCustoObra": 24093739.667792667,
+      "potencialMaximoSubvencao": 6023434.916948167,
+      "vgvPotencialEstimado": 61599031.283359036,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.533831477297852,
+    "lng": -46.62709231702547,
+    "score": 86,
+    "confidence": 76,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-70",
+    "endereco": "Imóvel Potencial 70 (SQL 491-67)",
+    "regiao": "Sé",
+    "idade": 56,
+    "usoConhecido": "Residencial",
+    "area": 7976,
+    "zoneamento": "ZEU",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "financeiro": {
+      "estimativaCustoObra": 22050589.44246663,
+      "potencialMaximoSubvencao": 5512647.360616658,
+      "vgvPotencialEstimado": 46666478.81931837,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.533929835672613,
+    "lng": -46.63715099819907,
+    "score": 65,
+    "confidence": 86,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-71",
+    "endereco": "Imóvel Potencial 71 (SQL 703-61)",
+    "regiao": "Santa Cecília",
+    "idade": 81,
+    "usoConhecido": "Não Residencial",
+    "area": 7190,
+    "zoneamento": "ZEU",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "financeiro": {
+      "estimativaCustoObra": 22263646.485691153,
+      "potencialMaximoSubvencao": 5565911.621422788,
+      "vgvPotencialEstimado": 53370577.956111506,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.55061583452989,
+    "lng": -46.64109926324342,
+    "score": 75,
+    "confidence": 89,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-72",
+    "endereco": "Imóvel Potencial 72 (SQL 33-13)",
+    "regiao": "Bela Vista",
+    "idade": 69,
+    "usoConhecido": "Residencial",
+    "area": 1151,
+    "zoneamento": "ZEU",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
+    "financeiro": {
+      "estimativaCustoObra": 3920135.642041668,
+      "potencialMaximoSubvencao": 980033.910510417,
+      "vgvPotencialEstimado": 7764495.053129575,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.546418825858293,
+    "lng": -46.63119998525199,
+    "score": 68,
+    "confidence": 62,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-73",
+    "endereco": "Imóvel Potencial 73 (SQL 691-18)",
+    "regiao": "Sé",
+    "idade": 39,
+    "usoConhecido": "Não Residencial",
+    "area": 4224,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
+    "financeiro": {
+      "estimativaCustoObra": 15099581.142737227,
+      "potencialMaximoSubvencao": 3774895.2856843066,
+      "vgvPotencialEstimado": 27522154.262869813,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.52859298829027,
+    "lng": -46.632979542153045,
+    "score": 90,
+    "confidence": 89,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-74",
+    "endereco": "Imóvel Potencial 74 (SQL 231-43)",
+    "regiao": "Bela Vista",
+    "idade": 65,
+    "usoConhecido": "HIS",
+    "area": 1542,
+    "zoneamento": "ZC",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Tombado/Inventário",
+    "riscos": [
+      "Aprovação complexa no CONPRESP/CONDEPHAAT",
+      "Custos de restauro elevados e imprevisíveis",
+      "Restrições de fachada"
+    ],
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "financeiro": {
+      "estimativaCustoObra": 4147873.9872795353,
+      "potencialMaximoSubvencao": 1036968.4968198838,
+      "vgvPotencialEstimado": 6766688.677234277,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.554471296869227,
+    "lng": -46.654537740950765,
+    "score": 61,
+    "confidence": 67,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-75",
+    "endereco": "Imóvel Potencial 75 (SQL 957-4)",
+    "regiao": "República",
+    "idade": 66,
+    "usoConhecido": "Uso Misto",
+    "area": 8681,
+    "zoneamento": "ZEIS",
     "perimetros": [
       "AIU Setor Central",
       "Requalifica Centro"
@@ -3127,21 +2880,21 @@
       "Custos de restauro elevados e imprevisíveis",
       "Restrições de fachada"
     ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
     "financeiro": {
-      "estimativaCustoObra": 4984955.1920087235,
-      "potencialMaximoSubvencao": 1246238.7980021809,
-      "vgvPotencialEstimado": 11568847.807463171,
+      "estimativaCustoObra": 25303757.91001781,
+      "potencialMaximoSubvencao": 6325939.477504453,
+      "vgvPotencialEstimado": 55382421.32751524,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.541049634489394,
-    "lng": -46.650075754822225,
-    "score": 84,
-    "confidence": 69,
+    "lat": -23.54744754901829,
+    "lng": -46.63224924656126,
+    "score": 90,
+    "confidence": 64,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
       "Estudo de Massa e Viabilidade Financeira detalhada.",
@@ -3150,35 +2903,36 @@
     ]
   },
   {
-    "id": "op-82",
-    "endereco": "Imóvel Potencial 82 (SQL 810-63)",
+    "id": "op-76",
+    "endereco": "Imóvel Potencial 76 (SQL 251-53)",
     "regiao": "República",
-    "idade": 89,
+    "idade": 76,
     "usoConhecido": "Residencial",
-    "area": 1636,
-    "zoneamento": "ZM",
+    "area": 6902,
+    "zoneamento": "ZC",
     "perimetros": [
       "Requalifica Centro"
     ],
-    "protecao": "Nenhuma",
+    "protecao": "Tombado/Inventário",
     "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
+      "Aprovação complexa no CONPRESP/CONDEPHAAT",
+      "Custos de restauro elevados e imprevisíveis",
+      "Restrições de fachada"
     ],
-    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
     "financeiro": {
-      "estimativaCustoObra": 4107731.46442253,
-      "potencialMaximoSubvencao": 1026932.8661056325,
-      "vgvPotencialEstimado": 10700685.60543146,
+      "estimativaCustoObra": 26965052.560195338,
+      "potencialMaximoSubvencao": 6741263.1400488345,
+      "vgvPotencialEstimado": 61155201.08167641,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.554785209034087,
-    "lng": -46.63639935682951,
-    "score": 63,
+    "lat": -23.537544107443317,
+    "lng": -46.639502227731455,
+    "score": 75,
     "confidence": 82,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
@@ -3188,12 +2942,51 @@
     ]
   },
   {
-    "id": "op-83",
-    "endereco": "Imóvel Potencial 83 (SQL 270-81)",
-    "regiao": "República",
-    "idade": 66,
+    "id": "op-77",
+    "endereco": "Imóvel Potencial 77 (SQL 126-62)",
+    "regiao": "Sé",
+    "idade": 23,
     "usoConhecido": "HIS",
-    "area": 2831,
+    "area": 3961,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
+    "financeiro": {
+      "estimativaCustoObra": 11264191.860960547,
+      "potencialMaximoSubvencao": 2816047.9652401367,
+      "vgvPotencialEstimado": 29530689.07728734,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.54665872522504,
+    "lng": -46.641511179674886,
+    "score": 61,
+    "confidence": 71,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-78",
+    "endereco": "Imóvel Potencial 78 (SQL 506-29)",
+    "regiao": "Santa Cecília",
+    "idade": 76,
+    "usoConhecido": "HIS",
+    "area": 8763,
     "zoneamento": "ZEIS",
     "perimetros": [
       "AIU Setor Central",
@@ -3207,19 +3000,19 @@
     ],
     "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
     "financeiro": {
-      "estimativaCustoObra": 9466658.465571897,
-      "potencialMaximoSubvencao": 2366664.6163929743,
-      "vgvPotencialEstimado": 12829497.207407227,
+      "estimativaCustoObra": 28034066.73605126,
+      "potencialMaximoSubvencao": 7008516.684012815,
+      "vgvPotencialEstimado": 35549062.02464834,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.53493055572184,
-    "lng": -46.63425627521086,
-    "score": 80,
-    "confidence": 70,
+    "lat": -23.53227067644242,
+    "lng": -46.626728439334634,
+    "score": 94,
+    "confidence": 78,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
       "Estudo de Massa e Viabilidade Financeira detalhada.",
@@ -3228,51 +3021,12 @@
     ]
   },
   {
-    "id": "op-84",
-    "endereco": "Imóvel Potencial 84 (SQL 502-95)",
-    "regiao": "Bela Vista",
-    "idade": 84,
-    "usoConhecido": "HIS",
-    "area": 4550,
-    "zoneamento": "ZM",
-    "perimetros": [
-      "AIU Setor Central",
-      "Requalifica Centro"
-    ],
-    "protecao": "Nenhuma",
-    "riscos": [
-      "Necessidade de reforço estrutural",
-      "Atualização de PPCI (Bombeiros)"
-    ],
-    "motivo": "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-    "financeiro": {
-      "estimativaCustoObra": 15756034.185949488,
-      "potencialMaximoSubvencao": 3939008.546487372,
-      "vgvPotencialEstimado": 41938462.65046805,
-      "isencoesFiscais": [
-        "IPTU (prazo definido)",
-        "ITBI (primeira aquisição)",
-        "ISS (serviços de obra)"
-      ]
-    },
-    "lat": -23.52902058422922,
-    "lng": -46.64688771674251,
-    "score": 77,
-    "confidence": 65,
-    "proximosPassos": [
-      "Levantamento arquitetônico as-built e avaliação estrutural.",
-      "Estudo de Massa e Viabilidade Financeira detalhada.",
-      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-      "Simulação oficial no Portal da Subvenção Econômica."
-    ]
-  },
-  {
-    "id": "op-85",
-    "endereco": "Imóvel Potencial 85 (SQL 531-95)",
-    "regiao": "Consolação",
-    "idade": 53,
-    "usoConhecido": "Residencial",
-    "area": 8376,
+    "id": "op-79",
+    "endereco": "Imóvel Potencial 79 (SQL 586-1)",
+    "regiao": "Santa Cecília",
+    "idade": 40,
+    "usoConhecido": "Não Residencial",
+    "area": 1726,
     "zoneamento": "ZC",
     "perimetros": [
       "AIU Setor Central",
@@ -3285,19 +3039,251 @@
     ],
     "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
     "financeiro": {
-      "estimativaCustoObra": 30908766.770087957,
-      "potencialMaximoSubvencao": 7727191.692521989,
-      "vgvPotencialEstimado": 50130273.78390927,
+      "estimativaCustoObra": 6467403.717531907,
+      "potencialMaximoSubvencao": 1616850.9293829768,
+      "vgvPotencialEstimado": 9057656.316652553,
       "isencoesFiscais": [
         "IPTU (prazo definido)",
         "ITBI (primeira aquisição)",
         "ISS (serviços de obra)"
       ]
     },
-    "lat": -23.547957239351113,
-    "lng": -46.640725099766,
-    "score": 84,
+    "lat": -23.53509474825202,
+    "lng": -46.648156547423476,
+    "score": 90,
+    "confidence": 83,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-80",
+    "endereco": "Imóvel Potencial 80 (SQL 988-83)",
+    "regiao": "Sé",
+    "idade": 56,
+    "usoConhecido": "Uso Misto",
+    "area": 4989,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
+    "financeiro": {
+      "estimativaCustoObra": 18468786.990811236,
+      "potencialMaximoSubvencao": 4617196.747702809,
+      "vgvPotencialEstimado": 38077839.54352816,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.540697476850752,
+    "lng": -46.65301564938003,
+    "score": 63,
+    "confidence": 65,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-81",
+    "endereco": "Imóvel Potencial 81 (SQL 16-78)",
+    "regiao": "Bela Vista",
+    "idade": 57,
+    "usoConhecido": "Não Residencial",
+    "area": 3656,
+    "zoneamento": "ZEIS",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "financeiro": {
+      "estimativaCustoObra": 11519515.399634803,
+      "potencialMaximoSubvencao": 2879878.8499087007,
+      "vgvPotencialEstimado": 14915878.782756653,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.542497528367456,
+    "lng": -46.63435866370362,
+    "score": 57,
+    "confidence": 82,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-82",
+    "endereco": "Imóvel Potencial 82 (SQL 380-73)",
+    "regiao": "Consolação",
+    "idade": 34,
+    "usoConhecido": "Uso Misto",
+    "area": 1933,
+    "zoneamento": "ZEU",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
+    "financeiro": {
+      "estimativaCustoObra": 5005678.416006124,
+      "potencialMaximoSubvencao": 1251419.604001531,
+      "vgvPotencialEstimado": 10926063.294733817,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.54177002240293,
+    "lng": -46.64059410676796,
+    "score": 91,
     "confidence": 85,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-83",
+    "endereco": "Imóvel Potencial 83 (SQL 825-65)",
+    "regiao": "República",
+    "idade": 84,
+    "usoConhecido": "HIS",
+    "area": 2936,
+    "zoneamento": "ZEIS",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
+    "financeiro": {
+      "estimativaCustoObra": 7653209.176551968,
+      "potencialMaximoSubvencao": 1913302.294137992,
+      "vgvPotencialEstimado": 12891821.43104192,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.552011428596266,
+    "lng": -46.647944860545934,
+    "score": 76,
+    "confidence": 66,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-84",
+    "endereco": "Imóvel Potencial 84 (SQL 610-32)",
+    "regiao": "Sé",
+    "idade": 70,
+    "usoConhecido": "Residencial",
+    "area": 7549,
+    "zoneamento": "ZEIS",
+    "perimetros": [
+      "Requalifica Centro"
+    ],
+    "protecao": "Nenhuma",
+    "riscos": [
+      "Necessidade de reforço estrutural",
+      "Atualização de PPCI (Bombeiros)"
+    ],
+    "motivo": "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.",
+    "financeiro": {
+      "estimativaCustoObra": 27719053.653648242,
+      "potencialMaximoSubvencao": 6929763.413412061,
+      "vgvPotencialEstimado": 35424711.79344605,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.53539148175128,
+    "lng": -46.63109899871626,
+    "score": 94,
+    "confidence": 83,
+    "proximosPassos": [
+      "Levantamento arquitetônico as-built e avaliação estrutural.",
+      "Estudo de Massa e Viabilidade Financeira detalhada.",
+      "Consulta prévia aos órgãos de patrimônio (se aplicável).",
+      "Simulação oficial no Portal da Subvenção Econômica."
+    ]
+  },
+  {
+    "id": "op-85",
+    "endereco": "Imóvel Potencial 85 (SQL 847-49)",
+    "regiao": "Santa Cecília",
+    "idade": 35,
+    "usoConhecido": "HIS",
+    "area": 7580,
+    "zoneamento": "ZM",
+    "perimetros": [
+      "AIU Setor Central",
+      "Requalifica Centro"
+    ],
+    "protecao": "Tombado/Inventário",
+    "riscos": [
+      "Aprovação complexa no CONPRESP/CONDEPHAAT",
+      "Custos de restauro elevados e imprevisíveis",
+      "Restrições de fachada"
+    ],
+    "motivo": "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
+    "financeiro": {
+      "estimativaCustoObra": 23395086.78012659,
+      "potencialMaximoSubvencao": 5848771.695031648,
+      "vgvPotencialEstimado": 41933206.22675556,
+      "isencoesFiscais": [
+        "IPTU (prazo definido)",
+        "ITBI (primeira aquisição)",
+        "ISS (serviços de obra)"
+      ]
+    },
+    "lat": -23.53904104683525,
+    "lng": -46.652686139365954,
+    "score": 76,
+    "confidence": 82,
     "proximosPassos": [
       "Levantamento arquitetônico as-built e avaliação estrutural.",
       "Estudo de Massa e Viabilidade Financeira detalhada.",
