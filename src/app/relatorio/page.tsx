@@ -1,13 +1,21 @@
+import Link from 'next/link'
 import data from '../../data/subvencao.json'
+import feed from '../../data/atualizacoes.json'
 import { Download } from 'lucide-react'
 import PageHeader from '../../components/ui/PageHeader'
 
 export default function RelatorioPage() {
-  const { indicadores, chamamentoAtual } = data
+  const { indicadores, programa, chamamentos } = data
+  const num = (v: unknown) => (typeof v === 'number' ? v : 0)
 
   const formatCurrency = (val: number) => {
     return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(val)
   }
+
+  const trintaDiasAtras = Date.now() - 30 * 86400000
+  const recentes = ((feed.itens || []) as Array<{ data: string; rotulo: string; sql: string | null; campo: string | null }>)
+    .filter((e) => new Date(e.data).getTime() >= trintaDiasAtras)
+    .slice(0, 5)
 
   return (
     <div className="page-shell max-w-4xl space-y-6">
@@ -15,7 +23,7 @@ export default function RelatorioPage() {
         <PageHeader
           className="mb-0"
           title="Relatório Executivo"
-          description="Estado do Retrofit no Centro de São Paulo"
+          description="Estado do Retrofit no Centro de São Paulo — apenas dados comprovados"
         />
         <button type="button" className="btn btn-inverted shrink-0">
           <Download size={18} aria-hidden /> Gerar PDF
@@ -26,31 +34,55 @@ export default function RelatorioPage() {
         <section>
           <h2 className="mb-3 border-b border-line pb-1 text-xl font-semibold text-fg">Em uma frase</h2>
           <p className="text-lg italic text-fg-muted">
-            &quot;O programa conta com {formatCurrency(indicadores.orcamentoDisponivel)} no chamamento vigente, com {indicadores.projetosConhecidos} projetos já conhecidos buscando requalificar o centro de São Paulo.&quot;
+            &quot;O Radar monitora {num(indicadores.imoveisMonitorados).toLocaleString('pt-BR')} imóveis reais no Centro, e as listas oficiais da SMUL registram {num(indicadores.totalRegistrosSubvencao)} interessados, habilitados e credenciados em {num(indicadores.chamamentosComListas)} chamamentos.&quot;
           </p>
         </section>
 
         <section className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <div className="rounded-xl border border-line bg-muted p-5">
-            <h2 className="mb-2 text-lg font-semibold text-fg">Dinheiro Disponível</h2>
+            <h2 className="mb-2 text-lg font-semibold text-fg">Recursos do programa</h2>
             <p className="text-fg-muted">
-              {formatCurrency(indicadores.orcamentoDisponivel)} previstos no edital atual, permitindo subvenção de até {chamamentoAtual.percentualMaximo}% por projeto.
+              Teto previsto em lei: <strong>{formatCurrency(programa.fatos.tetoPrevisto.valor)}</strong> (Lei nº 17.844/2022).
+              Oferta somada dos três editais 2023–2025: <strong>{formatCurrency(programa.fatos.ofertaEditais2023a2025.valor)}</strong>,
+              sendo {formatCurrency(programa.fatos.ofertaTerceiroChamamento.valor)} no 3º chamamento.
+            </p>
+            <p className="mt-2 text-xs text-fg-subtle">
+              Valores previstos/ofertados segundo a SMUL — não são valores concedidos ou pagos. A soma dos valores máximos da lista Fase II/2025 é {formatCurrency(num(indicadores.valorMaximoCredenciado2025FaseII))}.
             </p>
           </div>
           <div className="rounded-xl border border-line bg-muted p-5">
-            <h2 className="mb-2 text-lg font-semibold text-fg">Chamamento Vigente</h2>
-            <p className="text-fg-muted">
-              {chamamentoAtual.nome} ({chamamentoAtual.numero}), com foco nos perímetros {chamamentoAtual.perimetro}.
-            </p>
+            <h2 className="mb-2 text-lg font-semibold text-fg">Chamamentos documentados</h2>
+            <ul className="space-y-1 text-fg-muted">
+              {chamamentos.map((c) => (
+                <li key={c.numero}>
+                  <strong>{c.numero}</strong> — {c.fase} • {c.totalRegistros} registros
+                </li>
+              ))}
+            </ul>
+            <Link href="/chamamento-atual" className="mt-2 inline-block text-sm font-medium text-accent hover:underline">
+              Ver painel dos chamamentos
+            </Link>
           </div>
         </section>
 
         <section>
           <h2 className="mb-2 text-lg font-semibold text-fg">O que mudou (Últimos 30 dias)</h2>
-          <ul className="list-disc space-y-1 pl-5 text-fg-muted">
-            <li>Lançamento estimado do 4º Chamamento Público.</li>
-            <li>Inclusão de novos critérios de HIS no perímetro expandido.</li>
-          </ul>
+          {recentes.length > 0 ? (
+            <ul className="list-disc space-y-1 pl-5 text-fg-muted">
+              {recentes.map((e, i) => (
+                <li key={i}>
+                  {e.rotulo}
+                  {e.sql ? ` — SQL ${e.sql}` : ''}
+                  {e.campo ? ` (${e.campo})` : ''} • {new Date(e.data).toLocaleDateString('pt-BR')}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-fg-muted">
+              Nenhum evento registrado nos últimos 30 dias. O histórico completo está em{' '}
+              <Link href="/atualizacoes" className="font-medium text-accent hover:underline">Atualizações</Link>.
+            </p>
+          )}
         </section>
 
         <section>
@@ -65,7 +97,8 @@ export default function RelatorioPage() {
 
         <section className="callout callout-neutral text-sm">
           <p>
-            <strong>Fontes:</strong> Dados extraídos do Portal da Subvenção Econômica e Diário Oficial. <strong>Data do relatório:</strong> {new Date().toLocaleDateString('pt-BR')}.
+            <strong>Fontes:</strong> Cadastro Imobiliário Fiscal (GeoSampa), listas oficiais da SMUL (SEI 6068.2024/0005871-1 e 6068.2025/0004742-8) e páginas oficiais da Prefeitura.{' '}
+            <strong>Data do relatório:</strong> {new Date().toLocaleDateString('pt-BR')}.
           </p>
         </section>
       </div>

@@ -20,7 +20,7 @@ const geistMono = localFont({
   display: 'swap',
 })
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://radar-retrofit.lcfconsulting.com.br'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://radar-retrofit-sp.vercel.app'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/_next/'],
     },
-    sitemap: 'https://radar-retrofit.lcfconsulting.com.br/sitemap.xml',
+    sitemap: 'https://radar-retrofit-sp.vercel.app/sitemap.xml',
   }
 }

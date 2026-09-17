@@ -22,6 +22,22 @@ const COLUMN_TONE: Record<string, string> = {
   Concluída: 'bg-fg-subtle',
 }
 
+type ProjetoPipeline = {
+  nome: string
+  chamamento: string
+  situacao: string
+  ano: number
+}
+
+// Mapeamento honesto documento → coluna: as listas 2023/2024 documentam
+// HABILITAÇÃO (Fase I ou relação nominal); só a lista 2025 documenta
+// CREDENCIAMENTO (Fase II). Etapas sem documento (Outorga, Execução,
+// Conclusão) permanecem vazias.
+function colunaProjeto(p: ProjetoPipeline): string {
+  if (p.ano === 2025) return 'Credenciada'
+  return 'Em análise'
+}
+
 export default function PipelinePage() {
   const items = [
     ...oportunidadesData.map((op) => ({
@@ -32,12 +48,12 @@ export default function PipelinePage() {
       regiaoStr: `${op.distrito} • SQL ${op.sql}`,
       badge: `Score: ${op.score}`,
     })),
-    ...projetosData.map((proj) => ({
+    ...(projetosData as unknown as ProjetoPipeline[]).map((proj) => ({
       ...proj,
-      pipelineStatus: 'Credenciada',
+      pipelineStatus: colunaProjeto(proj),
       isOportunidade: false,
       regiaoStr: proj.chamamento,
-      badge: 'Lista oficial',
+      badge: proj.situacao,
     })),
   ]
 
@@ -45,7 +61,7 @@ export default function PipelinePage() {
     <div className="page-shell page-shell-wide space-y-6">
       <PageHeader
         title="Pipeline de Retrofit"
-        description="Acompanhamento do estágio de maturidade das oportunidades e projetos conhecidos."
+        description="Estágio documental de cada registro: imóveis do Radar (Identificada), habilitados 2023–2024 (Em análise) e credenciados Fase II/2025 (Credenciada). Etapas sem documento oficial publicado permanecem vazias."
       />
 
       <div className="relative">
@@ -87,7 +103,7 @@ export default function PipelinePage() {
                   ))}
                   {colItems.length === 0 && (
                     <div className="rounded-lg border-2 border-dashed border-line py-6 text-center text-xs text-fg-subtle">
-                      Nenhum projeto
+                      Nenhum registro nesta etapa (fontes atuais)
                     </div>
                   )}
                 </div>

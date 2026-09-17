@@ -175,5 +175,34 @@ function diffCampos(antes, depois) {
     fontes: readJSON(path.join(INTERNAL, 'fontes_conectadas.json'), {}).fontes || {},
   }, null, 2));
 
+  // Feed público de atualizações: últimos 30 eventos REAIS do histórico
+  // auditável (nada é redigido à mão — a página apenas renderiza este feed).
+  const slugPorSql = new Map(aprovadas.map((o) => [o.sql, o.slug]));
+  const rotuloTipo = {
+    publicada: 'Imóvel publicado',
+    alteracao: 'Campo atualizado',
+    arquivada: 'Registro arquivado',
+    removida_sintetica: 'Registro sintético removido',
+  };
+  const feed = historico.eventos.slice(-30).reverse().map((e) => ({
+    tipo: e.tipo,
+    rotulo: rotuloTipo[e.tipo] || e.tipo,
+    data: e.data,
+    sql: e.sql || null,
+    slug: (e.sql && slugPorSql.get(e.sql)) || null,
+    nome: e.nome || e.id || null,
+    campo: e.campo || null,
+    antes: e.campo ? e.antes ?? null : null,
+    depois: e.campo ? e.depois ?? null : null,
+    motivo: e.motivo || null,
+    fonte: e.fonte || null,
+  }));
+  fs.writeFileSync(path.join(DATA, 'atualizacoes.json'), JSON.stringify({
+    atualizadoEm: executadoEm,
+    totalEventos: historico.eventos.length,
+    nota: 'Eventos reais do pipeline (fontes oficiais → validação → publicação). Nenhum item é redigido manualmente.',
+    itens: feed,
+  }, null, 2));
+
   console.log(JSON.stringify(relatorio, null, 2));
 })();

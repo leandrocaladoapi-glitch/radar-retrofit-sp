@@ -17,7 +17,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
     return { title: 'Artigo não encontrado' }
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://radar-retrofit.lcfconsulting.com.br'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://radar-retrofit-sp.vercel.app'
 
   return {
     title: artigo.title,
@@ -49,7 +49,7 @@ export default function ArtigoPage({ params }: { params: { slug: string } }) {
     notFound()
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://radar-retrofit.lcfconsulting.com.br'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://radar-retrofit-sp.vercel.app'
 
   const jsonLd = {
     '@context': 'https://schema.org',

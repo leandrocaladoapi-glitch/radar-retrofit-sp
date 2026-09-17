@@ -1,29 +1,242 @@
 {
-  "chamamentoAtual": {
-    "nome": "Chamamento Público de Subvenção Econômica Vigente",
-    "numero": "Múltiplos (2023-2025)",
+  "programa": {
+    "nome": "Programa de Subvenção Econômica — Requalifica Centro",
     "orgao": "Prefeitura de São Paulo / SMUL",
-    "abertura": "2023-01-01",
-    "encerramento": "2026-12-31",
-    "orcamento": 1000000000,
-    "percentualMaximo": 25,
-    "categorias": [
-      "HIS-1",
-      "HIS-2",
-      "HMP",
-      "R2v",
-      "nR"
+    "portal": "https://subvencao.prefeitura.sp.gov.br",
+    "baseLegal": [
+      {
+        "norma": "Lei nº 17.577/2021 (Requalifica Centro)",
+        "url": "https://legislacao.prefeitura.sp.gov.br/leis/lei-17577-de-20-de-julho-de-2021"
+      },
+      {
+        "norma": "Lei nº 17.844/2022 (AIU Setor Central — autoriza a subvenção)",
+        "url": "https://legislacao.prefeitura.sp.gov.br"
+      },
+      {
+        "norma": "Decreto nº 62.878/2023 (regulamenta a subvenção)",
+        "url": "https://legislacao.prefeitura.sp.gov.br"
+      },
+      {
+        "norma": "Decreto nº 64.092/2025 (aperfeiçoa incentivos)",
+        "url": "https://legislacao.prefeitura.sp.gov.br"
+      }
     ],
-    "perimetro": "AIU Setor Central / Requalifica Centro",
-    "situacao": "Em andamento / Múltiplas Fases"
+    "fatos": {
+      "tetoPrevisto": {
+        "valor": 1000000000,
+        "moeda": "BRL",
+        "rotulo": "Investimento total previsto do programa (teto em lei)",
+        "fontes": [
+          {
+            "nome": "SMUL — “Programa Requalifica Centro é regulamentado para toda a região central”",
+            "url": "https://prefeitura.sp.gov.br/web/licenciamento/w/programa-requalifica-centro-%C3%A9-regulamentado-para-toda-a-regi%C3%A3o-central-de-s%C3%A3o-paulo",
+            "trecho": "“O subsídio total pode chegar a R$ 1 bilhão”"
+          },
+          {
+            "nome": "São Paulo Parcerias (empresa municipal) — 3º Chamamento, 10/10/2025",
+            "url": "https://www.spparcerias.com.br/noticias/3o-chamamento-da-subvencao-economica-prefeitura-divulga-lista-final-de-projetos-que-receberao-apoio-da-prefeitura-para-obras-de-retrofit-no-centro",
+            "trecho": "“Com investimento total previsto de R$ 1 bilhão” (Lei nº 17.844/2022)"
+          }
+        ],
+        "verificadoEm": "2026-09-17",
+        "aviso": "Teto previsto em lei. Não é valor em caixa, concedido ou pago."
+      },
+      "ofertaEditais2023a2025": {
+        "valor": 400000000,
+        "moeda": "BRL",
+        "rotulo": "Oferta somada dos três editais publicados entre 2023 e 2025",
+        "fontes": [
+          {
+            "nome": "SMUL — “Programa Requalifica Centro é regulamentado para toda a região central”",
+            "url": "https://prefeitura.sp.gov.br/web/licenciamento/w/programa-requalifica-centro-%C3%A9-regulamentado-para-toda-a-regi%C3%A3o-central-de-s%C3%A3o-paulo",
+            "trecho": "“Entre 2023 e 2025, foram lançados três editais, com a oferta de R$ 400 milhões”"
+          }
+        ],
+        "verificadoEm": "2026-09-17",
+        "aviso": "Valor ofertado nos editais. Não equivale a valor concedido ou pago."
+      },
+      "ofertaTerceiroChamamento": {
+        "valor": 200000000,
+        "moeda": "BRL",
+        "rotulo": "Oferta do 3º Chamamento Público (01/2025/SMUL)",
+        "fontes": [
+          {
+            "nome": "São Paulo Parcerias (empresa municipal) — 10/10/2025",
+            "url": "https://www.spparcerias.com.br/noticias/3o-chamamento-da-subvencao-economica-prefeitura-divulga-lista-final-de-projetos-que-receberao-apoio-da-prefeitura-para-obras-de-retrofit-no-centro",
+            "trecho": "“a Prefeitura disponibilizou o valor recorde de R$ 200 milhões”"
+          }
+        ],
+        "verificadoEm": "2026-09-17",
+        "aviso": "Valor ofertado no edital. Não equivale a valor concedido ou pago."
+      },
+      "percentualMaximo": {
+        "valor": 25,
+        "unidade": "% do custo da obra",
+        "rotulo": "Teto de subvenção por projeto (“até 25%”)",
+        "fontes": [
+          {
+            "nome": "São Paulo Parcerias (empresa municipal) — 10/10/2025",
+            "url": "https://www.spparcerias.com.br/noticias/3o-chamamento-da-subvencao-economica-prefeitura-divulga-lista-final-de-projetos-que-receberao-apoio-da-prefeitura-para-obras-de-retrofit-no-centro",
+            "trecho": "“programa que cobre até 25% do custo das obras de retrofit”"
+          }
+        ],
+        "verificadoEm": "2026-09-17",
+        "aviso": "Teto teórico. O percentual efetivo depende de pontuação, enquadramento e análise oficial."
+      },
+      "resultadoFinal2025": {
+        "inscritos": 19,
+        "contemplados": 16,
+        "publicacaoDOC": "2025-10-08",
+        "rotulo": "Resultado final do 3º Chamamento (DOC 08/10/2025)",
+        "fontes": [
+          {
+            "nome": "São Paulo Parcerias (empresa municipal) — 10/10/2025",
+            "url": "https://www.spparcerias.com.br/noticias/3o-chamamento-da-subvencao-economica-prefeitura-divulga-lista-final-de-projetos-que-receberao-apoio-da-prefeitura-para-obras-de-retrofit-no-centro",
+            "trecho": "“Dos 19 projetos inscritos, 16 foram aprovados … e convocados para assinar termos de outorga”"
+          }
+        ],
+        "verificadoEm": "2026-09-17",
+        "aviso": "A lista Fase II (19/09/2025, 14 credenciados) usada pelo Radar é etapa anterior ao resultado final (16 contemplados). Os 2 registros adicionais do resultado final não constam do documento Fase II e por isso não são publicados como registros individuais."
+      }
+    }
   },
+  "chamamentos": [
+    {
+      "ano": 2023,
+      "numero": "Chamamento Público nº 01/2023/SMUL",
+      "tituloDocumento": "Relação de INTERESSADOS habilitados a participar do CHAMAMENTO PÚBLICO",
+      "fase": "Habilitados",
+      "processo": null,
+      "lote": null,
+      "portaria": null,
+      "dataDocumento": "2023-12-07",
+      "totalRegistros": 11,
+      "somaValorMaximo": null,
+      "protocolosSemNomeAtribuivel": [],
+      "documento": {
+        "arquivo": "data-oficial/subvencao/2023-Relacao-Interessados-Habilitados.pdf",
+        "sei": null,
+        "verificador": null,
+        "crc": null,
+        "verificacaoUrl": null
+      },
+      "portal": "https://subvencao.prefeitura.sp.gov.br"
+    },
+    {
+      "ano": 2024,
+      "numero": "Chamamento Público nº 02/2024/SMUL",
+      "tituloDocumento": "LISTA DE INTERESSADOS — habilitados na Fase I (convocação de REUNIÃO TÉCNICA)",
+      "fase": "Fase I — Habilitados",
+      "processo": "6011.2024/0000706-7",
+      "lote": "Lote 2",
+      "portaria": "Portaria SMUL nº 55/2024",
+      "dataDocumento": "2024-07-10",
+      "totalRegistros": 21,
+      "somaValorMaximo": null,
+      "protocolosSemNomeAtribuivel": [
+        "SUBVENCAO2024.0007617724",
+        "SUBVENCAO2024.0008191591",
+        "SUBVENCAO2024.0006562008",
+        "SUBVENCAO2024.0028336508",
+        "SUBVENCAO2024.0027759111"
+      ],
+      "documento": {
+        "arquivo": "data-oficial/subvencao/2024-Relacao-Interessados-Habilitados.pdf",
+        "sei": "6068.2024/0005871-1",
+        "verificador": "106440352",
+        "crc": "9534D549",
+        "verificacaoUrl": "http://processos.prefeitura.sp.gov.br"
+      },
+      "portal": "https://subvencao.prefeitura.sp.gov.br"
+    },
+    {
+      "ano": 2025,
+      "numero": "Chamamento Público nº 01/2025/SMUL",
+      "tituloDocumento": "LISTA DE CREDENCIADOS em ORDEM DE PRIORIZAÇÃO — Fase II",
+      "fase": "Fase II — Credenciados",
+      "processo": "6068.2024/0005871-1",
+      "lote": "Lote 3",
+      "portaria": "Portaria SMUL nº 34/2025",
+      "dataDocumento": "2025-09-19",
+      "totalRegistros": 14,
+      "somaValorMaximo": 51949543.4,
+      "protocolosSemNomeAtribuivel": [],
+      "documento": {
+        "arquivo": "data-oficial/subvencao/2025-Lista_Credenciados.pdf",
+        "sei": "6068.2025/0004742-8",
+        "verificador": "142837382",
+        "crc": "3EB6DE09",
+        "verificacaoUrl": "http://processos.prefeitura.sp.gov.br"
+      },
+      "portal": "https://subvencao.prefeitura.sp.gov.br"
+    }
+  ],
   "indicadores": {
-    "orcamentoDisponivel": 1000000000,
-    "projetosConhecidos": 35,
-    "imoveisMonitorados": 420,
-    "recursosConcedidos": 145000000,
-    "recursosPagos": 45000000,
-    "oportunidadesIdentificadas": 85,
-    "ultimaAtualizacao": "2026-09-17T02:27:06.111Z"
-  }
+    "imoveisMonitorados": 983,
+    "oportunidadesScore85": 99,
+    "chamamentosComListas": 3,
+    "interessadosHabilitados2023": 11,
+    "interessadosHabilitadosFaseI2024": 21,
+    "credenciadosFaseII2025": 14,
+    "totalRegistrosSubvencao": 46,
+    "valorMaximoCredenciado2025FaseII": 51949543.4,
+    "ultimaAtualizacao": "2026-09-17T15:56:31.186Z"
+  },
+  "metodologiaIndicadores": {
+    "imoveisMonitorados": "oportunidades_index.json.length (base imobiliária publicada pelo ETL GeoSampa)",
+    "oportunidadesScore85": "contagem de registros com Opportunity Score >= 85 na base publicada",
+    "chamamentosComListas": "quantidade de chamamentos com documento oficial extraído",
+    "interessadosHabilitados2023": "linhas da relação nominal 01/2023/SMUL",
+    "interessadosHabilitadosFaseI2024": "pares protocolo+nome atribuíveis da lista 02/2024/SMUL (5 protocolos sem nome descartados — ver log)",
+    "credenciadosFaseII2025": "linhas da tabela 01/2025/SMUL Fase II",
+    "totalRegistrosSubvencao": "soma dos registros extraídos (11 + 21 + 14)",
+    "valorMaximoCredenciado2025FaseII": "soma da coluna “VALOR MÁXIMO DE SUBVENÇÃO” (Fase II). Não é valor concedido nem pago."
+  },
+  "removidos": [
+    {
+      "campo": "orcamentoDisponivel",
+      "motivo": "Sem fonte oficial localizada para “orçamento disponível em caixa”. Substituído por teto previsto em lei (R$ 1 bi) e ofertas por edital, ambos com fonte e URL."
+    },
+    {
+      "campo": "recursosConcedidos",
+      "motivo": "Sem fonte oficial localizada para total concedido. Removido em 2026-09-17."
+    },
+    {
+      "campo": "recursosPagos",
+      "motivo": "Sem fonte oficial localizada para total pago. Removido em 2026-09-17."
+    },
+    {
+      "campo": "chamamentoAtual.abertura / encerramento",
+      "motivo": "Datas escritas à mão sem vínculo com edital (“2023-01-01 / 2026-12-31”). Substituídas pelas datas reais de cada chamamento, extraídas dos documentos."
+    },
+    {
+      "campo": "chamamentoAtual.numero = “Múltiplos (2023-2025)”",
+      "motivo": "Identificação vaga. Substituída pelos três chamamentos reais (01/2023, 02/2024, 01/2025/SMUL)."
+    },
+    {
+      "campo": "indicadores.oportunidadesIdentificadas = 85",
+      "motivo": "Número escrito à mão, incompatível com a base real. Indicadores agora são calculados (array.length / agregação)."
+    },
+    {
+      "campo": "indicadores.imoveisMonitorados = 420",
+      "motivo": "Número escrito à mão. Agora calculado a partir da base publicada."
+    },
+    {
+      "campo": "indicadores.projetosConhecidos = 35",
+      "motivo": "Número escrito à mão. Agora calculado a partir das listas oficiais extraídas."
+    },
+    {
+      "campo": "projetos “Felipe Dupas Mahana (Projeto B)”",
+      "motivo": "Sufixo “(Projeto B)” inventado. O documento traz 3 protocolos distintos em nome de Felipe Dupas Mahana, publicados separadamente."
+    },
+    {
+      "campo": "projeto “Condomínio Edifício Copan (Blocos X e Y)”",
+      "motivo": "“(Blocos X e Y)” inventado e chamamento errado. Substituído pelos registros reais: habilitado 2024 (protocolo …31829167) e credenciado 2025 (Av. Ipiranga, 200)."
+    },
+    {
+      "campo": "projeto “SPE Edifício Martinelli S/A”",
+      "motivo": "Razão social inventada. O documento de 2024 traz “Tokyo Martinelli SPE S.A.” (habilitado, protocolo não atribuível com segurança)."
+    }
+  ],
+  "extraidoEm": "2026-09-17T15:56:31.186Z"
 }
