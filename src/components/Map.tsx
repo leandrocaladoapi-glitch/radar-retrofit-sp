@@ -3,8 +3,7 @@
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import 'leaflet/dist/leaflet.css';
-import projetosData from '../data/projetos.json';
-import oportunidadesData from '../data/oportunidades.json';
+import oportunidadesData from '../data/oportunidades_index.json';
 
 // Dynamically import map components to avoid SSR issues with Leaflet
 const MapContainer = dynamic(() => import('react-leaflet').then((mod) => mod.MapContainer), { ssr: false });
@@ -33,23 +32,9 @@ export default function RetrofitMap() {
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
         />
 
-        {/* Render Projetos */}
-        {projetosData.map((proj) => (
-          <CircleMarker
-            key={proj.id}
-            center={[proj.lat, proj.lng]}
-            radius={7}
-            pathOptions={{ color: '#1d4ed8', fillColor: '#3b82f6', fillOpacity: 0.9, weight: 2 }}
-          >
-            <Popup>
-              <div className="text-sm">
-                <strong className="block mb-1">{proj.empresa}</strong>
-                <p className="text-slate-600 mb-1">{proj.chamamento}</p>
-                <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded">{proj.situacao}</span>
-              </div>
-            </Popup>
-          </CircleMarker>
-        ))}
+        {/* Projetos de subvenção não possuem localização publicada de forma
+            estruturada nas listas oficiais — não são plotados para não inventar
+            coordenadas. Ver /projetos. */}
 
         {/* Render Oportunidades */}
         {oportunidadesData.map((op) => (
@@ -62,11 +47,11 @@ export default function RetrofitMap() {
             <Popup>
                <div className="text-sm space-y-2">
                 <div>
-                  <strong className="block mb-1">Oportunidade Indicativa</strong>
-                  <p className="text-slate-600 mb-1">{op.endereco}</p>
+                  <strong className="block mb-1">{op.nome}</strong>
+                  <p className="text-slate-600 mb-1">SQL {op.sql} • {op.areaConstruida.toLocaleString('pt-BR')} m²</p>
                   <div className="font-semibold text-amber-600">Score: {op.score}/100</div>
                 </div>
-                <a href={`/oportunidades/${op.id}`} className="inline-block text-blue-600 font-semibold hover:underline text-xs">
+                <a href={`/oportunidades/${op.slug}`} className="inline-block text-blue-600 font-semibold hover:underline text-xs">
                   Ver detalhes &rarr;
                 </a>
               </div>
@@ -78,13 +63,9 @@ export default function RetrofitMap() {
       {/* Legend */}
       <div className="absolute bottom-4 right-4 bg-white p-3 rounded shadow-md border border-slate-200 z-[400]">
         <h4 className="text-xs font-bold text-slate-700 mb-2">Legenda</h4>
-        <div className="flex items-center gap-2 mb-1">
-          <div className="w-3 h-3 rounded-full bg-blue-500"></div>
-          <span className="text-xs text-slate-600">Projetos Oficiais ({projetosData.length})</span>
-        </div>
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-amber-400"></div>
-          <span className="text-xs text-slate-600">Oportunidades ({oportunidadesData.length})</span>
+          <span className="text-xs text-slate-600">Imóveis reais no Radar ({oportunidadesData.length})</span>
         </div>
       </div>
     </div>

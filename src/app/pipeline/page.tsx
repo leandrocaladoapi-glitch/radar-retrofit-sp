@@ -1,5 +1,5 @@
 import projetosData from '../../data/projetos.json'
-import oportunidadesData from '../../data/oportunidades.json'
+import oportunidadesData from '../../data/oportunidades_index.json'
 
 const columns = [
   "Identificada",
@@ -14,14 +14,14 @@ const columns = [
 export default function PipelinePage() {
   // Combine all items and map to columns
   const items = [
-    ...oportunidadesData.map(op => ({ ...op, pipelineStatus: "Identificada", nome: op.endereco, isOportunidade: true, regiaoStr: op.regiao, badge: `Score: ${op.score}` })),
-    ...projetosData.map(proj => {
-      let status = "Inscrita";
-      if (proj.situacao === "Credenciado") status = "Credenciada";
-      if (proj.situacao === "Em execução") status = "Em execução";
-      if (proj.situacao === "Concluído") status = "Concluída";
-      return { ...proj, pipelineStatus: status, isOportunidade: false, regiaoStr: proj.empresa, badge: proj.chamamento }
-    })
+    ...oportunidadesData.map(op => ({ ...op, pipelineStatus: "Identificada", nome: op.nome, isOportunidade: true, regiaoStr: `${op.distrito} • SQL ${op.sql}`, badge: `Score: ${op.score}` })),
+    ...projetosData.map(proj => ({
+      ...proj,
+      pipelineStatus: "Credenciada",
+      isOportunidade: false,
+      regiaoStr: proj.chamamento,
+      badge: 'Lista oficial'
+    }))
   ]
 
   return (

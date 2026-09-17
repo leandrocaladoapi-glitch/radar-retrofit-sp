@@ -129,6 +129,30 @@ function diffCampos(antes, depois) {
 
   fs.mkdirSync(INTERNAL, { recursive: true });
   fs.writeFileSync(path.join(DATA, 'oportunidades.json'), JSON.stringify(aprovadas, null, 2));
+
+  // Índice leve (sem geometria) usado pela listagem, mapa e pipeline.
+  const indice = aprovadas.map((o) => ({
+    id: o.id,
+    slug: o.slug,
+    nome: o.nome,
+    sql: o.sql,
+    distrito: o.distrito,
+    lat: o.lat,
+    lng: o.lng,
+    areaConstruida: o.areaConstruida,
+    areaTerreno: o.areaTerreno,
+    usoCadastrado: o.usoCadastrado,
+    zoneamento: o.zoneamento,
+    score: o.score,
+    confidence: o.confidence,
+    requalificaCentro: o.perimetros.requalificaCentro.relacao,
+    aiuSetorCentral: o.perimetros.aiuSetorCentral.relacao,
+    protegido: !!(o.patrimonio && o.patrimonio.protegido),
+    motivoPrincipal: o.motivos[0] || null,
+    custoEstimadoMilhoes: o.estimativas.custoObra ? o.estimativas.custoObra.valorMilhoes : null,
+    ultimaVerificacao: o.ultimaVerificacao,
+  }));
+  fs.writeFileSync(path.join(DATA, 'oportunidades_index.json'), JSON.stringify(indice, null, 2));
   fs.writeFileSync(path.join(INTERNAL, 'candidatos_retidos.json'), JSON.stringify({ executadoEm, total: retidas.length, criterio: `Data Confidence >= ${CONFIDENCE_MINIMO}% + requisitos eliminatórios`, retidas }, null, 2));
   fs.writeFileSync(path.join(INTERNAL, 'historico.json'), JSON.stringify(historico, null, 2));
   fs.writeFileSync(path.join(INTERNAL, 'arquivadas.json'), JSON.stringify(arquivadas, null, 2));

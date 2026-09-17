@@ -7,18 +7,13 @@ export default function MercadoPage() {
   projetosData.forEach(p => {
     if (p.empresa && p.empresa !== "Não divulgado") {
       if (!empresasMap.has(p.empresa)) {
-        empresasMap.set(p.empresa, { nome: p.empresa, projetos: 0, valorAprovado: 0 });
+        empresasMap.set(p.empresa, { nome: p.empresa, projetos: 0 });
       }
       const data = empresasMap.get(p.empresa);
       data.projetos += 1;
-      data.valorAprovado += (p.valorAprovado || 0);
     }
   });
-  const empresas = Array.from(empresasMap.values()).sort((a, b) => b.valorAprovado - a.valorAprovado);
-
-  const formatCurrency = (val: number) => {
-    return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(val);
-  }
+  const empresas = Array.from(empresasMap.values()).sort((a, b) => b.projetos - a.projetos || a.nome.localeCompare(b.nome));
 
   return (
     <div className="space-y-6">
@@ -45,8 +40,8 @@ export default function MercadoPage() {
         <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center gap-4">
           <div className="bg-purple-100 p-3 rounded-full text-purple-600"><TrendingUp size={24}/></div>
           <div>
-            <div className="text-2xl font-bold text-slate-900">Top 5</div>
-            <div className="text-sm text-slate-500">Concentram 80% do VGV</div>
+            <div className="text-2xl font-bold text-slate-900">3</div>
+            <div className="text-sm text-slate-500">Chamamentos com listas publicadas (2023-2025)</div>
           </div>
         </div>
       </div>
@@ -58,7 +53,7 @@ export default function MercadoPage() {
             <tr>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Empresa / SPE / Condomínio</th>
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Projetos Vinculados</th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Valor Total Aprovado (Estimado)</th>
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Fonte</th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
@@ -66,7 +61,7 @@ export default function MercadoPage() {
               <tr key={idx} className="hover:bg-slate-50 transition">
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{empresa.nome}</td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{empresa.projetos}</td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{formatCurrency(empresa.valorAprovado)}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Listas oficiais de habilitados/credenciados (SMUL)</td>
               </tr>
             ))}
           </tbody>

@@ -102,6 +102,21 @@ const ABREV = {
   CAP: 'Capitão', ENG: 'Engenheiro', DES: 'Desembargador', PE: 'Padre', DONA: 'Dona',
 };
 
+// Grafia oficial dos distritos municipais (a camada WFS devolve sem acentuação).
+const DISTRITOS_GRAFIA = {
+  SE: 'Sé', REPUBLICA: 'República', BRAS: 'Brás', 'BOM RETIRO': 'Bom Retiro',
+  PARI: 'Pari', LIBERDADE: 'Liberdade', BELEM: 'Belém', 'BELA VISTA': 'Bela Vista',
+  'SANTA CECILIA': 'Santa Cecília', MOOCA: 'Mooca', CONSOLACAO: 'Consolação',
+  CAMBUCI: 'Cambuci', 'BARRA FUNDA': 'Barra Funda',
+};
+
+function nomeDistrito(nm) {
+  if (!nm) return null;
+  const chave = nm.trim().toUpperCase();
+  if (DISTRITOS_GRAFIA[chave]) return DISTRITOS_GRAFIA[chave];
+  return chave.split(/\s+/).map((w) => w.charAt(0) + w.slice(1).toLowerCase()).join(' ');
+}
+
 function titleCase(word) {
   const lower = word.toLowerCase();
   if (['de', 'da', 'do', 'das', 'dos', 'e', 'a', 'o'].includes(lower) ) return lower;
@@ -222,9 +237,9 @@ function pickByCentroid(features, lotGeom) {
     const uso = p.dc_tipo_uso_imovel || null;
     const zonaSigla = zonaF ? zonaF.properties.cd_zoneamento_perimetro : null;
     const zonaNome = zonaF ? zonaF.properties.tx_zoneamento_perimetro : null;
-    const distritoNome = distritoF
-      ? (distritoF.properties.nm_distrito_municipal || distritoF.properties.nm_distrito || null)
-      : null;
+    const distritoNome = nomeDistrito(
+      distritoF ? (distritoF.properties.nm_distrito_municipal || distritoF.properties.nm_distrito || null) : null
+    );
 
     const tombamento = tombF ? {
       situacao: tombF.feature.properties.tx_situacao_tombamento || null,
@@ -260,7 +275,7 @@ function pickByCentroid(features, lotGeom) {
     const custo = M.estimarCusto({ areaConstruida, tombado: protegido, envoltoria: !!tombamento && !protegido });
     const subv = M.tetoSubvencao(custo);
 
-    const nomeExibicao = `${logradouro}, ${numero} — ${distritoNome ? titleCase(distritoNome) : 'São Paulo'}`;
+    const nomeExibicao = `${logradouro}, ${numero} — ${distritoNome || 'São Paulo'}`;
     const slug = slugify(`${logradouro}-${numero}-${distritoNome || 'sao-paulo'}-${sql.replace(/\D/g, '').slice(0, 6)}`);
 
     // Motivos objetivos de entrada no Radar
@@ -290,7 +305,7 @@ function pickByCentroid(features, lotGeom) {
       usoCadastrado: { valor: uso, tipo: 'DADO_OFICIAL', fonte: FONTES.cadastro.nome, url: FONTES.cadastro.url, camada: LAYERS.lote, coletadoEm: executadoEm },
       coordenadas: { valor: { lat: Number(c[1].toFixed(7)), lng: Number(c[0].toFixed(7)) }, tipo: 'DADO_CALCULADO', fonte: 'Centroide calculado sobre a geometria oficial do lote (GeoSampa)', camada: LAYERS.lote, coletadoEm: executadoEm },
       zoneamento: zonaSigla ? { valor: zonaSigla, descricao: zonaNome, tipo: 'DADO_OFICIAL', fonte: FONTES.zoneamento.nome, url: FONTES.zoneamento.url, camada: LAYERS.zoneamento, coletadoEm: executadoEm } : null,
-      distrito: distritoNome ? { valor: titleCase(distritoNome), tipo: 'DADO_OFICIAL', fonte: FONTES.distrito.nome, url: FONTES.distrito.url, camada: LAYERS.distrito, coletadoEm: executadoEm } : null,
+      distrito: distritoNome ? { valor: distritoNome, tipo: 'DADO_OFICIAL', fonte: FONTES.distrito.nome, url: FONTES.distrito.url, camada: LAYERS.distrito, coletadoEm: executadoEm } : null,
       requalificaCentro: { valor: relReq ? relReq.relacao : 'fora', tipo: 'DADO_CALCULADO', fonte: FONTES.requalifica.nome, url: FONTES.requalifica.url, camada: LAYERS.requalifica, metodo: 'Cruzamento geométrico entre a geometria do lote e o polígono oficial do perímetro', coletadoEm: executadoEm },
       aiuSetorCentral: { valor: relAiu ? relAiu.relacao : 'fora', tipo: 'DADO_CALCULADO', fonte: FONTES.aiu.nome, url: FONTES.aiu.url, camada: LAYERS.aiu, metodo: 'Cruzamento geométrico entre a geometria do lote e o polígono oficial do perímetro', coletadoEm: executadoEm },
       patrimonio: { valor: protegido ? (tombamento.situacao || 'TOMBADO') : (tombamento ? 'Relação espacial com área de tombamento/envoltória' : 'Nenhuma proteção patrimonial identificada nesta base'), detalhe: tombamento, tipo: 'DADO_OFICIAL', fonte: FONTES.tombado.nome, url: (tombamento && tombamento.linkResolucao) || FONTES.tombado.url, camada: LAYERS.tombado, coletadoEm: executadoEm },
@@ -304,7 +319,7 @@ function pickByCentroid(features, lotGeom) {
       logradouro,
       numero,
       complementoCadastral: p.tx_complemento_endereco || null,
-      distrito: distritoNome ? titleCase(distritoNome) : null,
+      distrito: distritoNome,
       lat: Number(c[1].toFixed(7)),
       lng: Number(c[0].toFixed(7)),
       geometry: geom,
