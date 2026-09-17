@@ -38,7 +38,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
     },
     alternates: {
       canonical: `${siteUrl}/artigos/${artigo.slug}`,
-    }
+    },
   }
 }
 
@@ -61,24 +61,24 @@ export default function ArtigoPage({ params }: { params: { slug: string } }) {
     author: {
       '@type': 'Organization',
       name: 'LCF Consulting',
-      url: siteUrl
+      url: siteUrl,
     },
     publisher: {
       '@type': 'Organization',
       name: 'LCF Consulting',
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/favicon.ico`
-      }
+        url: `${siteUrl}/favicon.ico`,
+      },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${siteUrl}/artigos/${artigo.slug}`
-    }
+      '@id': `${siteUrl}/artigos/${artigo.slug}`,
+    },
   }
 
   return (
-    <article className="max-w-3xl mx-auto pb-16">
+    <article className="page-shell mx-auto max-w-3xl pb-16">
       <Script
         id={`json-ld-article-${artigo.slug}`}
         type="application/ld+json"
@@ -86,37 +86,30 @@ export default function ArtigoPage({ params }: { params: { slug: string } }) {
       />
 
       <div className="mb-8">
-        <Link href="/artigos" className="text-blue-600 hover:text-blue-800 flex items-center gap-2 text-sm font-medium mb-8">
-          <ArrowLeft size={16} /> Voltar para Artigos
+        <Link href="/artigos" className="mb-8 inline-flex min-h-tap items-center gap-2 text-sm font-medium text-accent hover:underline">
+          <ArrowLeft size={16} aria-hidden /> Voltar para Artigos
         </Link>
 
-        <div className="flex flex-wrap items-center gap-4 mb-6">
-          <span className="bg-blue-50 text-blue-700 text-sm font-bold px-3 py-1 rounded">
-            {artigo.categoria}
-          </span>
-          <span className="text-slate-500 text-sm flex items-center gap-1.5">
-            <Calendar size={14} />
+        <div className="mb-6 flex flex-wrap items-center gap-4">
+          <span className="rounded bg-accent-muted px-3 py-1 text-sm font-bold text-accent">{artigo.categoria}</span>
+          <span className="flex items-center gap-1.5 text-sm text-fg-muted">
+            <Calendar size={14} aria-hidden />
             Publicado em: {new Date(artigo.dataPublicacao).toLocaleDateString('pt-BR')}
           </span>
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6">
-          {artigo.title}
-        </h1>
+        <h1 className="mb-6 font-display text-4xl font-semibold leading-tight text-fg md:text-5xl">{artigo.title}</h1>
 
-        <div className="flex flex-wrap gap-2 mt-6 pb-8 border-b border-slate-200">
+        <div className="mt-6 flex flex-wrap gap-2 border-b border-line pb-8">
           {artigo.tags.map((tag: string, idx: number) => (
-            <span key={idx} className="bg-slate-100 text-slate-600 text-xs px-2.5 py-1 rounded-full flex items-center gap-1.5">
-              <Tag size={12}/> {tag}
+            <span key={idx} className="chip">
+              <Tag size={12} aria-hidden /> {tag}
             </span>
           ))}
         </div>
       </div>
 
-      <div
-        className="prose prose-lg prose-slate max-w-none prose-headings:font-bold prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-img:rounded-xl"
-        dangerouslySetInnerHTML={{ __html: artigo.conteudo }}
-      />
+      <div className="radar-prose" dangerouslySetInnerHTML={{ __html: artigo.conteudo }} />
     </article>
   )
 }

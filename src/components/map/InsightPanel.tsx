@@ -40,13 +40,13 @@ function Metrica({
   icone?: React.ReactNode
 }) {
   return (
-    <div className="rounded-lg border border-slate-200 bg-white px-3 py-2">
-      <p className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wide text-slate-500">
+    <div className="rounded-lg border border-line bg-surface px-3 py-2">
+      <p className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wide text-fg-muted">
         {icone}
         {rotulo}
       </p>
-      <p className="mt-0.5 text-lg font-semibold leading-tight text-slate-900">{valor}</p>
-      {detalhe && <p className="text-[11px] text-slate-500">{detalhe}</p>}
+      <p className="mt-0.5 text-lg font-semibold leading-tight text-fg">{valor}</p>
+      {detalhe && <p className="text-[11px] text-fg-muted">{detalhe}</p>}
     </div>
   )
 }
@@ -55,11 +55,11 @@ function Barra({ rotulo, total, maximo, cor }: { rotulo: string; total: number; 
   const largura = maximo > 0 ? Math.max(4, Math.round((total / maximo) * 100)) : 0
   return (
     <div className="space-y-1">
-      <div className="flex items-center justify-between gap-2 text-xs text-slate-600">
+      <div className="flex items-center justify-between gap-2 text-xs text-fg-muted">
         <span className="truncate">{rotulo}</span>
-        <span className="font-semibold text-slate-800">{formatarNumero(total)}</span>
+        <span className="font-semibold text-fg">{formatarNumero(total)}</span>
       </div>
-      <div className="h-1.5 w-full overflow-hidden rounded-full bg-slate-100">
+      <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
         <div className="h-full rounded-full" style={{ width: `${largura}%`, backgroundColor: cor ?? '#0F172A' }} />
       </div>
     </div>
@@ -81,20 +81,20 @@ export default function InsightPanel({
   return (
     <div className="space-y-4">
       <div>
-        <h2 className="flex items-center gap-2 text-sm font-bold text-slate-900">
+        <h2 className="flex items-center gap-2 text-sm font-bold text-fg">
           <TrendingUp size={15} /> Inteligência da área visível
         </h2>
-        <p className="mt-1 text-xs text-slate-500">
+        <p className="mt-1 text-xs text-fg-muted">
           Considera o que está dentro do enquadramento atual do mapa
           {filtrosAtivos > 0 ? ` e nos ${filtrosAtivos} filtro(s) ativo(s)` : ''}.
         </p>
       </div>
 
       {vazio ? (
-        <div className="rounded-lg border border-dashed border-slate-300 bg-white px-3 py-6 text-center">
-          <MapPin size={18} className="mx-auto mb-2 text-slate-400" />
-          <p className="text-sm font-medium text-slate-700">Nenhum imóvel no recorte visível</p>
-          <p className="mt-1 text-xs text-slate-500">
+        <div className="rounded-lg border border-dashed border-line-strong bg-surface px-3 py-6 text-center">
+          <MapPin size={18} className="mx-auto mb-2 text-fg-subtle" />
+          <p className="text-sm font-medium text-fg">Nenhum imóvel no recorte visível</p>
+          <p className="mt-1 text-xs text-fg-muted">
             {totalFiltrado === 0
               ? 'Os filtros ativos não retornam imóveis. Ajuste os filtros para ver dados.'
               : 'Afaste o zoom ou mova o mapa para outra área do centro.'}
@@ -134,22 +134,22 @@ export default function InsightPanel({
             <Metrica rotulo="Custo médio" valor={formatarMilhoes(stats.custoMedio)} detalhe="estimativa paramétrica" />
           </div>
 
-          <div className="rounded-lg border border-amber-200 bg-amber-50/70 px-3 py-2">
-            <p className="text-[11px] font-medium uppercase tracking-wide text-amber-800">
+          <div className="rounded-lg border border-warning/30 bg-warning-muted/70 px-3 py-2">
+            <p className="text-[11px] font-medium uppercase tracking-wide text-warning-fg">
               Subvenção teórica agregada
             </p>
-            <p className="mt-0.5 text-lg font-semibold leading-tight text-amber-900">
+            <p className="mt-0.5 text-lg font-semibold leading-tight text-warning-fg">
               {formatarMilhoes(stats.tetoTotal)}
             </p>
-            <p className="text-[11px] leading-relaxed text-amber-800/80">
+            <p className="text-[11px] leading-relaxed text-warning-fg/80">
               Soma dos tetos estimados (25% do custo de obra) dos imóveis visíveis. Custo total estimado no recorte:{' '}
               {formatarMilhoes(stats.custoTotal)}. Teto teórico não é valor concedido.
             </p>
           </div>
 
           {stats.distritos.length > 0 && (
-            <div className="space-y-2 rounded-lg border border-slate-200 bg-white px-3 py-3">
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+            <div className="space-y-2 rounded-lg border border-line bg-surface px-3 py-3">
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-fg-muted">
                 Distritos no recorte
               </p>
               <div className="space-y-2">
@@ -161,8 +161,8 @@ export default function InsightPanel({
           )}
 
           {stats.tipos.length > 0 && (
-            <div className="space-y-2 rounded-lg border border-slate-200 bg-white px-3 py-3">
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">Perfil dos pontos</p>
+            <div className="space-y-2 rounded-lg border border-line bg-surface px-3 py-3">
+              <p className="text-[11px] font-semibold uppercase tracking-wide text-fg-muted">Perfil dos pontos</p>
               <div className="space-y-2">
                 {stats.tipos.map((tipo) => {
                   const visual = TIPOS[tipo.chave as keyof typeof TIPOS]
@@ -180,8 +180,8 @@ export default function InsightPanel({
             </div>
           )}
 
-          <div className="space-y-2 rounded-lg border border-slate-200 bg-white px-3 py-3">
-            <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+          <div className="space-y-2 rounded-lg border border-line bg-surface px-3 py-3">
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-fg-muted">
               Top oportunidades visíveis
             </p>
             <ol className="space-y-2">
@@ -192,18 +192,18 @@ export default function InsightPanel({
                     <button
                       type="button"
                       onClick={() => aoSelecionar(registro)}
-                      className="w-full rounded-md px-2 py-1.5 text-left transition hover:bg-slate-50"
+                      className="w-full rounded-md px-2 py-1.5 text-left transition hover:bg-muted"
                     >
                       <span className="flex items-center gap-2">
-                        <span className="text-[11px] font-semibold text-slate-400">{indice + 1}</span>
+                        <span className="text-[11px] font-semibold text-fg-subtle">{indice + 1}</span>
                         <span
                           className="h-2 w-2 shrink-0 rounded-full"
                           style={{ backgroundColor: visual.cor }}
                           aria-hidden
                         />
-                        <span className="truncate text-xs font-medium text-slate-800">{registro.nome}</span>
+                        <span className="truncate text-xs font-medium text-fg">{registro.nome}</span>
                       </span>
-                      <span className="mt-0.5 block pl-[26px] text-[11px] text-slate-500">
+                      <span className="mt-0.5 block pl-[26px] text-[11px] text-fg-muted">
                         Score {registro.score} · {formatarArea(registro.areaConstruida)} ·{' '}
                         {registro.distrito ?? 'distrito não informado'}
                       </span>
@@ -212,24 +212,24 @@ export default function InsightPanel({
                 )
               })}
             </ol>
-            {stats.top.length === 0 && <p className="text-xs text-slate-500">Sem imóveis no recorte.</p>}
+            {stats.top.length === 0 && <p className="text-xs text-fg-muted">Sem imóveis no recorte.</p>}
           </div>
         </>
       )}
 
-      <div className="space-y-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-3">
-        <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+      <div className="space-y-2 rounded-lg border border-line bg-muted px-3 py-3">
+        <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-fg-muted">
           <Layers size={12} /> Projetos oficiais
         </p>
-        <p className="text-xs leading-relaxed text-slate-600">
-          <strong className="font-semibold text-slate-800">{formatarNumero(projetos.total)}</strong> projetos
-          habilitados/credenciados catalogados · <strong className="font-semibold text-slate-800">0</strong>{' '}
+        <p className="text-xs leading-relaxed text-fg-muted">
+          <strong className="font-semibold text-fg">{formatarNumero(projetos.total)}</strong> projetos
+          habilitados/credenciados catalogados · <strong className="font-semibold text-fg">0</strong>{' '}
           georreferenciados. {projetos.nota}{' '}
-          <a href={projetos.url} className="font-medium text-slate-800 underline decoration-slate-300">
+          <a href={projetos.url} className="font-medium text-fg underline decoration-line">
             Ver lista
           </a>
         </p>
-        <p className="text-[11px] leading-relaxed text-slate-500">
+        <p className="text-[11px] leading-relaxed text-fg-muted">
           {baseAlternativa
             ? 'Base vetorial alternativa (raster) ativa — dados e filtros inalterados.'
             : 'Marcadores em área densa podem se sobrepor visualmente; os números deste painel consideram todos os imóveis do recorte.'}

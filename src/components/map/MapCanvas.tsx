@@ -827,19 +827,19 @@ export default function MapCanvas({
       <div ref={containerRef} className="h-full w-full" />
 
       {!pronto && !erro && (
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2 bg-slate-100 text-sm text-slate-500">
-          <span className="h-6 w-6 animate-spin rounded-full border-2 border-slate-300 border-t-slate-600" />
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2 bg-muted text-sm text-fg-muted">
+          <span className="h-6 w-6 animate-spin rounded-full border-2 border-line-strong border-t-fg" />
           Carregando mapa…
         </div>
       )}
 
       {erro && (
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-slate-100 px-6 text-center text-sm text-slate-600">
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-muted px-6 text-center text-sm text-fg-muted">
           <span>{erro}</span>
           <button
             type="button"
             onClick={() => window.location.reload()}
-            className="rounded-md bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white"
+            className="rounded-md bg-fg px-3 py-1.5 text-xs font-semibold text-bg"
           >
             Tentar novamente
           </button>
@@ -847,7 +847,7 @@ export default function MapCanvas({
       )}
 
       {baseAlternativa && (
-        <div className="pointer-events-none absolute left-3 top-3 z-10 rounded-md bg-white/90 px-2 py-1 text-[11px] font-medium text-slate-600 shadow">
+        <div className="pointer-events-none absolute left-3 top-3 z-10 rounded-md bg-surface/90 px-2 py-1 text-[11px] font-medium text-fg-muted shadow">
           Base vetorial indisponível — usando base raster alternativa sem chave de API.
         </div>
       )}

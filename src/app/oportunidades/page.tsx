@@ -2,6 +2,7 @@ import Link from 'next/link'
 import indice from '../../data/oportunidades_index.json'
 import status from '../../data/etl_status.json'
 import type { OportunidadeIndex } from '../../lib/types'
+import PageHeader from '../../components/ui/PageHeader'
 
 export const metadata = {
   title: 'Radar de Oportunidades — imóveis reais da área central | Radar Retrofit SP',
@@ -19,63 +20,83 @@ function relacaoLabel(rel: string) {
   return 'fora'
 }
 
+function scoreTone(score: number) {
+  if (score >= 85) return 'bg-success-muted text-success-fg border-success/20'
+  if (score >= 70) return 'bg-info-muted text-info-fg border-info/20'
+  return 'bg-warning-muted text-warning-fg border-warning/20'
+}
+
 export default function OportunidadesPage() {
   const ops = indice as OportunidadeIndex[]
   const verificacao = new Date(status.executadoEm)
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-slate-900 mb-2">Radar de Oportunidades</h1>
-        <p className="text-slate-600">
-          {fmt(ops.length)} imóveis <strong>reais</strong> da área central de São Paulo, identificados no Cadastro
-          Imobiliário Fiscal (camada Lote do GeoSampa) e cruzados por geometria com os perímetros oficiais.{' '}
-          <strong className="text-blue-700">Os dados cadastrais são oficiais; as projeções financeiras são estimativas do Radar.</strong>
-        </p>
-        <p className="text-xs text-slate-500 mt-2">
-          Última verificação das fontes oficiais:{' '}
-          {verificacao.toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}
-          {' • '}
-          {status.candidatosRetidos} candidatos retidos internamente por confiança de dados insuficiente.
-        </p>
-      </div>
+    <div className="page-shell space-y-6">
+      <PageHeader
+        title="Radar de Oportunidades"
+        description={
+          <>
+            {fmt(ops.length)} imóveis <strong>reais</strong> da área central de São Paulo, identificados no Cadastro
+            Imobiliário Fiscal (camada Lote do GeoSampa) e cruzados por geometria com os perímetros oficiais.{' '}
+            <strong className="text-accent">Os dados cadastrais são oficiais; as projeções financeiras são estimativas do Radar.</strong>
+          </>
+        }
+        meta={
+          <p className="text-xs text-fg-subtle">
+            Última verificação das fontes oficiais:{' '}
+            {verificacao.toLocaleString('pt-BR', {
+              day: '2-digit',
+              month: '2-digit',
+              year: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit',
+            })}
+            {' • '}
+            {status.candidatosRetidos} candidatos retidos internamente por confiança de dados insuficiente.
+          </p>
+        }
+      />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {ops.map((op) => (
-          <Link href={`/oportunidades/${op.slug}`} key={op.id} className="block group">
-            <div className="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-400 hover:shadow-md transition-all h-full flex flex-col">
-              <div className="flex justify-between items-start mb-4">
-                <div className="bg-blue-50 text-blue-800 text-xs font-bold px-2 py-1 rounded">Score: {op.score}/100</div>
-                <div className="text-xs text-slate-500">Confiança: {op.confidence}%</div>
+          <Link href={`/oportunidades/${op.slug}`} key={op.id} className="group block">
+            <div className="card card-interactive flex h-full flex-col p-5">
+              <div className="mb-4 flex items-start justify-between gap-3">
+                <div className={`rounded border px-2 py-1 text-xs font-bold tabular ${scoreTone(op.score)}`}>
+                  Score: {op.score}/100
+                </div>
+                <div className="font-mono text-xs tabular text-fg-subtle">Confiança: {op.confidence}%</div>
               </div>
 
-              <h3 className="font-bold text-lg text-slate-900 group-hover:text-blue-700 transition-colors">{op.nome}</h3>
-              <p className="text-sm text-slate-500">
+              <h3 className="text-lg font-bold text-fg transition-colors duration-180 group-hover:text-accent">{op.nome}</h3>
+              <p className="text-sm text-fg-muted">
                 SQL {op.sql} • {op.usoCadastrado} • {fmt(op.areaConstruida)} m²
               </p>
-              <p className="text-[11px] text-slate-400 mb-4">Dados cadastrais oficiais — GeoSampa / Cadastro Imobiliário Fiscal</p>
+              <p className="mb-4 text-[11px] text-fg-subtle">Dados cadastrais oficiais — GeoSampa / Cadastro Imobiliário Fiscal</p>
 
               <div className="mt-auto space-y-2">
-                <div className="text-sm border-t border-slate-100 pt-3">
-                  <span className="font-semibold text-slate-700">Motivo:</span>{' '}
-                  <span className="text-slate-600 line-clamp-2">{op.motivoPrincipal}</span>
+                <div className="border-t border-line pt-3 text-sm">
+                  <span className="font-semibold text-fg">Motivo:</span>{' '}
+                  <span className="line-clamp-2 text-fg-muted">{op.motivoPrincipal}</span>
                 </div>
                 <div className="flex flex-wrap gap-1 pt-2">
                   {op.requalificaCentro !== 'fora' && (
-                    <span className="bg-slate-100 text-slate-600 text-[10px] uppercase px-2 py-0.5 rounded">
+                    <span className="rounded bg-muted px-2 py-0.5 text-[10px] uppercase text-fg-muted">
                       Requalifica Centro: {relacaoLabel(op.requalificaCentro)}
                     </span>
                   )}
                   {op.aiuSetorCentral !== 'fora' && (
-                    <span className="bg-slate-100 text-slate-600 text-[10px] uppercase px-2 py-0.5 rounded">
+                    <span className="rounded bg-muted px-2 py-0.5 text-[10px] uppercase text-fg-muted">
                       AIU Setor Central: {relacaoLabel(op.aiuSetorCentral)}
                     </span>
                   )}
                   {op.protegido && (
-                    <span className="bg-amber-100 text-amber-800 text-[10px] uppercase px-2 py-0.5 rounded">Imóvel protegido</span>
+                    <span className="rounded bg-warning-muted px-2 py-0.5 text-[10px] uppercase text-warning-fg">
+                      Imóvel protegido
+                    </span>
                   )}
                   {op.zoneamento && (
-                    <span className="bg-slate-100 text-slate-600 text-[10px] uppercase px-2 py-0.5 rounded">{op.zoneamento}</span>
+                    <span className="rounded bg-muted px-2 py-0.5 text-[10px] uppercase text-fg-muted">{op.zoneamento}</span>
                   )}
                 </div>
               </div>

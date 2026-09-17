@@ -1,6 +1,7 @@
 import { formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import { Bell, FileText, CheckCircle2 } from 'lucide-react'
+import PageHeader from '../../components/ui/PageHeader'
 
 export default function AtualizacoesPage() {
   const updates = [
@@ -10,26 +11,30 @@ export default function AtualizacoesPage() {
   ]
 
   return (
-    <div className="max-w-3xl mx-auto space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-slate-900 mb-2">Atualizações e Inteligência Temporal</h1>
-        <p className="text-slate-600">Acompanhe as mudanças mais recentes detectadas nos dados públicos.</p>
-      </div>
+    <div className="page-shell page-shell-narrow max-w-3xl space-y-6">
+      <PageHeader
+        title="Atualizações e Inteligência Temporal"
+        description="Acompanhe as mudanças mais recentes detectadas nos dados públicos."
+      />
 
-      <div className="bg-white shadow-sm border border-slate-200 rounded-xl overflow-hidden">
-        <div className="p-4 bg-slate-50 border-b border-slate-200 font-semibold text-slate-800">Linha do Tempo Recente</div>
-        <div className="divide-y divide-slate-100">
+      <div className="card overflow-hidden">
+        <div className="border-b border-line bg-muted p-4 font-semibold text-fg">Linha do Tempo Recente</div>
+        <div className="divide-y divide-[var(--line)]">
           {updates.map((update) => (
-            <div key={update.id} className="p-4 flex gap-4 hover:bg-slate-50 transition">
-              <div className="mt-1">
-                {update.type === 'edital' ? <FileText className="text-blue-500" size={20}/> :
-                 update.type === 'status' ? <Bell className="text-amber-500" size={20}/> :
-                 <CheckCircle2 className="text-green-500" size={20}/>}
+            <div key={update.id} className="flex gap-4 p-4 transition duration-180 hover:bg-muted">
+              <div className="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-muted">
+                {update.type === 'edital' ? (
+                  <FileText className="text-accent" size={20} aria-hidden />
+                ) : update.type === 'status' ? (
+                  <Bell className="text-warning" size={20} aria-hidden />
+                ) : (
+                  <CheckCircle2 className="text-success" size={20} aria-hidden />
+                )}
               </div>
               <div>
-                <h4 className="font-semibold text-slate-900">{update.title}</h4>
-                <p className="text-sm text-slate-600 mt-1">{update.desc}</p>
-                <span className="text-xs text-slate-400 mt-2 block">
+                <h4 className="font-semibold text-fg">{update.title}</h4>
+                <p className="mt-1 text-sm text-fg-muted">{update.desc}</p>
+                <span className="mt-2 block text-xs text-fg-subtle">
                   {formatDistanceToNow(new Date(update.date), { addSuffix: true, locale: ptBR })}
                 </span>
               </div>
