@@ -25,3 +25,74 @@ body {
     text-wrap: balance;
   }
 }
+
+/*
+ * Mapa de oportunidades — ajustes de leitura (escopo .radar-mapa-canvas).
+ * Nada aqui afeta o restante do produto.
+ */
+.radar-mapa-canvas .maplibregl-popup-content {
+  padding: 0;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
+  overflow: hidden;
+}
+
+.radar-tooltip-caixa {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #0f172a;
+  background: #ffffff;
+}
+
+.radar-tooltip-caixa strong {
+  font-weight: 600;
+  max-width: 220px;
+}
+
+.radar-tooltip-caixa span {
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.radar-tooltip-caixa i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+}
+
+.radar-tooltip-caixa .radar-tooltip-dica {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.radar-mapa-canvas .maplibregl-ctrl-attrib {
+  font-size: 10px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.radar-mapa-canvas .maplibregl-ctrl-group {
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.18);
+}
+
+/* Rolagem discreta nos painéis laterais do mapa */
+.radar-mapa-canvas ::-webkit-scrollbar,
+.sticky ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.sticky ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+input[type='range'] {
+  height: 1.25rem;
+}

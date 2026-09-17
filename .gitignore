@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# geometria de perímetros gerada no build (fonte oficial consultada em tempo de build)
+/public/data/perimetros.json
