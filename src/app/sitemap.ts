@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import oportunidades from '../data/oportunidades.json'
+import oportunidades from '../data/oportunidades_index.json'
 import artigos from '../data/artigos.json'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -28,8 +28,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const oportunidadesRoutes = oportunidades.map((op) => ({
-    url: `${baseUrl}/oportunidades/${op.id}`,
-    lastModified: new Date(),
+    url: `${baseUrl}/oportunidades/${op.slug}`,
+    lastModified: new Date(op.ultimaVerificacao),
     changeFrequency: 'weekly' as const,
     priority: 0.6,
   }))

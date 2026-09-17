@@ -1,0 +1,48 @@
+{
+  "executadoEm": "2026-09-17T02:39:04.724Z",
+  "fontes": {
+    "cadastro": {
+      "nome": "Cadastro Imobiliário Fiscal — camada Lote (GeoSampa)",
+      "orgao": "Prefeitura de São Paulo / Secretaria Municipal da Fazenda (via PRODAM/GeoSampa)",
+      "camada": "geoportal:lote_cidadao",
+      "url": "https://metadados.geosampa.prefeitura.sp.gov.br/geonetwork/srv/api/records/62c1113c-36a4-43d1-b763-81ec63b58116"
+    },
+    "requalifica": {
+      "nome": "Requalifica Centro — Perímetro Área Central (GeoSampa)",
+      "orgao": "Prefeitura de São Paulo / SMUL",
+      "camada": "geoportal:requalifica_centro_perimetro_geral",
+      "url": "https://legislacao.prefeitura.sp.gov.br/leis/lei-17577-de-20-de-julho-de-2021"
+    },
+    "aiu": {
+      "nome": "AIU Setor Central — Perímetros (GeoSampa)",
+      "orgao": "Prefeitura de São Paulo / SMUL",
+      "camada": "geoportal:perimetro_aiu",
+      "url": "https://gestaourbana.prefeitura.sp.gov.br/"
+    },
+    "zoneamento": {
+      "nome": "Zoneamento vigente — LPUOS Lei nº 18.177/2024 (GeoSampa)",
+      "orgao": "Prefeitura de São Paulo / SMUL",
+      "camada": "geoportal:perimetro_zona_lei_18177_24",
+      "url": "https://legislacao.prefeitura.sp.gov.br/leis/lei-18177-de-25-de-julho-de-2024"
+    },
+    "tombado": {
+      "nome": "Bem Tombado e/ou em Processo de Tombamento (GeoSampa)",
+      "orgao": "CONPRESP / CONDEPHAAT / IPHAN — consolidado por DPH-SMC",
+      "camada": "geoportal:patrimonio_cultural_bem_tombado",
+      "url": "https://metadados.geosampa.prefeitura.sp.gov.br/geonetwork/srv/api/records/f3522ff3-df73-4fc4-bff7-0344945f02f8"
+    },
+    "distrito": {
+      "nome": "Distrito Municipal (GeoSampa)",
+      "orgao": "Prefeitura de São Paulo",
+      "camada": "geoportal:distrito_municipal",
+      "url": "http://geosampa.prefeitura.sp.gov.br/"
+    }
+  },
+  "bboxBusca": [
+    331200,
+    7392800,
+    337500,
+    7398500
+  ],
+  "crsBusca": "EPSG:31983"
+}

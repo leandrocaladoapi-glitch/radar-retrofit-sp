@@ -54,82 +54,15 @@ const distritos = ["República", "Sé", "Santa Cecília", "Consolação", "Bela 
 const usos = ["Residencial", "Uso Misto", "HIS", "Não Residencial"];
 const situacoes = ["Em execução", "Credenciado", "Termo de Outorga", "Concluído", "Em análise"];
 
-const projetosData = projetosExtraidos.map((p, idx) => {
-    const lat = -23.54 + (Math.random() * 0.02 - 0.01);
-    const lng = -46.64 + (Math.random() * 0.02 - 0.01);
-
-    return {
-        id: `proj-${idx + 1}`,
-        nome: `Projeto Requalifica ${idx + 1}`,
-        endereco: `Endereço Cadastral (SQL ${Math.floor(Math.random() * 999)}-${Math.floor(Math.random() * 99)})`,
-        distrito: distritos[Math.floor(Math.random() * distritos.length)],
-        chamamento: p.chamamento,
-        empresa: p.empresa,
-        uso: usos[Math.floor(Math.random() * usos.length)],
-        valorObra: Math.floor(Math.random() * 20000000) + 5000000,
-        valorSolicitado: Math.floor(Math.random() * 5000000) + 1000000,
-        valorAprovado: Math.floor(Math.random() * 4000000) + 1000000,
-        percentual: (Math.random() * 15 + 10).toFixed(1),
-        situacao: situacoes[Math.floor(Math.random() * situacoes.length)],
-        lat,
-        lng
-    };
-});
-
-// Generate multiple opportunities WITH DEEP DETAIL
-const oportunidadesData = [];
-const motivesList = [
-  "Elevado potencial de conversão para Habitação de Interesse Social (HIS) em perímetro prioritário.",
-  "Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).",
-  "Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.",
-  "Estacionamento térreo com potencial construtivo subexplorado em ZC.",
-  "Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU."
-];
-
-for(let i = 0; i < 85; i++) {
-    const lat = -23.54 + (Math.random() * 0.03 - 0.015);
-    const lng = -46.64 + (Math.random() * 0.03 - 0.015);
-    const hasTombamento = Math.random() > 0.8;
-    const uso = usos[Math.floor(Math.random() * usos.length)];
-    const areaConstruida = Math.floor(Math.random() * 10000) + 500;
-
-    // Financial estimates based on area
-    const estimativaCustoObra = areaConstruida * (Math.random() * 1500 + 2500); // R$ 2500 to R$ 4000 per m2
-    const potencialSubvencao = estimativaCustoObra * 0.25; // 25% max
-    const vgvEstimado = estimativaCustoObra * (Math.random() * 1.5 + 1.2); // 1.2x to 2.7x markup
-
-    oportunidadesData.push({
-        id: `op-${i + 1}`,
-        endereco: `Imóvel Potencial ${i + 1} (SQL ${Math.floor(Math.random() * 999)}-${Math.floor(Math.random() * 99)})`,
-        regiao: distritos[Math.floor(Math.random() * distritos.length)],
-        idade: Math.floor(Math.random() * 70) + 20,
-        usoConhecido: uso,
-        area: areaConstruida,
-        zoneamento: ["ZC", "ZEU", "ZEIS", "ZM"][Math.floor(Math.random() * 4)],
-        perimetros: Math.random() > 0.5 ? ["AIU Setor Central", "Requalifica Centro"] : ["Requalifica Centro"],
-        protecao: hasTombamento ? "Tombado/Inventário" : "Nenhuma",
-        riscos: hasTombamento
-          ? ["Aprovação complexa no CONPRESP/CONDEPHAAT", "Custos de restauro elevados e imprevisíveis", "Restrições de fachada"]
-          : ["Necessidade de reforço estrutural", "Atualização de PPCI (Bombeiros)"],
-        motivo: motivesList[Math.floor(Math.random() * motivesList.length)],
-        financeiro: {
-          estimativaCustoObra,
-          potencialMaximoSubvencao: potencialSubvencao,
-          vgvPotencialEstimado: vgvEstimado,
-          isencoesFiscais: ["IPTU (prazo definido)", "ITBI (primeira aquisição)", "ISS (serviços de obra)"]
-        },
-        lat,
-        lng,
-        score: Math.floor(Math.random() * 40) + 55,
-        confidence: Math.floor(Math.random() * 30) + 60,
-        proximosPassos: [
-          "Levantamento arquitetônico as-built e avaliação estrutural.",
-          "Estudo de Massa e Viabilidade Financeira detalhada.",
-          "Consulta prévia aos órgãos de patrimônio (se aplicável).",
-          "Simulação oficial no Portal da Subvenção Econômica."
-        ]
-    });
-}
+const projetosData = projetosExtraidos.map((p, idx) => ({
+    id: `proj-${idx + 1}`,
+    nome: p.empresa,
+    empresa: p.empresa,
+    chamamento: p.chamamento,
+    fonte: 'Relação de interessados habilitados / lista de credenciados publicada pela Prefeitura de São Paulo (SMUL) — Portal da Subvenção Econômica',
+    fonteUrl: 'https://subvencao.prefeitura.sp.gov.br',
+    observacao: 'Endereço, SQL, valores e localização não são publicados de forma estruturada nesta fonte e, por isso, não são exibidos pelo Radar.'
+}));
 
 function main() {
   const dataDir = path.join(__dirname, '..', 'src', 'data');
@@ -139,9 +72,9 @@ function main() {
 
   fs.writeFileSync(path.join(dataDir, 'subvencao.json'), JSON.stringify(subvencaoData, null, 2));
   fs.writeFileSync(path.join(dataDir, 'projetos.json'), JSON.stringify(projetosData, null, 2));
-  fs.writeFileSync(path.join(dataDir, 'oportunidades.json'), JSON.stringify(oportunidadesData, null, 2));
-
-  console.log("Data generated successfully with DEEP DATA set for Oportunidades.");
+  // A base de oportunidades NÃO é gerada aqui. Ela vem exclusivamente do
+  // motor de descoberta em scripts/etl/ (fontes oficiais GeoSampa).
+  console.log("subvencao.json e projetos.json atualizados. Oportunidades: ver scripts/etl/.");
 }
 
 main();
