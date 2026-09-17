@@ -15,6 +15,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
+  config as maplibreConfig,
   GeoJSONSource,
   LngLatBounds,
   Map as MapLibreMap,
@@ -26,7 +27,7 @@ import {
   type StyleSpecification,
 } from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
-import type { FeatureCollection } from 'geojson'
+import type { Feature, FeatureCollection } from 'geojson'
 import type { RegistroMapa } from '../../lib/mapa'
 import {
   BASES,
@@ -44,7 +45,23 @@ import { registrarIcones } from './icons'
 
 const FONTE = 'imoveis'
 const TIMEOUT_FALLBACK_MS = 9000
+const TIMEOUT_LIMITE_MS = 20000
 const NENHUMA_SELECAO = '__radar_nenhum__'
+
+/*
+ * O maplibre-gl deduz a URL do seu worker a partir do import.meta.url do pacote.
+ * Em bundle de produção (webpack/Next) esse import.meta.url vira um caminho de
+ * arquivo (file:///.../node_modules/maplibre-gl/dist/maplibre-gl.mjs), que a
+ * validação interna do pacote rejeita: a URL do worker sai vazia, `new Worker('')`
+ * falha e nenhum worker é criado. Sem worker o MapLibre não processa tiles
+ * vetoriais, GeoJSON, clusterização nem rótulos — as fontes nunca ficam carregadas
+ * e o evento `load` nunca dispara (mapa preso em "Carregando mapa…").
+ *
+ * A cópia estática do worker (gerada por scripts/copy_maplibre_worker.js) é servida
+ * em /maplibre/ e resolve o problema sem trocar de provedor e sem chave de API.
+ */
+const WORKER_URL = '/maplibre/maplibre-gl-worker.mjs'
+maplibreConfig.WORKER_URL = WORKER_URL
 
 export interface MapCanvasProps {
   registros: RegistroMapa[]
@@ -68,10 +85,26 @@ function escaparHtml(texto: string): string {
   )
 }
 
+/** Coordenada utilizável pelo mapa (descarta NaN/Infinity e fora do globo). */
+function coordenadaValida(r: RegistroMapa): boolean {
+  return (
+    Number.isFinite(r.lng) &&
+    Number.isFinite(r.lat) &&
+    Math.abs(r.lng) <= 180 &&
+    Math.abs(r.lat) <= 90
+  )
+}
+
 function montarFeatureCollection(registros: RegistroMapa[]): FeatureCollection {
-  return {
-    type: 'FeatureCollection',
-    features: registros.map((r) => ({
+  const features: Feature[] = []
+  for (const r of registros) {
+    // Um único registro inválido não pode derrubar a fonte inteira: ele é
+    // ignorado (com log) e o restante do recorte continua no mapa.
+    if (!coordenadaValida(r)) {
+      console.warn(`[mapa] imóvel ignorado por coordenada inválida: ${r.id} (${r.lng}, ${r.lat})`)
+      continue
+    }
+    features.push({
       type: 'Feature',
       // O identificador viaja em properties (strings estáveis), evitando
       // ambiguidade de id numérico no worker de clusterização.
@@ -87,8 +120,9 @@ function montarFeatureCollection(registros: RegistroMapa[]): FeatureCollection {
         requalificaCentro: r.requalificaCentro,
         aiuSetorCentral: r.aiuSetorCentral,
       },
-    })),
+    })
   }
+  return { type: 'FeatureCollection', features }
 }
 
 export default function MapCanvas({
@@ -109,6 +143,8 @@ export default function MapCanvas({
   const tooltipRef = useRef<Popup | null>(null)
   const fallbackRef = useRef(false)
   const timerFallbackRef = useRef<number | null>(null)
+  const timerLimiteRef = useRef<number | null>(null)
+  const estiloCarregadoRef = useRef(false)
   const estiloAplicadoRef = useRef<string | null>(null)
   const ajusteInicialRef = useRef(false)
   const [pronto, setPronto] = useState(false)
@@ -200,177 +236,217 @@ export default function MapCanvas({
     const map = mapRef.current
     if (!map) return
 
-    registrarIcones(map)
+    /*
+     * Uma camada secundária com problema (ícone, geometria opcional, rótulo)
+     * não pode interromper a configuração nem impedir o mapa de ficar pronto:
+     * cada bloco é isolado e apenas registra o aviso.
+     */
+    const tentar = (descricao: string, acao: () => void) => {
+      try {
+        acao()
+      } catch (e) {
+        console.warn(`[mapa] falha ao configurar "${descricao}"; seguindo sem ela.`, e)
+      }
+    }
+
+    tentar('ícones dos marcadores', () => registrarIcones(map))
 
     const dados = montarFeatureCollection(propsRef.current.registros)
 
-    if (!map.getSource(FONTE)) {
-      const especificacao: GeoJSONSourceSpecification = {
-        type: 'geojson',
-        data: dados,
-        cluster: true,
-        clusterRadius: 60,
-        clusterMaxZoom: 14,
-        clusterProperties: { scoreMax: ['max', ['get', 'score']] },
+    tentar('fonte de imóveis', () => {
+      if (!map.getSource(FONTE)) {
+        const especificacao: GeoJSONSourceSpecification = {
+          type: 'geojson',
+          data: dados,
+          cluster: true,
+          clusterRadius: 60,
+          clusterMaxZoom: 14,
+          clusterProperties: { scoreMax: ['max', ['get', 'score']] },
+        }
+        map.addSource(FONTE, especificacao)
       }
-      map.addSource(FONTE, especificacao)
-    }
+    })
 
     // 1) Perímetros oficiais (quando a geometria está disponível) — ficam no fundo
     const perimetrosAtuais = propsRef.current.perimetros
     if (perimetrosAtuais?.aiu && !map.getSource('perimetro-aiu')) {
-      map.addSource('perimetro-aiu', { type: 'geojson', data: perimetrosAtuais.aiu.data })
+      tentar('geometria da AIU Setor Central', () =>
+        map.addSource('perimetro-aiu', { type: 'geojson', data: perimetrosAtuais.aiu!.data })
+      )
     }
     if (perimetrosAtuais?.requalifica && !map.getSource('perimetro-requalifica')) {
-      map.addSource('perimetro-requalifica', { type: 'geojson', data: perimetrosAtuais.requalifica.data })
+      tentar('geometria do Requalifica Centro', () =>
+        map.addSource('perimetro-requalifica', { type: 'geojson', data: perimetrosAtuais.requalifica!.data })
+      )
     }
+
     if (perimetrosAtuais?.distritos && !map.getSource('distritos')) {
-      map.addSource('distritos', { type: 'geojson', data: perimetrosAtuais.distritos.data })
+      tentar('geometria dos distritos', () =>
+        map.addSource('distritos', { type: 'geojson', data: perimetrosAtuais.distritos!.data })
+      )
     }
 
     if (map.getSource('perimetro-aiu') && !map.getLayer('perimetro-aiu-fill')) {
-      map.addLayer({
-        id: 'perimetro-aiu-fill',
-        type: 'fill',
-        source: 'perimetro-aiu',
-        paint: { 'fill-color': CORES.perimetroAiu, 'fill-opacity': 0.05 },
-      })
-      map.addLayer({
-        id: 'perimetro-aiu-line',
-        type: 'line',
-        source: 'perimetro-aiu',
-        paint: { 'line-color': CORES.perimetroAiu, 'line-width': 1.2, 'line-opacity': 0.75, 'line-dasharray': [3, 2] },
+      tentar('contorno da AIU Setor Central', () => {
+        map.addLayer({
+          id: 'perimetro-aiu-fill',
+          type: 'fill',
+          source: 'perimetro-aiu',
+          paint: { 'fill-color': CORES.perimetroAiu, 'fill-opacity': 0.05 },
+        })
+        map.addLayer({
+          id: 'perimetro-aiu-line',
+          type: 'line',
+          source: 'perimetro-aiu',
+          paint: { 'line-color': CORES.perimetroAiu, 'line-width': 1.2, 'line-opacity': 0.75, 'line-dasharray': [3, 2] },
+        })
       })
     }
     if (map.getSource('perimetro-requalifica') && !map.getLayer('perimetro-requalifica-fill')) {
-      map.addLayer({
-        id: 'perimetro-requalifica-fill',
-        type: 'fill',
-        source: 'perimetro-requalifica',
-        paint: { 'fill-color': CORES.perimetroRequalifica, 'fill-opacity': 0.06 },
-      })
-      map.addLayer({
-        id: 'perimetro-requalifica-line',
-        type: 'line',
-        source: 'perimetro-requalifica',
-        paint: { 'line-color': CORES.perimetroRequalifica, 'line-width': 1.4, 'line-opacity': 0.85 },
+      tentar('contorno do Requalifica Centro', () => {
+        map.addLayer({
+          id: 'perimetro-requalifica-fill',
+          type: 'fill',
+          source: 'perimetro-requalifica',
+          paint: { 'fill-color': CORES.perimetroRequalifica, 'fill-opacity': 0.06 },
+        })
+        map.addLayer({
+          id: 'perimetro-requalifica-line',
+          type: 'line',
+          source: 'perimetro-requalifica',
+          paint: { 'line-color': CORES.perimetroRequalifica, 'line-width': 1.4, 'line-opacity': 0.85 },
+        })
       })
     }
     if (map.getSource('distritos') && !map.getLayer('distritos-line')) {
-      map.addLayer({
-        id: 'distritos-line',
-        type: 'line',
-        source: 'distritos',
-        paint: { 'line-color': CORES.distrito, 'line-width': 0.9, 'line-opacity': 0.5, 'line-dasharray': [2, 1.5] },
-      })
+      tentar('limites distritais', () =>
+        map.addLayer({
+          id: 'distritos-line',
+          type: 'line',
+          source: 'distritos',
+          paint: { 'line-color': CORES.distrito, 'line-width': 0.9, 'line-opacity': 0.5, 'line-dasharray': [2, 1.5] },
+        })
+      )
     }
 
     // 2) Destaque territorial (usado quando não há geometria oficial carregada)
     if (!map.getLayer('destaque-aiu')) {
-      map.addLayer({
-        id: 'destaque-aiu',
-        type: 'circle',
-        source: FONTE,
-        filter: ['==', ['get', 'aiuSetorCentral'], 'dentro'],
-        paint: {
-          'circle-color': 'rgba(0,0,0,0)',
-          'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 9, 14, 15, 17, 26],
-          'circle-stroke-color': CORES.haloAiu,
-          'circle-stroke-width': 1.1,
-          'circle-stroke-opacity': 0.55,
-        },
+      tentar('destaque territorial da AIU', () => {
+        map.addLayer({
+          id: 'destaque-aiu',
+          type: 'circle',
+          source: FONTE,
+          filter: ['==', ['get', 'aiuSetorCentral'], 'dentro'],
+          paint: {
+            'circle-color': 'rgba(0,0,0,0)',
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 9, 14, 15, 17, 26],
+            'circle-stroke-color': CORES.haloAiu,
+            'circle-stroke-width': 1.1,
+            'circle-stroke-opacity': 0.55,
+          },
+        })
       })
     }
     if (!map.getLayer('destaque-requalifica')) {
-      map.addLayer({
-        id: 'destaque-requalifica',
-        type: 'circle',
-        source: FONTE,
-        filter: ['==', ['get', 'requalificaCentro'], 'dentro'],
-        paint: {
-          'circle-color': 'rgba(0,0,0,0)',
-          'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 7, 14, 12, 17, 20],
-          'circle-stroke-color': CORES.haloRequalifica,
-          'circle-stroke-width': 1.5,
-          'circle-stroke-opacity': 0.8,
-        },
+      tentar('destaque territorial do Requalifica Centro', () => {
+        map.addLayer({
+          id: 'destaque-requalifica',
+          type: 'circle',
+          source: FONTE,
+          filter: ['==', ['get', 'requalificaCentro'], 'dentro'],
+          paint: {
+            'circle-color': 'rgba(0,0,0,0)',
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 7, 14, 12, 17, 20],
+            'circle-stroke-color': CORES.haloRequalifica,
+            'circle-stroke-width': 1.5,
+            'circle-stroke-opacity': 0.8,
+          },
+        })
       })
     }
 
     // 3) Clusters
     if (!map.getLayer('imoveis-clusters')) {
-      map.addLayer({
-        id: 'imoveis-clusters',
-        type: 'circle',
-        source: FONTE,
-        filter: ['has', 'point_count'],
-        paint: {
-          'circle-color': [
-            'step',
-            ['get', 'point_count'],
-            CORES.clusterBaixo,
-            8,
-            CORES.clusterMedio,
-            40,
-            CORES.clusterAlto,
-          ],
-          'circle-radius': ['step', ['get', 'point_count'], 14, 8, 18, 40, 23, 150, 29],
-          'circle-stroke-width': 2,
-          'circle-stroke-color': CORES.clusterBorda,
-          'circle-opacity': 0.92,
-        },
+      tentar('camada de agrupamentos', () => {
+        map.addLayer({
+          id: 'imoveis-clusters',
+          type: 'circle',
+          source: FONTE,
+          filter: ['has', 'point_count'],
+          paint: {
+            'circle-color': [
+              'step',
+              ['get', 'point_count'],
+              CORES.clusterBaixo,
+              8,
+              CORES.clusterMedio,
+              40,
+              CORES.clusterAlto,
+            ],
+            'circle-radius': ['step', ['get', 'point_count'], 14, 8, 18, 40, 23, 150, 29],
+            'circle-stroke-width': 2,
+            'circle-stroke-color': CORES.clusterBorda,
+            'circle-opacity': 0.92,
+          },
+        })
       })
     }
     if (!map.getLayer('imoveis-cluster-count')) {
-      map.addLayer({
-        id: 'imoveis-cluster-count',
-        type: 'symbol',
-        source: FONTE,
-        filter: ['has', 'point_count'],
-        layout: {
-          'text-field': ['get', 'point_count_abbreviated'],
-          'text-font': ['Noto Sans Regular'],
-          'text-size': ['step', ['get', 'point_count'], 11, 40, 12, 200, 13],
-          'text-allow-overlap': true,
-          'text-ignore-placement': true,
-        },
-        paint: { 'text-color': '#ffffff' },
+      tentar('rótulo dos agrupamentos', () => {
+        map.addLayer({
+          id: 'imoveis-cluster-count',
+          type: 'symbol',
+          source: FONTE,
+          filter: ['has', 'point_count'],
+          layout: {
+            'text-field': ['get', 'point_count_abbreviated'],
+            'text-font': ['Noto Sans Regular'],
+            'text-size': ['step', ['get', 'point_count'], 11, 40, 12, 200, 13],
+            'text-allow-overlap': true,
+            'text-ignore-placement': true,
+          },
+          paint: { 'text-color': '#ffffff' },
+        })
       })
     }
 
     // 4) Marcadores individuais — anti-colisão: em área densa o mapa prioriza
     //    os imóveis de maior score e evita o empilhamento de bolinhas.
     if (!map.getLayer('imoveis-pontos')) {
-      map.addLayer({
-        id: 'imoveis-pontos',
-        type: 'symbol',
-        source: FONTE,
-        filter: ['!', ['has', 'point_count']],
-        layout: {
-          'icon-image': expressaoIcone(propsRef.current.camadas),
-          'icon-size': tamanhoIcone,
-          'icon-allow-overlap': false,
-          'icon-ignore-placement': false,
-          'icon-padding': 3,
-          'symbol-sort-key': ['-', ['get', 'score']],
-        },
+      tentar('marcadores dos imóveis', () => {
+        map.addLayer({
+          id: 'imoveis-pontos',
+          type: 'symbol',
+          source: FONTE,
+          filter: ['!', ['has', 'point_count']],
+          layout: {
+            'icon-image': expressaoIcone(propsRef.current.camadas),
+            'icon-size': tamanhoIcone,
+            'icon-allow-overlap': false,
+            'icon-ignore-placement': false,
+            'icon-padding': 3,
+            'symbol-sort-key': ['-', ['get', 'score']],
+          },
+        })
       })
     }
 
     // 5) Seleção — sempre visível, mesmo sob o anti-colisão
     if (!map.getLayer('imoveis-selecao')) {
-      map.addLayer({
-        id: 'imoveis-selecao',
-        type: 'circle',
-        source: FONTE,
-        filter: ['all', ['!', ['has', 'point_count']], ['==', ['get', 'id'], NENHUMA_SELECAO]],
-        paint: {
-          'circle-color': 'rgba(0,0,0,0)',
-          'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 12, 14, 18, 17, 30],
-          'circle-stroke-color': CORES.selecao,
-          'circle-stroke-width': 2.5,
-          'circle-stroke-opacity': 0.85,
-        },
+      tentar('destaque do imóvel selecionado', () => {
+        map.addLayer({
+          id: 'imoveis-selecao',
+          type: 'circle',
+          source: FONTE,
+          filter: ['all', ['!', ['has', 'point_count']], ['==', ['get', 'id'], NENHUMA_SELECAO]],
+          paint: {
+            'circle-color': 'rgba(0,0,0,0)',
+            'circle-radius': ['interpolate', ['linear'], ['zoom'], 11, 12, 14, 18, 17, 30],
+            'circle-stroke-color': CORES.selecao,
+            'circle-stroke-width': 2.5,
+            'circle-stroke-opacity': 0.85,
+          },
+        })
       })
     }
   }, [expressaoIcone, tamanhoIcone])
@@ -455,6 +531,7 @@ export default function MapCanvas({
     mapRef.current = map
     estiloAplicadoRef.current = BASES[0].style
 
+
     map.addControl(new NavigationControl({ showCompass: false }), 'top-right')
     map.addControl(new ScaleControl({ maxWidth: 90, unit: 'metric' }), 'bottom-left')
     if (map.touchZoomRotate) map.touchZoomRotate.disableRotation()
@@ -469,6 +546,9 @@ export default function MapCanvas({
     }
 
     map.on('style.load', () => {
+      // Marca que o estilo (vetorial ou raster) carregou: o evento `load` pode
+      // demorar mais porque depende também do carregamento dos tiles.
+      estiloCarregadoRef.current = true
       configurar()
       aplicarEstado()
       aplicarSelecao()
@@ -479,6 +559,10 @@ export default function MapCanvas({
       if (timerFallbackRef.current) {
         window.clearTimeout(timerFallbackRef.current)
         timerFallbackRef.current = null
+      }
+      if (timerLimiteRef.current) {
+        window.clearTimeout(timerLimiteRef.current)
+        timerLimiteRef.current = null
       }
       if (!ajusteInicialRef.current) {
         ajusteInicialRef.current = true
@@ -497,19 +581,35 @@ export default function MapCanvas({
       })
     })
 
-    // Só troca de base quando o problema é claramente da própria base
-    // (evita reagir a erros de tile isolado ou de glifo ausente).
+    // Só troca de base quando o problema é da própria base (falha ao carregar o
+    // estilo). Erro de sprite, de tile ou de glifo isolado não troca o provedor.
     map.on('error', (evento) => {
       const mensagem = String((evento as { error?: { message?: string } })?.error?.message ?? '')
-      if (/openfreemap|failed to load style|style\.json/i.test(mensagem)) {
+      const erroDoEstilo = BASES.some((base) => mensagem.includes(base.style))
+      if (erroDoEstilo || /failed to load style|failed to fetch style|style\.json/i.test(mensagem)) {
         aplicarFallback(mensagem.slice(0, 120))
       }
     })
 
+    // Plano B raster apenas quando o estilo da base vetorial não carrega —
+    // tiles ainda em streaming não são motivo para trocar de provedor.
     timerFallbackRef.current = window.setTimeout(() => {
-      if (!mapRef.current || mapRef.current.isStyleLoaded()) return
+      if (!mapRef.current || estiloCarregadoRef.current) return
       aplicarFallback('tempo limite ao carregar o estilo da base')
     }, TIMEOUT_FALLBACK_MS)
+
+    // Rede de segurança: nunca deixar o carregamento em aberto indefinidamente.
+    // Se o estilo e as camadas já estão no mapa (faltando apenas tiles do fundo),
+    // libera a interface; se nem o estilo chegou, mostra erro objetivo com retry.
+    timerLimiteRef.current = window.setTimeout(() => {
+      const mapa = mapRef.current
+      if (!mapa || mapa.loaded()) return
+      if (estiloCarregadoRef.current) {
+        setPronto(true)
+        return
+      }
+      setErro('O mapa não terminou de carregar. Verifique a conexão e tente novamente.')
+    }, TIMEOUT_LIMITE_MS)
 
     const tooltip = new Popup({
       closeButton: false,
@@ -633,6 +733,7 @@ export default function MapCanvas({
 
     return () => {
       if (timerFallbackRef.current) window.clearTimeout(timerFallbackRef.current)
+      if (timerLimiteRef.current) window.clearTimeout(timerLimiteRef.current)
       if (rafHover !== null) window.cancelAnimationFrame(rafHover)
       if (timerViewport) window.clearTimeout(timerViewport)
       tooltip.remove()
@@ -733,8 +834,15 @@ export default function MapCanvas({
       )}
 
       {erro && (
-        <div className="absolute inset-0 z-10 flex items-center justify-center bg-slate-100 px-6 text-center text-sm text-slate-600">
-          {erro}
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-slate-100 px-6 text-center text-sm text-slate-600">
+          <span>{erro}</span>
+          <button
+            type="button"
+            onClick={() => window.location.reload()}
+            className="rounded-md bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white"
+          >
+            Tentar novamente
+          </button>
         </div>
       )}
 

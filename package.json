@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/fetch_subvencao.js && node scripts/generate_articles.js && node scripts/build_mapa_index.js && node scripts/fetch_perimetros.js && next build",
+    "predev": "node scripts/copy_maplibre_worker.js",
+    "build": "node scripts/fetch_subvencao.js && node scripts/generate_articles.js && node scripts/build_mapa_index.js && node scripts/fetch_perimetros.js && node scripts/copy_maplibre_worker.js && next build",
     "build:data": "node scripts/fetch_subvencao.js && node scripts/generate_articles.js && node scripts/build_mapa_index.js",
     "build:mapa": "node scripts/build_mapa_index.js",
     "build:perimetros": "node scripts/fetch_perimetros.js",
