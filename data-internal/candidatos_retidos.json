@@ -1,0 +1,232 @@
+{
+  "executadoEm": "2026-09-17T02:22:10.844Z",
+  "total": 25,
+  "criterio": "Data Confidence >= 70% + requisitos eliminatórios",
+  "retidas": [
+    {
+      "id": "avenida-tiradentes-s-n-bom-retiro-018023",
+      "nome": "Avenida Tiradentes, S/N — Bom retiro",
+      "sql": "018.023.0037-6",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "avenida-presidente-castelo-branco-s-n-bom-retiro-019124",
+      "nome": "Avenida Presidente Castelo Branco, S/N — Bom retiro",
+      "sql": "019.124.0001-4",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "avenida-ipiranga-s-n-republica-008095",
+      "nome": "Avenida Ipiranga, S/N — Republica",
+      "sql": "008.095.0001-9",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "rua-brigadeiro-tobias-s-n-republica-001020",
+      "nome": "Rua Brigadeiro Tobias, S/N — Republica",
+      "sql": "001.020.0484-6",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "rua-imac-conceicao-s-n-santa-cecilia-007017",
+      "nome": "Rua Imac Conceicao, S/N — Santa cecilia",
+      "sql": "007.017.0462-4",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "praca-dr-joao-mendes-s-n-se-005031",
+      "nome": "Praça Dr. Joao Mendes, S/N — Se",
+      "sql": "005.031.0001-3",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "avenida-bom-jardim-s-n-pari-017022",
+      "nome": "Avenida Bom Jardim, S/N — Pari",
+      "sql": "017.022.0013-2",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "praca-da-se-s-n-se-005026",
+      "nome": "Praça da Se, S/N — Se",
+      "sql": "005.026.0001-2",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "avenida-presidente-castelo-branco-s-n-bom-retiro-018100",
+      "nome": "Avenida Presidente Castelo Branco, S/N — Bom retiro",
+      "sql": "018.100.0031-9",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "avenida-celso-garcia-s-n-belem-026028",
+      "nome": "Avenida Celso Garcia, S/N — Belem",
+      "sql": "026.028.0280-8",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "avenida-mercurio-s-n-se-002052",
+      "nome": "Avenida Mercurio, S/N — Se",
+      "sql": "002.052.0001-1",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "avenida-pedroso-da-silveira-s-n-pari-017113",
+      "nome": "Avenida Pedroso da Silveira, S/N — Pari",
+      "sql": "017.113.0001-2",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "parque-dom-pedro-ii-s-n-se-003009",
+      "nome": "Parque Dom Pedro Ii, S/N — Se",
+      "sql": "003.009.0001-5",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "rua-formosa-s-n-republica-006036",
+      "nome": "Rua Formosa, S/N — Republica",
+      "sql": "006.036.0440-4",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "avenida-prestes-maia-s-n-se-001061",
+      "nome": "Avenida Prestes Maia, S/N — Se",
+      "sql": "001.061.0029-7",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "rua-dr-almeida-lima-s-n-bras-027087",
+      "nome": "Rua Dr. Almeida Lima, S/N — Bras",
+      "sql": "027.087.0101-0",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "rua-sebastiao-pereira-s-n-santa-cecilia-007092",
+      "nome": "Rua Sebastiao Pereira, S/N — Santa cecilia",
+      "sql": "007.092.0035-8",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "avenida-tiradentes-s-n-bom-retiro-018080",
+      "nome": "Avenida Tiradentes, S/N — Bom retiro",
+      "sql": "018.080.0002-1",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "rua-domingos-paiva-s-n-bras-003070",
+      "nome": "Rua Domingos Paiva, S/N — Bras",
+      "sql": "003.070.0001-1",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "praca-da-republica-s-n-republica-007088",
+      "nome": "Praça da Republica, S/N — Republica",
+      "sql": "007.088.0001-7",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "rua-waldemar-seyssel-p-arrelia-s-n-bras-027088",
+      "nome": "Rua Waldemar Seyssel-p. Arrelia, S/N — Bras",
+      "sql": "027.088.0478-2",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "praca-s-vito-s-n-se-002093",
+      "nome": "Praça S Vito, S/N — Se",
+      "sql": "002.093.0001-9",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "avenida-rangel-pestana-s-n-bras-027084",
+      "nome": "Avenida Rangel Pestana, S/N — Bras",
+      "sql": "027.084.0016-9",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "praca-clovis-bevilaqua-s-n-se-005032",
+      "nome": "Praça Clovis Bevilaqua, S/N — Se",
+      "sql": "005.032.0001-8",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    },
+    {
+      "id": "avenida-projetada-caninde-pari-s-n-pari-017116",
+      "nome": "Avenida Projetada (caninde-pari), S/N — Pari",
+      "sql": "017.116.0002-4",
+      "confidence": 85,
+      "falhas": [
+        "endereço cadastral incompleto (logradouro/número)"
+      ]
+    }
+  ]
+}
