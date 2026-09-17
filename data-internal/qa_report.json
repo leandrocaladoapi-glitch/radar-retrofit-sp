@@ -1,13 +1,13 @@
 {
-  "executadoEm": "2026-09-17T02:22:28.289Z",
+  "executadoEm": "2026-09-17T02:34:12.870Z",
   "totalPublicadas": 983,
   "problemas": [],
   "aprovado": true,
   "amostraQA": [
     {
-      "nome": "Rua Capitão Faustino Lima, 134 — Bras",
+      "nome": "Rua Capitão Faustino Lima, 134 — Brás",
       "sql": "003.010.0055-7",
-      "distrito": "Bras",
+      "distrito": "Brás",
       "areaConstruida": 21916,
       "uso": "Não residencial",
       "zoneamento": "ZC",
@@ -18,9 +18,9 @@
       "consultaFonte": "http://wfs.geosampa.prefeitura.sp.gov.br/geoserver/geoportal/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geoportal%3Alote_cidadao&outputFormat=application%2Fjson&srsName=EPSG%3A4326&CQL_FILTER=cd_setor_fiscal%3D%27003%27+AND+cd_quadra_fiscal%3D%27010%27+AND+cd_lote%3D%270055%27"
     },
     {
-      "nome": "Rua Marcos Arruda, 909 — Belem",
+      "nome": "Rua Marcos Arruda, 909 — Belém",
       "sql": "026.015.0271-1",
-      "distrito": "Belem",
+      "distrito": "Belém",
       "areaConstruida": 3306,
       "uso": "Não residencial",
       "zoneamento": "ZEMP",
@@ -44,9 +44,9 @@
       "consultaFonte": "http://wfs.geosampa.prefeitura.sp.gov.br/geoserver/geoportal/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geoportal%3Alote_cidadao&outputFormat=application%2Fjson&srsName=EPSG%3A4326&CQL_FILTER=cd_setor_fiscal%3D%27027%27+AND+cd_quadra_fiscal%3D%27085%27+AND+cd_lote%3D%270001%27"
     },
     {
-      "nome": "Rua Rego Freitas, 57 — Republica",
+      "nome": "Rua Rego Freitas, 57 — República",
       "sql": "007.050.0054-0",
-      "distrito": "Republica",
+      "distrito": "República",
       "areaConstruida": 6000,
       "uso": "Não residencial",
       "zoneamento": "ZC",
@@ -57,9 +57,9 @@
       "consultaFonte": "http://wfs.geosampa.prefeitura.sp.gov.br/geoserver/geoportal/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geoportal%3Alote_cidadao&outputFormat=application%2Fjson&srsName=EPSG%3A4326&CQL_FILTER=cd_setor_fiscal%3D%27007%27+AND+cd_quadra_fiscal%3D%27050%27+AND+cd_lote%3D%270054%27"
     },
     {
-      "nome": "Rua Paula Sousa, 166 — Se",
+      "nome": "Rua Paula Sousa, 166 — Sé",
       "sql": "001.032.0038-1",
-      "distrito": "Se",
+      "distrito": "Sé",
       "areaConstruida": 3700,
       "uso": "Não residencial",
       "zoneamento": "ZC",
@@ -70,9 +70,9 @@
       "consultaFonte": "http://wfs.geosampa.prefeitura.sp.gov.br/geoserver/geoportal/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geoportal%3Alote_cidadao&outputFormat=application%2Fjson&srsName=EPSG%3A4326&CQL_FILTER=cd_setor_fiscal%3D%27001%27+AND+cd_quadra_fiscal%3D%27032%27+AND+cd_lote%3D%270038%27"
     },
     {
-      "nome": "Rua Sete de Abril, 278 — Republica",
+      "nome": "Rua Sete de Abril, 278 — República",
       "sql": "006.015.0020-2",
-      "distrito": "Republica",
+      "distrito": "República",
       "areaConstruida": 4694,
       "uso": "Não residencial",
       "zoneamento": "ZC",
@@ -83,9 +83,9 @@
       "consultaFonte": "http://wfs.geosampa.prefeitura.sp.gov.br/geoserver/geoportal/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geoportal%3Alote_cidadao&outputFormat=application%2Fjson&srsName=EPSG%3A4326&CQL_FILTER=cd_setor_fiscal%3D%27006%27+AND+cd_quadra_fiscal%3D%27015%27+AND+cd_lote%3D%270020%27"
     },
     {
-      "nome": "Rua Joao Teodoro, 1462 — Bras",
+      "nome": "Rua Joao Teodoro, 1462 — Brás",
       "sql": "025.001.0133-9",
-      "distrito": "Bras",
+      "distrito": "Brás",
       "areaConstruida": 7451,
       "uso": "Não residencial",
       "zoneamento": "ZDE-1",
@@ -96,9 +96,9 @@
       "consultaFonte": "http://wfs.geosampa.prefeitura.sp.gov.br/geoserver/geoportal/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geoportal%3Alote_cidadao&outputFormat=application%2Fjson&srsName=EPSG%3A4326&CQL_FILTER=cd_setor_fiscal%3D%27025%27+AND+cd_quadra_fiscal%3D%27001%27+AND+cd_lote%3D%270133%27"
     },
     {
-      "nome": "Rua Guapore, 259 — Bom retiro",
+      "nome": "Rua Guapore, 259 — Bom Retiro",
       "sql": "018.007.0001-6",
-      "distrito": "Bom retiro",
+      "distrito": "Bom Retiro",
       "areaConstruida": 6035,
       "uso": "Não residencial",
       "zoneamento": "ZC",
@@ -122,9 +122,9 @@
       "consultaFonte": "http://wfs.geosampa.prefeitura.sp.gov.br/geoserver/geoportal/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=geoportal%3Alote_cidadao&outputFormat=application%2Fjson&srsName=EPSG%3A4326&CQL_FILTER=cd_setor_fiscal%3D%27027%27+AND+cd_quadra_fiscal%3D%27087%27+AND+cd_lote%3D%270031%27"
     },
     {
-      "nome": "Rua Helvetia, 754 — Santa cecilia",
+      "nome": "Rua Helvetia, 754 — Santa Cecília",
       "sql": "007.021.0092-7",
-      "distrito": "Santa cecilia",
+      "distrito": "Santa Cecília",
       "areaConstruida": 3606,
       "uso": "Não residencial",
       "zoneamento": "ZEM",
