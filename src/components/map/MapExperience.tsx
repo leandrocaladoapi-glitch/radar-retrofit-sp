@@ -41,7 +41,7 @@ function assinaturaFiltros(f: Filtros): string {
 const MapCanvas = dynamic(() => import('./MapCanvas'), {
   ssr: false,
   loading: () => (
-    <div className="flex h-full w-full items-center justify-center bg-slate-100 text-sm text-slate-500">
+    <div className="flex h-full w-full items-center justify-center bg-muted text-sm text-fg-muted">
       Carregando mapa…
     </div>
   ),
@@ -63,19 +63,19 @@ function Sheet({
   children: React.ReactNode
 }) {
   return (
-    <div className="fixed inset-0 z-[1200] flex items-end bg-slate-900/40 p-0 sm:items-center sm:justify-center sm:p-4">
+    <div className="fixed inset-0 z-[1200] flex items-end bg-[var(--overlay)] p-0 sm:items-center sm:justify-center sm:p-4">
       <button type="button" aria-label="Fechar" className="absolute inset-0 cursor-default" onClick={aoFechar} />
       <div
         role="dialog"
         aria-label={titulo}
-        className="relative max-h-[88vh] w-full overflow-y-auto rounded-t-2xl bg-white p-4 shadow-2xl sm:max-w-md sm:rounded-2xl"
+        className="relative max-h-[88vh] w-full overflow-y-auto rounded-t-2xl bg-surface p-4 shadow-2xl sm:max-w-md sm:rounded-2xl"
       >
         <div className="mb-3 flex items-center justify-between">
-          <h3 className="text-sm font-bold text-slate-900">{titulo}</h3>
+          <h3 className="text-sm font-bold text-fg">{titulo}</h3>
           <button
             type="button"
             onClick={aoFechar}
-            className="rounded-md px-2 py-1 text-xs font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-800"
+            className="inline-flex min-h-tap min-w-tap items-center justify-center rounded-md px-2 text-xs font-medium text-fg-muted hover:bg-muted hover:text-fg"
           >
             Fechar
           </button>
@@ -169,17 +169,17 @@ export default function MapExperience({ raw }: MapExperienceProps) {
       <button
         type="button"
         onClick={() => setPainelMobile('filtros')}
-        className="inline-flex items-center gap-1.5 rounded-lg bg-white/95 px-3 py-2 text-xs font-semibold text-slate-800 shadow-md backdrop-blur"
+        className="inline-flex min-h-tap items-center gap-1.5 rounded-lg bg-surface/95 px-3 py-2 text-xs font-semibold text-fg shadow-md backdrop-blur"
       >
         <Filter size={13} /> Filtros
         {filtrosAtivos > 0 && (
-          <span className="rounded-full bg-slate-900 px-1.5 text-[10px] font-bold text-white">{filtrosAtivos}</span>
+          <span className="rounded-full bg-fg px-1.5 text-[10px] font-bold text-bg">{filtrosAtivos}</span>
         )}
       </button>
       <button
         type="button"
         onClick={() => setPainelMobile('camadas')}
-        className="inline-flex items-center gap-1.5 rounded-lg bg-white/95 px-3 py-2 text-xs font-semibold text-slate-800 shadow-md backdrop-blur"
+        className="inline-flex min-h-tap items-center gap-1.5 rounded-lg bg-surface/95 px-3 py-2 text-xs font-semibold text-fg shadow-md backdrop-blur"
       >
         <LayersIcon size={13} /> Camadas
       </button>
@@ -190,7 +190,7 @@ export default function MapExperience({ raw }: MapExperienceProps) {
     <div className="space-y-4">
       {/* Barra de presets + status */}
       <div className="flex flex-wrap items-center gap-2">
-        <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-slate-500">
+        <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-fg-muted">
           <Sparkles size={13} /> Recortes rápidos
         </span>
         {PRESETS.map((preset) => {
@@ -201,10 +201,10 @@ export default function MapExperience({ raw }: MapExperienceProps) {
               type="button"
               onClick={() => setFiltros({ ...FILTROS_PADRAO, ...preset.filtros })}
               aria-pressed={ativo}
-              className={`rounded-full border px-3 py-1 text-xs font-medium transition ${
+              className={`min-h-tap rounded-full border px-3 py-1 text-xs font-medium transition ${
                 ativo
-                  ? 'border-slate-900 bg-slate-900 text-white'
-                  : 'border-slate-200 bg-white text-slate-600 hover:border-slate-400 hover:text-slate-900'
+                  ? 'border-fg bg-fg text-bg'
+                  : 'border-line bg-surface text-fg-muted hover:border-line-strong hover:text-fg'
               }`}
             >
               {preset.rotulo}
@@ -218,12 +218,12 @@ export default function MapExperience({ raw }: MapExperienceProps) {
             setSelecionado(null)
             setEnquadrar((valor) => valor + 1)
           }}
-          className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600 transition hover:border-slate-400 hover:text-slate-900"
+          className="inline-flex min-h-tap items-center gap-1.5 rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium text-fg-muted transition hover:border-line-strong hover:text-fg"
         >
           <RotateCcw size={12} /> Ver tudo
         </button>
-        <span className="ml-auto text-xs text-slate-500">
-          <strong className="font-semibold text-slate-800">{formatarNumero(registrosFiltrados.length)}</strong> imóveis
+        <span className="ml-auto text-xs text-fg-muted">
+          <strong className="font-semibold text-fg">{formatarNumero(registrosFiltrados.length)}</strong> imóveis
           no recorte · base {dados.total} publicados
         </span>
       </div>
@@ -231,7 +231,7 @@ export default function MapExperience({ raw }: MapExperienceProps) {
       <div className="grid gap-4 lg:grid-cols-[300px_minmax(0,1fr)] xl:grid-cols-[300px_minmax(0,1fr)_360px]">
         {/* Filtros — desktop */}
         <aside className="hidden lg:block">
-          <div className="sticky top-4 max-h-[calc(100vh-2rem)] overflow-y-auto rounded-xl border border-slate-200 bg-white p-4">
+          <div className="sticky top-[calc(var(--header-h)+0.75rem)] max-h-[calc(100vh-var(--header-h)-1.5rem)] overflow-y-auto rounded-xl border border-line bg-surface p-4">
             <FilterPanel
               filtros={filtros}
               aoMudar={setFiltros}
@@ -243,10 +243,10 @@ export default function MapExperience({ raw }: MapExperienceProps) {
           </div>
 
           <details
-            className="sticky top-4 mt-4 max-h-[calc(100vh-2rem)] overflow-y-auto rounded-xl border border-slate-200 bg-white p-4"
+            className="sticky top-[calc(var(--header-h)+0.75rem)] mt-4 max-h-[calc(100vh-var(--header-h)-1.5rem)] overflow-y-auto rounded-xl border border-line bg-surface p-4"
             open
           >
-            <summary className="cursor-pointer text-sm font-bold text-slate-900">Camadas e base do mapa</summary>
+            <summary className="cursor-pointer text-sm font-bold text-fg">Camadas e base do mapa</summary>
             <div className="mt-3">
               <LayerPanel
                 camadas={camadas}
@@ -259,8 +259,8 @@ export default function MapExperience({ raw }: MapExperienceProps) {
             </div>
           </details>
 
-          <details className="sticky top-4 mt-4 rounded-xl border border-slate-200 bg-white p-4" open>
-            <summary className="cursor-pointer text-sm font-bold text-slate-900">Legenda</summary>
+          <details className="sticky top-[calc(var(--header-h)+0.75rem)] mt-4 rounded-xl border border-line bg-surface p-4" open>
+            <summary className="cursor-pointer text-sm font-bold text-fg">Legenda</summary>
             <div className="mt-3">
               <LegendPanel contagens={contagensPorTipo} />
             </div>
@@ -268,7 +268,7 @@ export default function MapExperience({ raw }: MapExperienceProps) {
         </aside>
 
         {/* Mapa */}
-        <section className="relative h-[62vh] min-h-[420px] overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-sm lg:h-[calc(100vh-13rem)] lg:min-h-[600px]">
+        <section className="relative h-[62vh] min-h-[420px] overflow-hidden rounded-xl border border-line bg-muted shadow-sm lg:h-[calc(100vh-13rem)] lg:min-h-[600px]">
           <MapCanvas
             registros={registrosFiltrados}
             indicePorId={indicePorId}
@@ -286,13 +286,13 @@ export default function MapExperience({ raw }: MapExperienceProps) {
           {botoesMobile}
 
           {registrosFiltrados.length === 0 && (
-            <div className="pointer-events-none absolute inset-x-4 top-1/2 z-[600] -translate-y-1/2 rounded-xl border border-slate-200 bg-white/95 p-4 text-center shadow-lg">
-              <p className="text-sm font-semibold text-slate-800">Nenhum imóvel atende aos filtros atuais</p>
-              <p className="mt-1 text-xs text-slate-500">Ajuste ou limpe os filtros para voltar a ver os pontos.</p>
+            <div className="pointer-events-none absolute inset-x-4 top-1/2 z-[600] -translate-y-1/2 rounded-xl border border-line bg-surface/95 p-4 text-center shadow-lg">
+              <p className="text-sm font-semibold text-fg">Nenhum imóvel atende aos filtros atuais</p>
+              <p className="mt-1 text-xs text-fg-muted">Ajuste ou limpe os filtros para voltar a ver os pontos.</p>
               <button
                 type="button"
                 onClick={() => setFiltros(FILTROS_PADRAO)}
-                className="pointer-events-auto mt-3 rounded-md bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white"
+                className="pointer-events-auto mt-3 rounded-md bg-fg px-3 py-1.5 text-xs font-semibold text-bg"
               >
                 Limpar filtros
               </button>
@@ -309,7 +309,7 @@ export default function MapExperience({ raw }: MapExperienceProps) {
 
         {/* Inteligência — desktop */}
         <aside className="hidden xl:block">
-          <div className="sticky top-4 max-h-[calc(100vh-2rem)] overflow-y-auto rounded-xl border border-slate-200 bg-white p-4">
+          <div className="sticky top-[calc(var(--header-h)+0.75rem)] max-h-[calc(100vh-var(--header-h)-1.5rem)] overflow-y-auto rounded-xl border border-line bg-surface p-4">
             <InsightPanel
               stats={stats}
               totalFiltrado={registrosFiltrados.length}
@@ -324,8 +324,8 @@ export default function MapExperience({ raw }: MapExperienceProps) {
 
       {/* Abaixo de xl: legenda, card e inteligência empilhados */}
       <div className="space-y-4 xl:hidden">
-        <details className="rounded-xl border border-slate-200 bg-white p-3" open>
-          <summary className="cursor-pointer text-xs font-semibold uppercase tracking-wide text-slate-500">
+        <details className="rounded-xl border border-line bg-surface p-3" open>
+          <summary className="cursor-pointer text-xs font-semibold uppercase tracking-wide text-fg-muted">
             Legenda do mapa
           </summary>
           <div className="mt-3">
@@ -333,7 +333,7 @@ export default function MapExperience({ raw }: MapExperienceProps) {
           </div>
         </details>
 
-        <div className="rounded-xl border border-slate-200 bg-white p-4">
+        <div className="rounded-xl border border-line bg-surface p-4">
           <InsightPanel
             stats={stats}
             totalFiltrado={registrosFiltrados.length}
@@ -379,7 +379,7 @@ export default function MapExperience({ raw }: MapExperienceProps) {
             geometria={geometria}
             projetos={dados.projetos}
           />
-          <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
+          <p className="mt-3 text-[11px] leading-relaxed text-fg-muted">
             Tipologias: {Object.entries(TIPOS).map(([, visual]) => visual.rotulo).join(' · ')}.
           </p>
         </Sheet>

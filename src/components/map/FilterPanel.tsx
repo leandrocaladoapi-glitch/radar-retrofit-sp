@@ -47,22 +47,22 @@ function Chip({
       type="button"
       onClick={aoClicar}
       aria-pressed={ativo}
-      className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium transition ${
+      className={`inline-flex min-h-8 items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium transition duration-180 ${
         ativo
-          ? 'border-slate-900 bg-slate-900 text-white'
-          : 'border-slate-200 bg-white text-slate-600 hover:border-slate-400 hover:text-slate-900'
+          ? 'border-fg bg-fg text-bg'
+          : 'border-line bg-surface text-fg-muted hover:border-line-strong hover:text-fg'
       }`}
     >
       {cor && (
         <span
-          className="h-2.5 w-2.5 rounded-full ring-1 ring-white/70"
+          className="h-2.5 w-2.5 rounded-full ring-1 ring-surface/70"
           style={{ backgroundColor: cor }}
           aria-hidden
         />
       )}
       {rotulo}
       {typeof contagem === 'number' && (
-        <span className={ativo ? 'text-white/70' : 'text-slate-400'}>{contagem}</span>
+        <span className={ativo ? 'text-bg/70' : 'text-fg-subtle'}>{contagem}</span>
       )}
     </button>
   )
@@ -70,8 +70,8 @@ function Chip({
 
 function Secao({ titulo, children }: { titulo: string; children: React.ReactNode }) {
   return (
-    <div className="space-y-2 border-t border-slate-100 pt-3 first:border-t-0 first:pt-0">
-      <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">{titulo}</p>
+    <div className="space-y-2 border-t border-line pt-3 first:border-t-0 first:pt-0">
+      <p className="text-[11px] font-semibold uppercase tracking-wide text-fg-muted">{titulo}</p>
       {children}
     </div>
   )
@@ -85,11 +85,11 @@ export default function FilterPanel({ filtros, aoMudar, distritos, usos, visivei
     <div className="space-y-4">
       <div className="flex items-start justify-between gap-2">
         <div>
-          <h2 className="flex items-center gap-2 text-sm font-bold text-slate-900">
+          <h2 className="flex items-center gap-2 text-sm font-bold text-fg">
             <Filter size={15} /> Filtros
           </h2>
-          <p className="mt-1 text-xs text-slate-500">
-            <strong className="font-semibold text-slate-700">{formatarNumero(visiveis)}</strong> de{' '}
+          <p className="mt-1 text-xs text-fg-muted">
+            <strong className="font-semibold text-fg">{formatarNumero(visiveis)}</strong> de{' '}
             {formatarNumero(total)} imóveis no recorte
           </p>
         </div>
@@ -111,7 +111,7 @@ export default function FilterPanel({ filtros, aoMudar, distritos, usos, visivei
                 busca: '',
               })
             }
-            className="inline-flex items-center gap-1 rounded-md border border-slate-200 px-2 py-1 text-xs font-medium text-slate-600 hover:border-slate-400 hover:text-slate-900"
+            className="inline-flex items-center gap-1 rounded-md border border-line px-2 py-1 text-xs font-medium text-fg-muted hover:border-line-strong hover:text-fg"
           >
             <RotateCcw size={12} /> Limpar ({ativos})
           </button>
@@ -121,13 +121,13 @@ export default function FilterPanel({ filtros, aoMudar, distritos, usos, visivei
       <div className="space-y-4">
         <Secao titulo="Busca livre">
           <div className="relative">
-            <Search size={14} className="pointer-events-none absolute left-2.5 top-2.5 text-slate-400" />
+            <Search size={14} className="pointer-events-none absolute left-2.5 top-2.5 text-fg-subtle" />
             <input
               type="search"
               value={filtros.busca}
               onChange={(evento) => atualizar({ busca: evento.target.value })}
               placeholder="Endereço, SQL ou distrito"
-              className="w-full rounded-md border border-slate-200 py-2 pl-8 pr-2 text-sm text-slate-800 outline-none focus:border-slate-500"
+              className="field pl-8"
             />
           </div>
         </Secao>
@@ -155,12 +155,12 @@ export default function FilterPanel({ filtros, aoMudar, distritos, usos, visivei
               step={5}
               value={filtros.scoreMin}
               onChange={(evento) => atualizar({ scoreMin: Number(evento.target.value) })}
-              className="w-full accent-slate-900"
+              className="w-full accent-accent"
               aria-label="Opportunity Score mínimo"
             />
-            <div className="flex items-center justify-between text-xs text-slate-500">
+            <div className="flex items-center justify-between text-xs text-fg-muted">
               <span>0</span>
-              <span className="rounded bg-slate-100 px-2 py-0.5 font-semibold text-slate-700">
+              <span className="rounded bg-muted px-2 py-0.5 font-semibold text-fg">
                 {filtros.scoreMin === 0 ? 'todos' : `≥ ${filtros.scoreMin}`}
               </span>
               <span>100</span>
@@ -180,23 +180,23 @@ export default function FilterPanel({ filtros, aoMudar, distritos, usos, visivei
 
         <Secao titulo="Enquadramento territorial">
           <div className="space-y-2">
-            <label className="flex cursor-pointer items-start gap-2 text-sm text-slate-700">
+            <label className="flex cursor-pointer items-start gap-2 text-sm text-fg">
               <input
                 type="checkbox"
                 checked={filtros.requalifica === 'dentro'}
                 onChange={(evento) => atualizar({ requalifica: evento.target.checked ? 'dentro' : 'todos' })}
-                className="mt-0.5 accent-slate-900"
+                className="mt-0.5 accent-accent"
               />
               <span>
                 Somente dentro do <strong className="font-semibold">Requalifica Centro</strong>
               </span>
             </label>
-            <label className="flex cursor-pointer items-start gap-2 text-sm text-slate-700">
+            <label className="flex cursor-pointer items-start gap-2 text-sm text-fg">
               <input
                 type="checkbox"
                 checked={filtros.aiu === 'dentro'}
                 onChange={(evento) => atualizar({ aiu: evento.target.checked ? 'dentro' : 'todos' })}
-                className="mt-0.5 accent-slate-900"
+                className="mt-0.5 accent-accent"
               />
               <span>
                 Somente dentro da <strong className="font-semibold">AIU Setor Central</strong>
@@ -297,7 +297,7 @@ export default function FilterPanel({ filtros, aoMudar, distritos, usos, visivei
               />
             ))}
           </div>
-          <p className="text-[11px] leading-relaxed text-slate-400">
+          <p className="text-[11px] leading-relaxed text-fg-subtle">
             Teto teórico = custo estimado × 25%. Não é valor concedido nem direito adquirido.
           </p>
         </Secao>

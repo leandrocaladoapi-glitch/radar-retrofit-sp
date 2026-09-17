@@ -1,9 +1,11 @@
+import PageHeader from '../../components/ui/PageHeader'
+
 export default function MetodologiaPage() {
   return (
-    <div className="max-w-3xl mx-auto space-y-6">
-      <h1 className="text-3xl font-bold text-slate-900 mb-4">Metodologia e Transparência</h1>
+    <div className="page-shell page-shell-narrow max-w-3xl space-y-6">
+      <PageHeader title="Metodologia e Transparência" />
 
-      <div className="prose prose-slate max-w-none">
+      <article className="card radar-prose p-6 md:p-10">
         <p>O <strong>Radar Retrofit São Paulo</strong> é uma ferramenta independente de inteligência de mercado desenvolvida pela LCF Consulting. Nossa missão é consolidar e estruturar dados públicos dispersos para facilitar a análise de oportunidades de requalificação imobiliária.</p>
 
         <h3>1. Fontes de Dados</h3>
@@ -57,7 +59,7 @@ export default function MetodologiaPage() {
 
         <h3>8. Privacidade</h3>
         <p>O foco é o imóvel e a oportunidade. Não são publicados telefone, CPF ou dados pessoais de proprietários.</p>
-      </div>
+      </article>
     </div>
   )
 }

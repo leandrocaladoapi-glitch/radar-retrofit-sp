@@ -21,7 +21,7 @@ interface LegendPanelProps {
 export function LegendPanel({ contagens, compacta = false }: LegendPanelProps) {
   return (
     <div className={compacta ? 'space-y-2' : 'space-y-2.5'}>
-      <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">Legenda</p>
+      <p className="text-[11px] font-semibold uppercase tracking-wide text-fg-muted">Legenda</p>
       <ul className="space-y-1.5">
         {(Object.keys(TIPOS) as TipoRegistro[]).map((tipo) => {
           const visual = TIPOS[tipo]
@@ -34,23 +34,23 @@ export function LegendPanel({ contagens, compacta = false }: LegendPanelProps) {
                 aria-hidden
               />
               <span className="min-w-0">
-                <span className="block text-xs font-medium leading-tight text-slate-800">
+                <span className="block text-xs font-medium leading-tight text-fg">
                   {visual.rotulo}
                   {typeof total === 'number' && (
-                    <span className="ml-1 font-normal text-slate-400">({formatarNumero(total)})</span>
+                    <span className="ml-1 font-normal text-fg-subtle">({formatarNumero(total)})</span>
                   )}
                 </span>
-                <span className="block text-[11px] leading-snug text-slate-500">{visual.descricao}</span>
+                <span className="block text-[11px] leading-snug text-fg-muted">{visual.descricao}</span>
               </span>
             </li>
           )
         })}
       </ul>
-      <div className="border-t border-slate-100 pt-2">
-        <ul className="space-y-1.5 text-[11px] leading-snug text-slate-600">
+      <div className="border-t border-line pt-2">
+        <ul className="space-y-1.5 text-[11px] leading-snug text-fg-muted">
           <li className="flex items-center gap-2">
             <span className="relative inline-flex h-4 w-4 items-center justify-center" aria-hidden>
-              <span className="absolute h-4 w-4 rounded-full bg-slate-500/80" />
+              <span className="absolute h-4 w-4 rounded-full bg-muted0/80" />
               <span className="relative text-[8px] font-bold text-white">12</span>
             </span>
             Agrupamento: número de imóveis na área. Clique para abrir o grupo.
@@ -65,7 +65,7 @@ export function LegendPanel({ contagens, compacta = false }: LegendPanelProps) {
           </li>
         </ul>
       </div>
-      <p className="border-t border-slate-100 pt-2 text-[11px] leading-snug text-slate-500">
+      <p className="border-t border-line pt-2 text-[11px] leading-snug text-fg-muted">
         Tamanho do marcador cresce com o Opportunity Score. Em áreas densas o mapa evita sobreposição de ícones.
       </p>
     </div>
@@ -99,7 +99,7 @@ function LinhaCamada({
   return (
     <label
       className={`flex items-start gap-2.5 rounded-lg border px-2.5 py-2 transition ${
-        indisponivel ? 'cursor-not-allowed border-slate-100 bg-slate-50' : 'cursor-pointer border-slate-200 bg-white hover:border-slate-300'
+        indisponivel ? 'cursor-not-allowed border-line bg-muted' : 'cursor-pointer border-line bg-surface hover:border-line-strong'
       }`}
     >
       <input
@@ -107,12 +107,12 @@ function LinhaCamada({
         checked={ativo}
         disabled={indisponivel}
         onChange={aoAlternar}
-        className="mt-0.5 accent-slate-900"
+        className="mt-0.5 accent-accent"
       />
       <span className="min-w-0">
-        <span className="block text-xs font-semibold text-slate-800">{titulo}</span>
-        <span className="mt-0.5 block text-[11px] leading-snug text-slate-500">{descricao}</span>
-        {nota && <span className="mt-0.5 block text-[11px] leading-snug text-slate-400">{nota}</span>}
+        <span className="block text-xs font-semibold text-fg">{titulo}</span>
+        <span className="mt-0.5 block text-[11px] leading-snug text-fg-muted">{descricao}</span>
+        {nota && <span className="mt-0.5 block text-[11px] leading-snug text-fg-subtle">{nota}</span>}
       </span>
     </label>
   )
@@ -124,10 +124,10 @@ export function LayerPanel({ camadas, aoMudarCamadas, base, aoMudarBase, geometr
   return (
     <div className="space-y-3">
       <div>
-        <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+        <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-fg-muted">
           <Layers size={12} /> Camadas
         </p>
-        <p className="mt-1 text-[11px] leading-snug text-slate-500">
+        <p className="mt-1 text-[11px] leading-snug text-fg-muted">
           Filtros definem o recorte; camadas definem o que aparece e como.
         </p>
       </div>
@@ -182,8 +182,8 @@ export function LayerPanel({ camadas, aoMudarCamadas, base, aoMudarBase, geometr
         />
       </div>
 
-      <div className="rounded-lg border border-slate-200 bg-white px-2.5 py-2">
-        <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+      <div className="rounded-lg border border-line bg-surface px-2.5 py-2">
+        <p className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-fg-muted">
           <Eye size={12} /> Base do mapa
         </p>
         <div className="mt-2 flex gap-1.5">
@@ -196,15 +196,15 @@ export function LayerPanel({ camadas, aoMudarCamadas, base, aoMudarBase, geometr
               title={opcao.descricao}
               className={`rounded-md border px-2 py-1 text-xs font-medium transition ${
                 base === opcao.id
-                  ? 'border-slate-900 bg-slate-900 text-white'
-                  : 'border-slate-200 bg-white text-slate-600 hover:border-slate-400'
+                  ? 'border-fg bg-fg text-bg'
+                  : 'border-line bg-surface text-fg-muted hover:border-line-strong'
               }`}
             >
               {opcao.rotulo}
             </button>
           ))}
         </div>
-        <p className="mt-2 text-[11px] leading-snug text-slate-500">
+        <p className="mt-2 text-[11px] leading-snug text-fg-muted">
           Base vetorial aberta (OpenFreeMap). Sem chave de API, sem conta e sem marca de água de erro.
         </p>
       </div>
@@ -217,7 +217,7 @@ export function LegendToggle({ aberta, aoAlternar }: { aberta: boolean; aoAltern
     <button
       type="button"
       onClick={aoAlternar}
-      className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-slate-500 transition hover:text-slate-800"
+      className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-fg-muted transition hover:text-fg"
       aria-expanded={aberta}
     >
       Legenda <ChevronDown size={12} className={aberta ? 'rotate-180 transition' : 'transition'} />

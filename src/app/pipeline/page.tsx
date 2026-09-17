@@ -1,68 +1,100 @@
 import projetosData from '../../data/projetos.json'
 import oportunidadesData from '../../data/oportunidades_index.json'
+import PageHeader from '../../components/ui/PageHeader'
 
 const columns = [
-  "Identificada",
-  "Em análise",
-  "Inscrita",
-  "Credenciada",
-  "Outorga",
-  "Em execução",
-  "Concluída"
+  'Identificada',
+  'Em análise',
+  'Inscrita',
+  'Credenciada',
+  'Outorga',
+  'Em execução',
+  'Concluída',
 ]
 
+const COLUMN_TONE: Record<string, string> = {
+  Identificada: 'bg-gold',
+  'Em análise': 'bg-accent',
+  Inscrita: 'bg-info',
+  Credenciada: 'bg-success',
+  Outorga: 'bg-purple',
+  'Em execução': 'bg-warning',
+  Concluída: 'bg-fg-subtle',
+}
+
 export default function PipelinePage() {
-  // Combine all items and map to columns
   const items = [
-    ...oportunidadesData.map(op => ({ ...op, pipelineStatus: "Identificada", nome: op.nome, isOportunidade: true, regiaoStr: `${op.distrito} • SQL ${op.sql}`, badge: `Score: ${op.score}` })),
-    ...projetosData.map(proj => ({
+    ...oportunidadesData.map((op) => ({
+      ...op,
+      pipelineStatus: 'Identificada',
+      nome: op.nome,
+      isOportunidade: true,
+      regiaoStr: `${op.distrito} • SQL ${op.sql}`,
+      badge: `Score: ${op.score}`,
+    })),
+    ...projetosData.map((proj) => ({
       ...proj,
-      pipelineStatus: "Credenciada",
+      pipelineStatus: 'Credenciada',
       isOportunidade: false,
       regiaoStr: proj.chamamento,
-      badge: 'Lista oficial'
-    }))
+      badge: 'Lista oficial',
+    })),
   ]
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-slate-900 mb-2">Pipeline de Retrofit</h1>
-        <p className="text-slate-600">Acompanhamento do estágio de maturidade das oportunidades e projetos conhecidos.</p>
-      </div>
+    <div className="page-shell page-shell-wide space-y-6">
+      <PageHeader
+        title="Pipeline de Retrofit"
+        description="Acompanhamento do estágio de maturidade das oportunidades e projetos conhecidos."
+      />
 
-      <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
-        {columns.map((col, idx) => {
-          const colItems = items.filter(item => item.pipelineStatus === col);
-          return (
-            <div key={idx} className="min-w-[280px] w-[300px] flex-shrink-0 snap-center flex flex-col bg-slate-100 rounded-xl p-3 border border-slate-200 shadow-sm max-h-[70vh]">
-              <div className="flex justify-between items-center mb-3 px-1">
-                <h3 className="font-semibold text-slate-800 text-sm">{col}</h3>
-                <span className="bg-slate-200 text-slate-600 text-xs font-bold px-2 py-0.5 rounded-full">{colItems.length}</span>
+      <div className="relative">
+        <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4">
+          {columns.map((col, idx) => {
+            const colItems = items.filter((item) => item.pipelineStatus === col)
+            return (
+              <div
+                key={idx}
+                className="flex max-h-[70vh] w-[300px] min-w-[280px] flex-shrink-0 snap-center flex-col rounded-xl border border-line bg-muted p-3 shadow-sm"
+              >
+                <div className="mb-3 flex items-center justify-between px-1">
+                  <h3 className="flex items-center gap-2 text-sm font-semibold text-fg">
+                    <span className={`h-2 w-2 rounded-full ${COLUMN_TONE[col] ?? 'bg-fg-subtle'}`} aria-hidden />
+                    {col}
+                  </h3>
+                  <span className="rounded-full bg-surface px-2 py-0.5 text-xs font-bold tabular text-fg-muted">
+                    {colItems.length}
+                  </span>
+                </div>
+                <div className="custom-scrollbar flex-grow space-y-3 overflow-y-auto pr-1">
+                  {colItems.map((item, itemIdx) => (
+                    <div
+                      key={itemIdx}
+                      className={`card p-3 ${item.isOportunidade ? 'border-warning/40' : 'border-line'}`}
+                    >
+                      <h4 className="mb-1 truncate text-sm font-medium text-fg">{item.nome}</h4>
+                      <p className="mb-2 truncate text-xs text-fg-muted">{item.regiaoStr}</p>
+                      {item.isOportunidade ? (
+                        <span className="inline-block rounded bg-warning-muted px-1.5 py-0.5 text-[10px] font-bold text-warning-fg">
+                          {item.badge}
+                        </span>
+                      ) : (
+                        <span className="inline-block rounded bg-info-muted px-1.5 py-0.5 text-[10px] font-bold text-info-fg">
+                          {item.badge}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                  {colItems.length === 0 && (
+                    <div className="rounded-lg border-2 border-dashed border-line py-6 text-center text-xs text-fg-subtle">
+                      Nenhum projeto
+                    </div>
+                  )}
+                </div>
               </div>
-              <div className="flex-grow overflow-y-auto space-y-3 pr-1 custom-scrollbar">
-                {colItems.map((item, itemIdx) => (
-                  <div key={itemIdx} className={`bg-white p-3 rounded-lg border shadow-sm ${item.isOportunidade ? 'border-amber-200' : 'border-slate-200'}`}>
-                    <h4 className="font-medium text-slate-900 text-sm mb-1 truncate">{item.nome}</h4>
-                    <p className="text-xs text-slate-500 mb-2 truncate">
-                      {item.regiaoStr}
-                    </p>
-                    {item.isOportunidade ? (
-                       <span className="inline-block bg-amber-100 text-amber-800 text-[10px] font-bold px-1.5 py-0.5 rounded">{item.badge}</span>
-                    ) : (
-                       <span className="inline-block bg-blue-100 text-blue-800 text-[10px] font-bold px-1.5 py-0.5 rounded">{item.badge}</span>
-                    )}
-                  </div>
-                ))}
-                {colItems.length === 0 && (
-                  <div className="text-center text-xs text-slate-400 py-6 border-2 border-dashed border-slate-200 rounded-lg">
-                    Nenhum projeto
-                  </div>
-                )}
-              </div>
-            </div>
-          )
-        })}
+            )
+          })}
+        </div>
       </div>
     </div>
   )
