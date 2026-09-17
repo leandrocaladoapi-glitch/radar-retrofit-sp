@@ -1,0 +1,43 @@
+name: Radar ETL — imóveis reais (GeoSampa)
+
+on:
+  schedule:
+    - cron: '0 11 * * *'   # 08:00 America/Sao_Paulo
+    - cron: '0 21 * * *'   # 18:00 America/Sao_Paulo
+  workflow_dispatch:
+
+concurrency:
+  group: radar-etl
+  cancel-in-progress: false
+
+jobs:
+  etl:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: arena/01a0ad21-radar-retrofit-sp
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Descoberta em fontes oficiais
+        run: node scripts/etl/discover_opportunities.js
+
+      - name: Validação e publicação
+        run: node scripts/etl/validate_and_publish.js
+
+      - name: QA — auditoria de 100% da base publicada
+        run: node scripts/etl/qa_audit.js
+
+      - name: Commit dos dados atualizados
+        if: always()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Radar ETL"
+          git add src/data/*.json data-internal/*.json
+          git diff --staged --quiet || git commit -m "chore(etl): atualização automática da base de oportunidades reais"
+          git push origin arena/01a0ad21-radar-retrofit-sp
