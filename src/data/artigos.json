@@ -1,5 +1,20 @@
 [
   {
+    "id": "art-daily-1789606307604",
+    "title": "Radar identifica nova oportunidade de retrofit na região de Bela Vista",
+    "slug": "oportunidade-retrofit-bela-vista-op-24",
+    "dataPublicacao": "2026-09-17T00:51:47.560Z",
+    "dataAtualizacao": "2026-09-17T00:51:47.560Z",
+    "descricao": "Nova oportunidade identificada na região de Bela Vista com alto Opportunity Score no Radar Retrofit SP.",
+    "categoria": "Oportunidades",
+    "tags": [
+      "Novas Oportunidades",
+      "Bela Vista",
+      "Análise Indicativa"
+    ],
+    "conteudo": "\n            <p class=\"lead text-lg text-slate-600 mb-6\">Na atualização mais recente do Radar Retrofit São Paulo, nossa engine identificou um novo imóvel com potencial significativo para requalificação e acesso à subvenção econômica.</p>\n            \n            <h2 class=\"text-2xl font-bold text-slate-900 mt-8 mb-4\">Sobre o Imóvel</h2>\n            <p class=\"mb-4\">Localizado na região de <strong>Bela Vista</strong>, o imóvel possui aproximadamente <strong>6660m²</strong> e uso conhecido atual como <em>Não Residencial</em>. A inteligência do Radar atribuiu a este imóvel um <strong>Opportunity Score de 80/100</strong>.</p>\n            \n            <div class=\"bg-blue-50 border-l-4 border-blue-500 p-4 my-6\">\n              <p class=\"text-blue-900 font-medium\">Motivo do destaque: Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.</p>\n            </div>\n\n            <h2 class=\"text-2xl font-bold text-slate-900 mt-8 mb-4\">Viabilidade Financeira e Regulatória</h2>\n            <p class=\"mb-4\">Estando em zoneamento ZEU e inserido no perímetro de AIU Setor Central, Requalifica Centro, o imóvel apresenta potencial máximo de subvenção econômica estimado em <strong>R$ 6.484.632</strong>, dado um custo de obra projetado de R$ 25.938.529.</p>\n\n            <p class=\"mb-4\">É importante notar os riscos regulatórios e operacionais associados, tais como: Necessidade de reforço estrutural, Atualização de PPCI (Bombeiros). O imóvel possui status de proteção: Nenhuma.</p>\n\n            <p class=\"mb-6\">Para acessar a análise completa, incluindo VGV potencial estimado e isenções fiscais aplicáveis, acesse a página detalhada da oportunidade.</p>\n\n            <div class=\"text-center my-8\">\n              <a href=\"/oportunidades/op-24\" class=\"inline-block bg-slate-900 text-white font-bold px-8 py-3 rounded-lg hover:bg-slate-800 transition shadow-md\">Ver Dossiê Completo da Oportunidade</a>\n            </div>\n\n            \n<div class=\"mt-10 p-6 bg-slate-50 border border-slate-200 rounded-xl\">\n  <h3 class=\"text-lg font-bold text-slate-900 mb-2\">Quer identificar imóveis com potencial de retrofit no Centro de São Paulo?</h3>\n  <p class=\"text-slate-600 mb-4\">O Radar Retrofit SP monitora dezenas de propriedades com alta viabilidade financeira.</p>\n  <a href=\"/oportunidades\" class=\"inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-700 transition\">Explorar o Radar de Oportunidades</a>\n</div>\n\n          "
+  },
+  {
     "id": "art-daily-1789605251163",
     "title": "Radar identifica nova oportunidade de retrofit na região de Sé",
     "slug": "oportunidade-retrofit-se-op-47",
