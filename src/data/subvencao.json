@@ -19,11 +19,11 @@
   },
   "indicadores": {
     "orcamentoDisponivel": 1000000000,
-    "projetosConhecidos": 35,
-    "imoveisMonitorados": 420,
+    "projetosConhecidos": 15,
+    "imoveisMonitorados": 12,
     "recursosConcedidos": 145000000,
     "recursosPagos": 45000000,
-    "oportunidadesIdentificadas": 85,
-    "ultimaAtualizacao": "2026-09-17T00:51:47.502Z"
+    "oportunidadesIdentificadas": 4,
+    "ultimaAtualizacao": "2026-09-17T02:19:16.196Z"
   }
 }

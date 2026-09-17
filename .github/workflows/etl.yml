@@ -25,9 +25,6 @@ jobs:
       - name: Run ETL Script
         run: node scripts/fetch_subvencao.js
 
-      - name: Generate Articles
-        run: node scripts/generate_articles.js
-
       - name: Build Next.js Application
         run: npm run build
 

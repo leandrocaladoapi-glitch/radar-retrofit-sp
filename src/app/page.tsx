@@ -1,11 +1,9 @@
 import Link from 'next/link'
-import { Activity, Building2, Map, TrendingUp, AlertCircle, Clock, CheckCircle2, ChevronRight, BarChart, ShieldCheck, Database, FileText } from 'lucide-react'
+import { Activity, Building2, Map, TrendingUp, AlertCircle, Clock, CheckCircle2, ChevronRight, BarChart, ShieldCheck, Database } from 'lucide-react'
 import data from '../data/subvencao.json'
-import artigosData from '../data/artigos.json'
 
 export default function Home() {
   const { indicadores, chamamentoAtual } = data;
-  const recentArticles = [...artigosData].sort((a, b) => new Date(b.dataPublicacao).getTime() - new Date(a.dataPublicacao).getTime()).slice(0, 3);
 
   const formatCurrency = (val: number) => {
     return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(val);
@@ -66,41 +64,6 @@ export default function Home() {
           </div>
           <div className="text-3xl font-bold text-slate-900">{indicadores.oportunidadesIdentificadas} <span className="text-xl font-normal text-slate-500">imóveis</span></div>
           <div className="text-sm text-slate-600 mt-2">Identificados para análise preliminar</div>
-        </div>
-      </section>
-
-      {/* Latest Articles / Updates */}
-      <section className="max-w-5xl mx-auto space-y-8 py-8">
-        <div className="flex justify-between items-end border-b border-slate-200 pb-4">
-          <div>
-            <h2 className="text-3xl font-bold text-slate-900 flex items-center gap-2"><FileText className="text-blue-600" /> Últimas atualizações do Radar</h2>
-            <p className="text-slate-600 mt-2">Monitoramento contínuo de novas oportunidades, projetos e editais.</p>
-          </div>
-          <Link href="/artigos" className="hidden md:flex text-blue-600 hover:text-blue-800 font-semibold items-center gap-1">
-            Ver todas análises <ChevronRight size={18} />
-          </Link>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {recentArticles.length > 0 ? recentArticles.map((art) => (
-            <Link key={art.slug} href={`/artigos/${art.slug}`} className="bg-white border border-slate-200 p-6 rounded-2xl hover:shadow-md hover:border-blue-400 transition-all flex flex-col h-full group">
-              <div className="text-xs text-blue-600 font-bold mb-2">{art.categoria}</div>
-              <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors line-clamp-3">{art.title}</h3>
-              <p className="text-slate-600 text-sm mb-4 line-clamp-3 flex-grow">{art.descricao}</p>
-              <div className="text-xs text-slate-400 mt-auto flex items-center gap-1.5 pt-4 border-t border-slate-100">
-                <Clock size={12} /> {new Date(art.dataPublicacao).toLocaleDateString('pt-BR')}
-              </div>
-            </Link>
-          )) : (
-            <div className="col-span-3 text-center p-8 bg-slate-50 border border-slate-200 rounded-xl text-slate-500">
-              O radar está processando as primeiras análises.
-            </div>
-          )}
-        </div>
-        <div className="md:hidden text-center mt-4">
-          <Link href="/artigos" className="inline-flex text-blue-600 hover:text-blue-800 font-semibold items-center gap-1">
-            Ver todas análises <ChevronRight size={18} />
-          </Link>
         </div>
       </section>
 

@@ -91,7 +91,6 @@ export default function RootLayout({
               <Link href="/mapa" className="hover:text-blue-300 transition">Mapa</Link>
               <Link href="/projetos" className="hover:text-blue-300 transition">Projetos</Link>
               <Link href="/oportunidades" className="hover:text-blue-300 transition">Oportunidades</Link>
-              <Link href="/artigos" className="hover:text-blue-300 transition text-amber-300">Radar Editorial</Link>
             </nav>
           </div>
         </header>
