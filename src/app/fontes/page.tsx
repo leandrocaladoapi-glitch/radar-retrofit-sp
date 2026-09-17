@@ -40,6 +40,30 @@ export default function FontesPage() {
       desc: 'Situação de proteção patrimonial, nível de tombamento, ZEPEC e resoluções aplicáveis.',
     },
     {
+      nome: 'Lista de habilitados — Chamamento 01/2023/SMUL (07/12/2023)',
+      instituicao: 'Prefeitura de São Paulo / SMUL — Comissão Especial de Avaliação',
+      link: 'https://subvencao.prefeitura.sp.gov.br',
+      desc: 'Relação nominal de 11 interessados habilitados. Extraída por código do PDF oficial preservado em data-oficial/subvencao/.',
+    },
+    {
+      nome: 'Lista Fase I — Chamamento 02/2024/SMUL (SEI 6068.2024/0005871-1)',
+      instituicao: 'Prefeitura de São Paulo / SMUL — Portaria nº 55/2024',
+      link: 'http://processos.prefeitura.sp.gov.br',
+      desc: 'Habilitados na Fase I com protocolos. Autenticidade conferível no portal SEI (verificador 106440352, CRC 9534D549). Extração reproduzível do PDF oficial.',
+    },
+    {
+      nome: 'Lista de credenciados Fase II — Chamamento 01/2025/SMUL (SEI 6068.2025/0004742-8)',
+      instituicao: 'Prefeitura de São Paulo / SMUL — Portaria nº 34/2025',
+      link: 'http://processos.prefeitura.sp.gov.br',
+      desc: '14 credenciados em ordem de priorização, com endereço, categoria, pontuação, percentual e valor máximo de subvenção. Autenticidade conferível no portal SEI (verificador 142837382, CRC 3EB6DE09).',
+    },
+    {
+      nome: 'Programa Requalifica Centro — fatos do programa (teto, ofertas, resultado final)',
+      instituicao: 'Prefeitura de São Paulo / SMUL e São Paulo Parcerias',
+      link: 'https://prefeitura.sp.gov.br/web/licenciamento/w/programa-requalifica-centro-%C3%A9-regulamentado-para-toda-a-regi%C3%A3o-central-de-s%C3%A3o-paulo',
+      desc: 'Teto de R$ 1 bilhão (Lei 17.844/2022), R$ 400 milhões ofertados nos três editais e resultado final do 3º chamamento (16 contemplados, DOC 08/10/2025).',
+    },
+    {
       nome: 'Diário Oficial da Cidade (DOC)',
       instituicao: 'Prefeitura de São Paulo',
       link: 'https://diariooficial.prefeitura.sp.gov.br',

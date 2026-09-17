@@ -18,7 +18,8 @@ import artigosData from '../data/artigos.json'
 import MetricCard from '../components/ui/MetricCard'
 
 export default function Home() {
-  const { indicadores, chamamentoAtual } = data
+  const { indicadores, programa } = data
+  const num = (v: number | string | null) => (typeof v === 'number' ? v : 0)
   const recentArticles = [...artigosData]
     .sort((a, b) => new Date(b.dataPublicacao).getTime() - new Date(a.dataPublicacao).getTime())
     .slice(0, 3)
@@ -59,42 +60,42 @@ export default function Home() {
       <section className="page-shell py-0">
         <div className="grid grid-cols-1 gap-4 rounded-2xl border border-line bg-muted/70 p-4 md:grid-cols-2 md:p-6 lg:grid-cols-4">
           <MetricCard
-            icon={<TrendingUp size={16} />}
-            label="Orçamento Disponível"
-            value={formatCurrency(indicadores.orcamentoDisponivel)}
-            detail={
-              <span className="chip border-success/20 bg-success-muted text-success-fg">
-                Até {chamamentoAtual.percentualMaximo}% por projeto
-              </span>
+            icon={<Building2 size={16} />}
+            label="Imóveis Monitorados"
+            value={
+              <>
+                {num(indicadores.imoveisMonitorados).toLocaleString('pt-BR')}{' '}
+                <span className="text-xl font-normal text-fg-subtle">imóveis reais</span>
+              </>
             }
+            detail={<>{num(indicadores.oportunidadesScore85)} com Opportunity Score ≥ 85</>}
           />
           <MetricCard
             icon={<CheckCircle2 size={16} />}
-            label="Recursos Concedidos"
-            value={formatCurrency(indicadores.recursosConcedidos)}
-            detail={<>Pagos: {formatCurrency(indicadores.recursosPagos)}</>}
-          />
-          <MetricCard
-            icon={<Building2 size={16} />}
-            label="Histórico Público"
-            value={
-              <>
-                {indicadores.projetosConhecidos}{' '}
-                <span className="text-xl font-normal text-fg-subtle">projetos</span>
-              </>
-            }
-            detail={<>{indicadores.imoveisMonitorados} imóveis em monitoramento contínuo</>}
+            label="Credenciados 2025 (Fase II)"
+            value={formatCurrency(num(indicadores.valorMaximoCredenciado2025FaseII))}
+            detail={<>Soma dos valores máximos de {num(indicadores.credenciadosFaseII2025)} credenciados — não é valor pago</>}
           />
           <MetricCard
             icon={<AlertCircle size={16} />}
-            label="Radar de Oportunidades"
+            label="Histórico Público SMUL"
             value={
               <>
-                {indicadores.oportunidadesIdentificadas}{' '}
-                <span className="text-xl font-normal text-fg-subtle">imóveis</span>
+                {num(indicadores.totalRegistrosSubvencao)}{' '}
+                <span className="text-xl font-normal text-fg-subtle">registros</span>
               </>
             }
-            detail="Identificados para análise preliminar"
+            detail={<>Listas oficiais de {num(indicadores.chamamentosComListas)} chamamentos (2023–2025)</>}
+          />
+          <MetricCard
+            icon={<TrendingUp size={16} />}
+            label="Teto do Programa em Lei"
+            value={formatCurrency(programa.fatos.tetoPrevisto.valor)}
+            detail={
+              <span className="chip border-success/20 bg-success-muted text-success-fg">
+                Até {programa.fatos.percentualMaximo.valor}% do custo da obra por projeto
+              </span>
+            }
           />
         </div>
       </section>
@@ -149,7 +150,7 @@ export default function Home() {
           <div className="space-y-4 text-center">
             <h2 className="text-2xl font-semibold text-fg md:text-3xl">Como o Radar funciona</h2>
             <p className="mx-auto max-w-2xl text-lg text-fg-muted">
-              Nós cruzamos dezenas de fontes de dados espaciais, financeiros e regulatórios para criar um pipeline claro de investimento em Retrofit.
+              Nós cruzamos 6 camadas oficiais do GeoSampa com as listas oficiais de subvenção da SMUL para criar um pipeline claro de análise de Retrofit.
             </p>
           </div>
 
@@ -160,7 +161,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold text-fg">1. Agregação de Dados</h3>
               <p className="leading-relaxed text-fg-muted">
-                Consolidamos Diário Oficial, GeoSampa e Portal da Subvenção em uma única base de dados estruturada e auditável.
+                Consolidamos o Cadastro Imobiliário Fiscal (GeoSampa), os perímetros oficiais de incentivo e as listas de habilitados/credenciados da SMUL em uma única base estruturada e auditável.
               </p>
             </div>
             <div className="card space-y-4 p-6">
@@ -214,7 +215,7 @@ export default function Home() {
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-sm">
               <h3 className="mb-4 text-xl font-bold">Pronto para começar?</h3>
-              <p className="mb-6 text-white/60">Acesse agora as 85 oportunidades pré-analisadas pela nossa engine de dados.</p>
+              <p className="mb-6 text-white/60">Acesse agora os {num(indicadores.imoveisMonitorados).toLocaleString('pt-BR')} imóveis reais com Opportunity Score calculado pela nossa engine.</p>
               <Link href="/oportunidades" className="btn btn-primary w-full">
                 Acessar Pipeline <ChevronRight size={20} aria-hidden />
               </Link>

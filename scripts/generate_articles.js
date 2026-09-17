@@ -1,197 +1,232 @@
+#!/usr/bin/env node
+/*
+ * GERADOR DE ARTIGOS DO RADAR — à prova de invenção.
+ *
+ * REGRAS RÍGIDAS:
+ *  - Nenhum artigo afirma mudança (novo imóvel, status, valor, aprovação) sem
+ *    evento correspondente em data-internal/historico.json.
+ *  - Todo número do texto é agregado da base real (array.length, soma, contagem).
+ *  - Todo artigo carrega `fontes[]` (nome + URL) e seção "Fontes e evidências".
+ *  - Sem aleatoriedade, sem relógio no conteúdo, sem templates com campos de
+ *    outro schema. O texto é validado contra "undefined" antes de salvar.
+ *  - Sem novidade real => nenhum artigo é gerado (exit 0).
+ */
+
 const fs = require('fs');
 const path = require('path');
 
-// Paths
-const dataDir = path.join(__dirname, '..', 'src', 'data');
-const artigosPath = path.join(dataDir, 'artigos.json');
-const oportunidadesPath = path.join(dataDir, 'oportunidades.json');
-const projetosPath = path.join(dataDir, 'projetos.json');
-const subvencaoPath = path.join(dataDir, 'subvencao.json');
+const ROOT = path.resolve(__dirname, '..');
+const DATA = path.join(ROOT, 'src', 'data');
+const INTERNAL = path.join(ROOT, 'data-internal');
 
-// Helper to format date in pt-BR
-function formatDate(date) {
-  return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+function readJSON(p, fallback) {
+  try {
+    return JSON.parse(fs.readFileSync(p, 'utf8'));
+  } catch {
+    return fallback;
+  }
 }
 
-// Helper to create a slug
-function createSlug(text) {
-  return text
-    .toString()
-    .toLowerCase()
-    .normalize('NFD') // separate accents from letters
-    .replace(/[\u0300-\u036f]/g, '') // remove accents
-    .replace(/\s+/g, '-') // spaces to dashes
-    .replace(/[^\w\-]+/g, '') // remove non-words
-    .replace(/\-\-+/g, '-') // multiple dashes to single
-    .replace(/^-+/, '') // trim dash from start
-    .replace(/-+$/, ''); // trim dash from end
+function fmt(n) {
+  return Number(n || 0).toLocaleString('pt-BR');
 }
 
-function formatCurrency(val) {
-  return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(val);
+function fmtBRL(n) {
+  return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(n || 0);
 }
 
-const ctaHtml = `
-<div class="mt-10 p-6 bg-slate-50 border border-slate-200 rounded-xl">
-  <h3 class="text-lg font-bold text-slate-900 mb-2">Quer identificar imóveis com potencial de retrofit no Centro de São Paulo?</h3>
-  <p class="text-slate-600 mb-4">O Radar Retrofit SP monitora dezenas de propriedades com alta viabilidade financeira.</p>
-  <a href="/oportunidades" class="inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-700 transition">Explorar o Radar de Oportunidades</a>
-</div>
+function fmtData(iso) {
+  return new Date(iso).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+}
+
+function esc(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function montaSnapshot({ ops, subv, status, historico, agora }) {
+  const total = ops.length;
+  const prioritarias = ops.filter((o) => o.score >= 85);
+  const tombadas = ops.filter((o) => o.patrimonio && o.patrimonio.protegido);
+  const confMedia = total ? Math.round(ops.reduce((s, o) => s + o.confidence, 0) / total) : 0;
+  const top3 = [...ops].sort((a, b) => b.score - a.score || b.confidence - a.confidence).slice(0, 3);
+  const eventos = historico.eventos || [];
+  const porTipo = eventos.reduce((acc, e) => {
+    acc[e.tipo] = (acc[e.tipo] || 0) + 1;
+    return acc;
+  }, {});
+  const ind = subv.indicadores || {};
+
+  const fontes = [
+    { nome: 'Cadastro Imobiliário Fiscal — camada Lote (GeoSampa)', url: 'https://metadados.geosampa.prefeitura.sp.gov.br/geonetwork/srv/api/records/62c1113c-36a4-43d1-b763-81ec63b58116' },
+    { nome: 'Requalifica Centro — Lei nº 17.577/2021', url: 'https://legislacao.prefeitura.sp.gov.br/leis/lei-17577-de-20-de-julho-de-2021' },
+    { nome: 'Zoneamento — LPUOS Lei nº 18.177/2024', url: 'https://legislacao.prefeitura.sp.gov.br/leis/lei-18177-de-25-de-julho-de-2024' },
+    { nome: 'Portal da Subvenção Econômica (SMUL)', url: 'https://subvencao.prefeitura.sp.gov.br' },
+    { nome: 'Metodologia do Radar', url: '/metodologia' },
+  ];
+
+  const titulo = `Base do Radar: ${fmt(total)} imóveis reais monitorados no Centro — ${fmtData(agora)}`;
+  const slug = `base-do-radar-${fmt(total)}-imoveis-${agora.slice(0, 10)}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+  const conteudo = `
+<p class="lead text-lg text-slate-600 mb-6">Retrato verificável da base do Radar Retrofit SP em ${fmtData(agora)}: ${fmt(total)} imóveis reais da área central, extraídos do Cadastro Imobiliário Fiscal (GeoSampa) e cruzados por geometria com os perímetros oficiais de incentivo. Nenhum número abaixo é estimativa editorial — todos são agregados da base publicada.</p>
+
+<h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">O que a base contém</h2>
+<ul class="list-disc pl-5 space-y-1 mb-4">
+  <li><strong>${fmt(total)} imóveis publicados</strong>, cada um com SQL cadastral, endereço oficial, geometria do lote e proveniência por campo.</li>
+  <li><strong>${fmt(prioritarias.length)} com Opportunity Score ≥ 85</strong> (análise do Radar sobre dados oficiais — ver metodologia).</li>
+  <li><strong>${fmt(tombadas.length)} com proteção patrimonial registrada</strong> na camada oficial de bens tombados (CONPRESP/CONDEPHAAT/IPHAN).</li>
+  <li><strong>Data Confidence médio de ${confMedia}%</strong> (mínimo de publicação: 70%; ${fmt(status.candidatosRetidos || 0)} candidatos retidos internamente por não atingir os critérios).</li>
+  <li><strong>${fmt(ind.totalRegistrosSubvencao || 0)} registros de subvenção</strong> extraídos das listas oficiais da SMUL (${fmt(ind.interessadosHabilitados2023 || 0)} habilitados em 2023, ${fmt(ind.interessadosHabilitadosFaseI2024 || 0)} na Fase I de 2024, ${fmt(ind.credenciadosFaseII2025 || 0)} credenciados na Fase II de 2025).</li>
+</ul>
+
+<h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Maiores Opportunity Scores da base atual</h2>
+<p class="mb-4">Classificação determinística (score, desempate por confiança e SQL). O score é análise do Radar, não dado da Prefeitura:</p>
+<ul class="space-y-4 mb-6">
+  ${top3.map((op) => `
+  <li class="bg-white p-4 border border-slate-200 rounded-lg shadow-sm">
+    <a href="/oportunidades/${esc(op.slug)}" class="font-bold text-blue-700 hover:underline text-lg block mb-1">${esc(op.nome)}</a>
+    <span class="text-sm text-slate-500 block mb-2">SQL ${esc(op.sql)} • ${fmt(op.areaConstruida)} m² • Score <strong class="text-slate-800">${op.score}/100</strong> • Confiança ${op.confidence}%</span>
+    <p class="text-sm text-slate-600">${esc(op.motivos && op.motivos[0])}</p>
+  </li>`).join('')}
+</ul>
+
+<h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Movimentações registradas pelo ETL</h2>
+<p class="mb-4">Histórico auditável de execuções do pipeline (antes/depois por campo): ${fmt(porTipo.publicada || 0)} publicações, ${fmt(porTipo.alteracao || 0)} alterações de campo e ${fmt(porTipo.removida_sintetica || 0)} remoções de registros sintéticos legados. Última execução: ${fmtData(status.executadoEm || agora)}.</p>
+
+<h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Limites do que afirmamos</h2>
+<p class="mb-4">Custos de obra e tetos de subvenção por imóvel são <strong>estimativas paramétricas do Radar</strong>, nunca valores oficiais. Ocupação, vacância, situação dominial e condições estruturais não constam das fontes públicas e não são afirmadas. A lista completa de fontes e a metodologia estão linkadas abaixo.</p>
+
+<h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Fontes e evidências</h2>
+<ul class="list-disc pl-5 space-y-1 mb-4">
+  ${fontes.map((f) => `<li><a href="${esc(f.url)}" class="text-blue-700 hover:underline"${f.url.startsWith('http') ? ' target="_blank" rel="noopener noreferrer"' : ''}>${esc(f.nome)}</a></li>`).join('')}
+</ul>
 `;
 
-function loadJson(filePath, defaultVal) {
-  try {
-    if (fs.existsSync(filePath)) {
-      const data = fs.readFileSync(filePath, 'utf8');
-      return JSON.parse(data);
-    }
-  } catch (e) {
-    console.error(`Error reading ${filePath}:`, e);
-  }
-  return defaultVal;
+  return {
+    id: `art-${slug}`,
+    title: titulo,
+    slug,
+    dataPublicacao: agora,
+    dataAtualizacao: agora,
+    descricao: `Retrato auditável da base em ${fmtData(agora)}: ${fmt(total)} imóveis reais, ${fmt(prioritarias.length)} com score ≥ 85 e ${fmt(ind.totalRegistrosSubvencao || 0)} registros de subvenção das listas SMUL.`,
+    categoria: 'Radar',
+    tags: ['Base de dados', 'Transparência', 'GeoSampa', 'SMUL'],
+    conteudo,
+    fontes,
+    evidencias: {
+      tipo: 'snapshot-base',
+      executadoEm: agora,
+      totalImoveis: total,
+      score85: prioritarias.length,
+      protegidos: tombadas.length,
+      confiancaMedia: confMedia,
+      eventosPorTipo: porTipo,
+      etlExecutadoEm: status.executadoEm || null,
+    },
+  };
 }
 
-function saveJson(filePath, data) {
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+function montaAtualizacao({ novos, alteracoes, arquivadas, ops, agora }) {
+  const total = ops.length;
+  const exemplos = novos.slice(0, 3)
+    .map((e) => ops.find((o) => o.sql === e.sql))
+    .filter(Boolean);
+  const fontes = [
+    { nome: 'Cadastro Imobiliário Fiscal — camada Lote (GeoSampa)', url: 'https://metadados.geosampa.prefeitura.sp.gov.br/geonetwork/srv/api/records/62c1113c-36a4-43d1-b763-81ec63b58116' },
+    { nome: 'Metodologia do Radar', url: '/metodologia' },
+  ];
+  const slug = `atualizacao-etl-${agora.slice(0, 10)}-${novos.length}n-${alteracoes.length}a-${arquivadas.length}r`;
+  const titulo = `Atualização da base: ${novos.length} ${novos.length === 1 ? 'novo imóvel' : 'novos imóveis'} publicados — ${fmtData(agora)}`;
+  const conteudo = `
+<p class="lead text-lg text-slate-600 mb-6">O pipeline do Radar publicou ${fmt(novos.length)} ${novos.length === 1 ? 'novo imóvel' : 'novos imóveis'}, registrou ${fmt(alteracoes.length)} ${alteracoes.length === 1 ? 'alteração' : 'alterações'} de campo e arquivou ${fmt(arquivadas.length)} ${arquivadas.length === 1 ? 'registro' : 'registros'} desde a última atualização. A base soma agora ${fmt(total)} imóveis reais.</p>
+${exemplos.length ? `
+<h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Novos imóveis publicados</h2>
+<ul class="space-y-4 mb-6">
+  ${exemplos.map((op) => `
+  <li class="bg-white p-4 border border-slate-200 rounded-lg shadow-sm">
+    <a href="/oportunidades/${esc(op.slug)}" class="font-bold text-blue-700 hover:underline text-lg block mb-1">${esc(op.nome)}</a>
+    <span class="text-sm text-slate-500 block mb-2">SQL ${esc(op.sql)} • ${fmt(op.areaConstruida)} m² • Score <strong class="text-slate-800">${op.score}/100</strong></span>
+  </li>`).join('')}
+</ul>` : ''}
+<p class="mb-4">Cada imóvel acima possui página com proveniência por campo e links para as consultas oficiais. Registros arquivados deixaram de atender aos critérios de publicação e permanecem no histórico interno para auditoria.</p>
+<h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Fontes e evidências</h2>
+<ul class="list-disc pl-5 space-y-1 mb-4">
+  ${fontes.map((f) => `<li><a href="${esc(f.url)}" class="text-blue-700 hover:underline"${f.url.startsWith('http') ? ' target="_blank" rel="noopener noreferrer"' : ''}>${esc(f.nome)}</a></li>`).join('')}
+</ul>
+`;
+  return {
+    id: `art-${slug}`,
+    title: titulo,
+    slug,
+    dataPublicacao: agora,
+    dataAtualizacao: agora,
+    descricao: `O pipeline publicou ${novos.length} novos imóveis e registrou ${alteracoes.length} alterações. Base atual: ${fmt(total)} imóveis reais.`,
+    categoria: 'Atualização',
+    tags: ['ETL', 'Base de dados', 'Transparência'],
+    conteudo,
+    fontes,
+    evidencias: { tipo: 'atualizacao-etl', executadoEm: agora, novos: novos.length, alteracoes: alteracoes.length, arquivadas: arquivadas.length, totalImoveis: total },
+  };
 }
 
 function main() {
-  console.log("Iniciando geração de artigos...");
+  console.log('Gerador de artigos (modo evidência)...');
+  const agora = new Date().toISOString();
+  const ops = readJSON(path.join(DATA, 'oportunidades.json'), []);
+  const subv = readJSON(path.join(DATA, 'subvencao.json'), {});
+  const status = readJSON(path.join(DATA, 'etl_status.json'), {});
+  const historico = readJSON(path.join(INTERNAL, 'historico.json'), { eventos: [] });
+  let artigos = readJSON(path.join(DATA, 'artigos.json'), []);
 
-  try {
-    const oportunidades = loadJson(oportunidadesPath, []);
-    const projetos = loadJson(projetosPath, []);
-    const subvencao = loadJson(subvencaoPath, {});
-    let artigos = loadJson(artigosPath, []);
-
-    const now = new Date();
-    const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday...
-
-    // Check if we should generate the weekly article (e.g., every Monday)
-    // For the sake of testing/initial run, if no articles exist, let's create a weekly one anyway.
-    const isWeekly = dayOfWeek === 1 || artigos.length === 0;
-
-    const newArticles = [];
-
-    if (isWeekly) {
-      // Generate Weekly Summary Article
-      const weekNumber = Math.ceil(now.getDate() / 7);
-      const title = `Oportunidades de Retrofit da Semana — ${formatDate(now)}`;
-      const slug = createSlug(`oportunidades-retrofit-semana-${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`);
-
-      // Avoid exact duplicates
-      if (!artigos.find(a => a.slug === slug)) {
-        const topOportunidades = [...oportunidades].sort((a, b) => b.score - a.score).slice(0, 3);
-        const topProjetos = [...projetos].sort((a, b) => b.valorAprovado - a.valorAprovado).slice(0, 2);
-
-        let content = `
-          <p class="lead text-lg text-slate-600 mb-6">Resumo das principais movimentações da semana no monitoramento do Radar Retrofit SP. Identificamos novos imóveis com potencial de subvenção e atualizamos o status de projetos no Centro.</p>
-
-          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">O que mudou esta semana</h2>
-          <p class="mb-4">Na atualização de ${formatDate(now)}, a base do Radar registra um total de ${subvencao.indicadores?.oportunidadesIdentificadas || oportunidades.length} imóveis monitorados e um orçamento disponível de ${formatCurrency(subvencao.indicadores?.orcamentoDisponivel || 0)}.</p>
-
-          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Maiores Opportunity Scores</h2>
-          <p class="mb-4">Nossa engine destacou os seguintes imóveis com alta aderência aos parâmetros de retrofit:</p>
-          <ul class="space-y-4 mb-6">
-            ${topOportunidades.map(op => `
-              <li class="bg-white p-4 border border-slate-200 rounded-lg shadow-sm">
-                <a href="/oportunidades/${op.id}" class="font-bold text-blue-700 hover:underline text-lg block mb-1">${op.endereco}</a>
-                <span class="text-sm text-slate-500 block mb-2">${op.regiao} • Score: <strong class="text-slate-800">${op.score}/100</strong></span>
-                <p class="text-sm text-slate-600">${op.motivo}</p>
-              </li>
-            `).join('')}
-          </ul>
-
-          <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Destaques em Projetos e Incentivos</h2>
-          <p class="mb-4">Entre os projetos acompanhados, destacamos movimentações relevantes:</p>
-          <ul class="space-y-4 mb-6">
-            ${topProjetos.map(proj => `
-              <li class="bg-white p-4 border border-slate-200 rounded-lg shadow-sm">
-                <strong class="text-slate-900 block mb-1">${proj.nome} (${proj.empresa})</strong>
-                <p class="text-sm text-slate-600">Situado em ${proj.distrito}, o projeto encontra-se <em>${proj.situacao}</em> com valor aprovado estimado em ${formatCurrency(proj.valorAprovado)}.</p>
-              </li>
-            `).join('')}
-          </ul>
-
-          <p class="mb-4">Continue acompanhando nossa plataforma para mais informações e alertas.</p>
-          ${ctaHtml}
-        `;
-
-        newArticles.push({
-          id: `art-weekly-${Date.now()}`,
-          title,
-          slug,
-          dataPublicacao: now.toISOString(),
-          dataAtualizacao: now.toISOString(),
-          descricao: `Resumo das principais movimentações da semana no Radar Retrofit SP, incluindo novas oportunidades e projetos.`,
-          categoria: 'Semanal',
-          tags: ['Resumo Semanal', 'Oportunidades', 'Retrofit Centro'],
-          conteudo: content
-        });
-      }
-    } else {
-      // Daily Content generation based on an interesting opportunity not recently covered
-      // Let's pick a random high score opportunity
-      const highScores = oportunidades.filter(op => op.score >= 80);
-      const op = highScores[Math.floor(Math.random() * highScores.length)] || oportunidades[0];
-
-      if (op) {
-        const title = `Radar identifica nova oportunidade de retrofit na região de ${op.regiao}`;
-        const slug = createSlug(`oportunidade-retrofit-${op.regiao}-${op.id}`);
-
-        if (!artigos.find(a => a.slug === slug)) {
-          let content = `
-            <p class="lead text-lg text-slate-600 mb-6">Na atualização mais recente do Radar Retrofit São Paulo, nossa engine identificou um novo imóvel com potencial significativo para requalificação e acesso à subvenção econômica.</p>
-
-            <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Sobre o Imóvel</h2>
-            <p class="mb-4">Localizado na região de <strong>${op.regiao}</strong>, o imóvel possui aproximadamente <strong>${op.area}m²</strong> e uso conhecido atual como <em>${op.usoConhecido}</em>. A inteligência do Radar atribuiu a este imóvel um <strong>Opportunity Score de ${op.score}/100</strong>.</p>
-
-            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 my-6">
-              <p class="text-blue-900 font-medium">Motivo do destaque: ${op.motivo}</p>
-            </div>
-
-            <h2 class="text-2xl font-bold text-slate-900 mt-8 mb-4">Viabilidade Financeira e Regulatória</h2>
-            <p class="mb-4">Estando em zoneamento ${op.zoneamento} e inserido no perímetro de ${op.perimetros?.join(', ')}, o imóvel apresenta potencial máximo de subvenção econômica estimado em <strong>${formatCurrency(op.financeiro?.potencialMaximoSubvencao)}</strong>, dado um custo de obra projetado de ${formatCurrency(op.financeiro?.estimativaCustoObra)}.</p>
-
-            <p class="mb-4">É importante notar os riscos regulatórios e operacionais associados, tais como: ${op.riscos?.join(', ')}. O imóvel possui status de proteção: ${op.protecao}.</p>
-
-            <p class="mb-6">Para acessar a análise completa, incluindo VGV potencial estimado e isenções fiscais aplicáveis, acesse a página detalhada da oportunidade.</p>
-
-            <div class="text-center my-8">
-              <a href="/oportunidades/${op.id}" class="inline-block bg-slate-900 text-white font-bold px-8 py-3 rounded-lg hover:bg-slate-800 transition shadow-md">Ver Dossiê Completo da Oportunidade</a>
-            </div>
-
-            ${ctaHtml}
-          `;
-
-          newArticles.push({
-            id: `art-daily-${Date.now()}`,
-            title,
-            slug,
-            dataPublicacao: now.toISOString(),
-            dataAtualizacao: now.toISOString(),
-            descricao: `Nova oportunidade identificada na região de ${op.regiao} com alto Opportunity Score no Radar Retrofit SP.`,
-            categoria: 'Oportunidades',
-            tags: ['Novas Oportunidades', op.regiao, 'Análise Indicativa'],
-            conteudo: content
-          });
-        }
-      }
-    }
-
-    if (newArticles.length > 0) {
-      artigos = [...newArticles, ...artigos];
-      saveJson(artigosPath, artigos);
-      console.log(`Sucesso: ${newArticles.length} artigo(s) gerado(s).`);
-    } else {
-      console.log("Nenhum artigo novo gerado (possível duplicidade ou sem pautas).");
-    }
-
-  } catch (error) {
-    console.error("Erro fatal durante a geração de artigos. Protegendo a build...", error);
-    // Exit code 0 to NOT break the Next.js build or ETL action
-    process.exit(0);
+  if (!Array.isArray(artigos)) artigos = [];
+  if (!Array.isArray(ops) || !ops.length) {
+    console.log('Base de oportunidades vazia — nenhum artigo gerado.');
+    return;
   }
+
+  const ultimoCorte = artigos.reduce((max, a) => {
+    const c = (a.evidencias && a.evidencias.executadoEm) || a.dataPublicacao || '';
+    return c > max ? c : max;
+  }, '');
+  const eventos = (historico.eventos || []).filter((e) => e.data && e.data > ultimoCorte);
+  const novos = eventos.filter((e) => e.tipo === 'publicada');
+  const alteracoes = eventos.filter((e) => e.tipo === 'alteracao');
+  const arquivadas = eventos.filter((e) => e.tipo === 'arquivada' || e.tipo === 'removida_sintetica');
+
+  let novo = null;
+  const temSnapshot = artigos.some((a) => a.evidencias && a.evidencias.tipo === 'snapshot-base');
+  if (!temSnapshot) {
+    novo = montaSnapshot({ ops, subv, status, historico, agora });
+  } else if (novos.length || alteracoes.length || arquivadas.length) {
+    novo = montaAtualizacao({ novos, alteracoes, arquivadas, ops, agora });
+  }
+
+  if (!novo) {
+    console.log('Sem novidade real desde o último artigo — nada gerado.');
+    return;
+  }
+  if (artigos.some((a) => a.slug === novo.slug)) {
+    console.log(`Artigo ${novo.slug} já existe — nada gerado.`);
+    return;
+  }
+  // Trava final: texto jamais pode conter "undefined" (campo de schema errado).
+  const serial = JSON.stringify(novo);
+  if (/undefined/.test(serial)) {
+    console.error('Artigo descartado: contém "undefined" (schema incompatível).');
+    process.exit(1);
+  }
+  if (!novo.fontes || !novo.fontes.length || !novo.fontes.every((f) => f.url)) {
+    console.error('Artigo descartado: sem fontes com URL.');
+    process.exit(1);
+  }
+
+  artigos = [novo, ...artigos].slice(0, 50);
+  fs.writeFileSync(path.join(DATA, 'artigos.json'), JSON.stringify(artigos, null, 2));
+  console.log(`Artigo gerado: ${novo.slug}`);
 }
 
 main();

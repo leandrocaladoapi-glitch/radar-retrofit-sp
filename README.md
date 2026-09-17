@@ -4,10 +4,12 @@ O **Radar Retrofit São Paulo** é uma plataforma de inteligência independente,
 
 ## O que é o projeto?
 
-A plataforma transforma dados públicos espalhados (Prefeitura, GeoSampa, Diário Oficial, Portal da Subvenção) em:
-* **Oportunidades identificáveis:** Uma engine algorítmica pontua (Opportunity Score) imóveis no Centro de São Paulo que possuem aderência aos incentivos do Requalifica Centro e AIU Setor Central.
-* **Inteligência comercial:** Acompanhamento do dinheiro, histórico de projetos aprovados, valores concedidos e agentes (empresas) atuando no mercado.
-* **Projeção Financeira e de Risco:** Dossiês indicativos que calculam estimativas de custo de obra, teto de subvenção e apontam riscos regulatórios e de patrimônio histórico.
+A plataforma transforma dados públicos espalhados (GeoSampa, listas oficiais da SMUL, Portal da Subvenção) em:
+* **Oportunidades identificáveis:** Uma engine algorítmica pontua (Opportunity Score) imóveis reais no Centro de São Paulo que possuem aderência aos incentivos do Requalifica Centro e AIU Setor Central.
+* **Inteligência comercial:** Histórico de habilitados/credenciados extraído das listas oficiais, valores máximos Fase II/2025 e agentes (empresas) atuando no mercado. Valores concedidos ou pagos não são publicados — nenhuma fonte oficial localizada até o momento.
+* **Projeção Financeira e de Risco:** Dossiês que exibem dados cadastrais oficiais, estimativas paramétricas de custo de obra e teto de subvenção (sempre rotuladas como estimativas do Radar) e apontam riscos regulatórios e de patrimônio histórico.
+
+**Política de integridade: zero dado inventado.** Todo campo oficial publicado possui proveniência (fonte + URL/documento + data). O comando `npm run verify:data-integrity` falha o build diante de qualquer dado não comprovado. O que não pode ser verificado não é publicado.
 
 *(Nota: O produto gera inteligência indicativa. Ele não executa projeto arquitetônico e não garante que a Prefeitura concederá subvenções.)*
 
@@ -15,16 +17,16 @@ A plataforma transforma dados públicos espalhados (Prefeitura, GeoSampa, Diári
 
 A aplicação é dividida em módulos analíticos:
 
-1. **Dashboard Inicial (Home):** Visão macro do orçamento, recursos concedidos e volume de projetos.
-2. **Mapa de Oportunidades:** Visualização geográfica (MapLibre GL) com clusterização, filtros territoriais/financeiros e painel de inteligência do recorte visível. As oportunidades identificadas pelo Radar aparecem georreferenciadas; os projetos oficiais aparecem na lista de `/projetos`, pois as fontes públicas não informam endereço nem coordenada.
-3. **Radar de Oportunidades (Pipeline):** Lista de imóveis pontuados pela nossa engine. Ao clicar em uma oportunidade, você acessa um **Dossiê Completo**, contendo:
-   - Dados físicos e cadastrais estimados.
-   - Status em perímetros de incentivo oficiais.
-   - Projeção financeira preliminar (custo de obra, teto de subvenção, isenções aplicáveis).
-   - Matriz de Riscos (estruturais, patrimônio histórico).
-   - Próximos passos recomendados.
-4. **Chamamento Atual:** Regras vigentes do edital.
-5. **Projetos:** Base histórica com filtros de projetos passados e atuais.
+1. **Dashboard Inicial (Home):** Visão macro calculada da base real (imóveis monitorados, credenciados Fase II/2025, registros SMUL, teto do programa em lei).
+2. **Mapa de Oportunidades:** Visualização geográfica (MapLibre GL) com clusterização, filtros territoriais/financeiros e painel de inteligência do recorte visível. As oportunidades identificadas pelo Radar aparecem georreferenciadas (centroide da geometria oficial do lote); os projetos oficiais aparecem na lista de `/projetos`, pois as listas não publicam coordenadas (a lista 2025 publica endereços, sem georreferência oficial).
+3. **Radar de Oportunidades (Pipeline):** Lista de imóveis reais pontuados pela nossa engine. Ao clicar em uma oportunidade, você acessa um **Dossiê Completo**, contendo:
+   - Dados cadastrais oficiais (SQL, endereço, áreas, uso, zoneamento).
+   - Status em perímetros de incentivo oficiais (cruzamento geométrico).
+   - Estimativas do Radar (custo de obra, teto teórico de subvenção) — nunca apresentadas como dados da Prefeitura.
+   - Matriz de Riscos (patrimônio histórico, lacunas de informação).
+   - Fontes e proveniência por campo + data da última verificação.
+4. **Chamamentos:** Os três chamamentos com listas oficiais extraídas (01/2023, 02/2024, 01/2025/SMUL), com documentos, SEI e valores Fase II/2025.
+5. **Projetos:** Base histórica com busca, extraída verbatim das listas oficiais.
 
 ## Mapa de Oportunidades (arquitetura)
 
@@ -64,9 +66,10 @@ segue em modo *destaque* (marca os imóveis dentro do perímetro, sem desenhar p
 
 ### Projetos no mapa
 
-As listas oficiais de habilitados/credenciados não publicam endereço, SQL ou
-coordenadas. Por isso nenhum projeto é plotado — a camada existe no painel como
-informação, com link para `/projetos`. Nada de coordenada inventada.
+As listas oficiais de habilitados/credenciados não publicam coordenadas (a lista
+2025 publica endereços, sem georreferência oficial). Por isso nenhum projeto é
+plotado — a camada existe no painel como informação, com link para `/projetos`.
+Nada de coordenada inventada.
 
 ## Arquitetura e Deploy (Vercel)
 
@@ -76,27 +79,36 @@ informação, com link para `/projetos`. Nada de coordenada inventada.
 
 ### Processo ETL (Automação de Dados)
 
-Os dados são ingeridos através do script Node `scripts/fetch_subvencao.js`. Ele simula a leitura de fontes e gera os JSONs estatisticamente plausíveis (inclusive lendo PDFs quando necessário, via pdftotext) para preencher a engine de oportunidades.
+Pipeline 100% a partir de fontes oficiais — nenhum dado escrito à mão:
 
-Para gerar/atualizar os dados localmente:
-`node scripts/fetch_subvencao.js`
+1. **Imóveis** (`scripts/etl/discover_opportunities.js`): consulta o WFS oficial do GeoSampa (camada Lote + Requalifica + AIU + zoneamento + tombamento + distritos), cruza geometrias e calcula score/confiança.
+2. **Validação** (`scripts/etl/validate_and_publish.js` + `qa_audit.js`): requisitos eliminatórios, confidence ≥ 70%, arquivamento (nunca deleção silenciosa) e histórico antes/depois.
+3. **Subvenção** (`scripts/fetch_subvencao.js` + `scripts/etl/subvencao_docs.js`): extrai por código os 3 PDFs oficiais em `data-oficial/subvencao/` e calcula todos os indicadores (nenhum número digitado).
+4. **Artigos** (`scripts/generate_articles.js`): só publica a partir de agregados reais + eventos do histórico, sempre com fontes linkadas.
+5. **Trava** (`scripts/verify_data_integrity.js`, via `npm run verify:data-integrity`): falha o build se houver mock, campo oficial sem fonte, indicador divergente ou artigo sem evidência.
+
+Para regenerar os dados derivados localmente:
+`npm run build:data && npm run verify:data-integrity`
+
+Para rodar o ETL completo de imóveis (requer acesso ao WFS do GeoSampa):
+`npm run etl:imoveis`
 
 ### Como rodar localmente
 
 1. Instale as dependências:
    `npm install`
-2. Rode o script de dados para gerar a base JSON (se necessário):
-   `npm run build:data`
+2. Verifique a integridade dos dados:
+   `npm run verify:data-integrity`
 3. Inicie o servidor Next.js:
-   `npm run start_dev &` (where start_dev maps to next dev)
+   `npm run dev`
 
 A aplicação subirá em http://localhost:3000
 
 ### Deploy
 
-A aplicação está pronta para o Vercel. O script de build no package.json já foi configurado para executar o ETL automático (`node scripts/fetch_subvencao.js`) **antes** do build Next, garantindo que os dados (SSG) cheguem sempre frescos na build.
+A aplicação está pronta para o Vercel. O script de build executa ETL derivado + trava de integridade **antes** do build Next, garantindo que dados não comprovados nunca cheguem à produção.
 
-Adicionalmente, há um arquivo `.github/workflows/etl.yml` preparado para rodar duas vezes ao dia e gerar novos commits automáticos caso os dados públicos sofram alterações, mantendo a plataforma viva.
+Adicionalmente, `.github/workflows/radar-etl.yml` roda duas vezes ao dia (08:00 e 18:00 BRT): executa o ETL completo nas fontes oficiais, valida, e gera commit automático **somente quando há mudança real** nos dados.
 
 ---
 **Nota de Independência:** O site deve deixar claro que se trata de um projeto independente de inteligência. A identidade visual foi elaborada (padrão Bloomberg) de modo a não se passar por uma página da Prefeitura de São Paulo.

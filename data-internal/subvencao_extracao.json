@@ -1,0 +1,79 @@
+{
+  "executadoEm": "2026-09-17T15:56:31.186Z",
+  "totais": {
+    "2023": 11,
+    "2024": 21,
+    "2025": 14
+  },
+  "soma2025": 51949543.4,
+  "descartados2024": [
+    {
+      "protocolo": "SUBVENCAO2024.0007617724",
+      "motivo": "sem nome atribuível no documento (linha seguinte é outro protocolo, vazia ou rodapé)"
+    },
+    {
+      "protocolo": "SUBVENCAO2024.0008191591",
+      "motivo": "sem nome atribuível no documento (linha seguinte é outro protocolo, vazia ou rodapé)"
+    },
+    {
+      "protocolo": "SUBVENCAO2024.0006562008",
+      "motivo": "protocolo em cluster ambíguo — nome publicado sem atribuição de protocolo"
+    },
+    {
+      "protocolo": "SUBVENCAO2024.0028336508",
+      "motivo": "sem nome atribuível no documento (linha seguinte é outro protocolo, vazia ou rodapé)"
+    },
+    {
+      "protocolo": "SUBVENCAO2024.0027759111",
+      "motivo": "protocolo em cluster ambíguo — nome publicado sem atribuição de protocolo"
+    }
+  ],
+  "documentos": {
+    "2023": {
+      "arquivo": "2023-Relacao-Interessados-Habilitados.pdf",
+      "chamamento": "Chamamento Público nº 01/2023/SMUL",
+      "titulo": "Relação de INTERESSADOS habilitados a participar do CHAMAMENTO PÚBLICO",
+      "data": "2023-12-07",
+      "fase": "Habilitados",
+      "situacao": "Habilitado",
+      "itemEdital": "1.1.29",
+      "processo": null,
+      "lote": null,
+      "portaria": null,
+      "sei": null,
+      "verificador": null,
+      "crc": null
+    },
+    "2024": {
+      "arquivo": "2024-Relacao-Interessados-Habilitados.pdf",
+      "chamamento": "Chamamento Público nº 02/2024/SMUL",
+      "titulo": "LISTA DE INTERESSADOS — habilitados na Fase I (convocação de REUNIÃO TÉCNICA)",
+      "data": "2024-07-10",
+      "fase": "Fase I — Habilitados",
+      "situacao": "Habilitado (Fase I)",
+      "itemEdital": "8.4",
+      "processo": "6011.2024/0000706-7",
+      "lote": "Lote 2",
+      "portaria": "Portaria SMUL nº 55/2024",
+      "sei": "6068.2024/0005871-1",
+      "verificador": "106440352",
+      "crc": "9534D549",
+      "atosExecutivo": "982876"
+    },
+    "2025": {
+      "arquivo": "2025-Lista_Credenciados.pdf",
+      "chamamento": "Chamamento Público nº 01/2025/SMUL",
+      "titulo": "LISTA DE CREDENCIADOS em ORDEM DE PRIORIZAÇÃO — Fase II",
+      "data": "2025-09-19",
+      "fase": "Fase II — Credenciados",
+      "situacao": "Credenciado (Fase II)",
+      "itensEdital": "9.3.11 e 9.3.13",
+      "processo": "6068.2024/0005871-1",
+      "lote": "Lote 3",
+      "portaria": "Portaria SMUL nº 34/2025",
+      "sei": "6068.2025/0004742-8",
+      "verificador": "142837382",
+      "crc": "3EB6DE09"
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import projetosData from '../../data/projetos.json'
+import subvencaoData from '../../data/subvencao.json'
 import { Users, Building2, TrendingUp } from 'lucide-react'
 import PageHeader from '../../components/ui/PageHeader'
 import MetricCard from '../../components/ui/MetricCard'
@@ -39,12 +40,12 @@ export default function MercadoPage() {
         <MetricCard
           icon={<TrendingUp size={16} />}
           label="Chamamentos com listas publicadas (2023-2025)"
-          value={3}
+          value={subvencaoData.chamamentos.length}
         />
       </div>
 
       <h2 className="mb-4 border-b border-line pb-2 text-xl font-semibold text-fg">
-        Agentes com Projetos Aprovados/Credenciados
+        Agentes nas listas oficiais (habilitados/credenciados)
       </h2>
 
       <div className="space-y-3 md:hidden">
@@ -83,7 +84,7 @@ export default function MercadoPage() {
       </div>
 
       <div className="callout callout-neutral mt-4 text-xs">
-        A associação entre empresas e projetos é feita exclusivamente com base em dados de domínio público (Diário Oficial, relatórios da SMUL, notícias da Prefeitura). Nomes protegidos por sigilo fiscal não são expostos.
+        Contagem feita exclusivamente a partir das listas oficiais extraídas: relação de habilitados 01/2023/SMUL, lista Fase I 02/2024/SMUL (SEI 6068.2024/0005871-1) e lista de credenciados Fase II 01/2025/SMUL (SEI 6068.2025/0004742-8). Nomes transcritos como publicados; nenhum outro atributo é inferido.
       </div>
     </div>
   )

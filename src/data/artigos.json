@@ -1,47 +1,54 @@
 [
   {
-    "id": "art-daily-1789606307604",
-    "title": "Radar identifica nova oportunidade de retrofit na região de Bela Vista",
-    "slug": "oportunidade-retrofit-bela-vista-op-24",
-    "dataPublicacao": "2026-09-17T00:51:47.560Z",
-    "dataAtualizacao": "2026-09-17T00:51:47.560Z",
-    "descricao": "Nova oportunidade identificada na região de Bela Vista com alto Opportunity Score no Radar Retrofit SP.",
-    "categoria": "Oportunidades",
+    "id": "art-base-do-radar-983-imoveis-2026-09-17",
+    "title": "Base do Radar: 983 imóveis reais monitorados no Centro — 17 de setembro de 2026",
+    "slug": "base-do-radar-983-imoveis-2026-09-17",
+    "dataPublicacao": "2026-09-17T15:51:12.451Z",
+    "dataAtualizacao": "2026-09-17T15:51:12.451Z",
+    "descricao": "Retrato auditável da base em 17 de setembro de 2026: 983 imóveis reais, 99 com score ≥ 85 e 46 registros de subvenção das listas SMUL.",
+    "categoria": "Radar",
     "tags": [
-      "Novas Oportunidades",
-      "Bela Vista",
-      "Análise Indicativa"
+      "Base de dados",
+      "Transparência",
+      "GeoSampa",
+      "SMUL"
     ],
-    "conteudo": "\n            <p class=\"lead text-lg text-slate-600 mb-6\">Na atualização mais recente do Radar Retrofit São Paulo, nossa engine identificou um novo imóvel com potencial significativo para requalificação e acesso à subvenção econômica.</p>\n            \n            <h2 class=\"text-2xl font-bold text-slate-900 mt-8 mb-4\">Sobre o Imóvel</h2>\n            <p class=\"mb-4\">Localizado na região de <strong>Bela Vista</strong>, o imóvel possui aproximadamente <strong>6660m²</strong> e uso conhecido atual como <em>Não Residencial</em>. A inteligência do Radar atribuiu a este imóvel um <strong>Opportunity Score de 80/100</strong>.</p>\n            \n            <div class=\"bg-blue-50 border-l-4 border-blue-500 p-4 my-6\">\n              <p class=\"text-blue-900 font-medium\">Motivo do destaque: Prédio histórico vazio com viabilidade financeira via subvenção econômica e isenção de IPTU.</p>\n            </div>\n\n            <h2 class=\"text-2xl font-bold text-slate-900 mt-8 mb-4\">Viabilidade Financeira e Regulatória</h2>\n            <p class=\"mb-4\">Estando em zoneamento ZEU e inserido no perímetro de AIU Setor Central, Requalifica Centro, o imóvel apresenta potencial máximo de subvenção econômica estimado em <strong>R$ 6.484.632</strong>, dado um custo de obra projetado de R$ 25.938.529.</p>\n\n            <p class=\"mb-4\">É importante notar os riscos regulatórios e operacionais associados, tais como: Necessidade de reforço estrutural, Atualização de PPCI (Bombeiros). O imóvel possui status de proteção: Nenhuma.</p>\n\n            <p class=\"mb-6\">Para acessar a análise completa, incluindo VGV potencial estimado e isenções fiscais aplicáveis, acesse a página detalhada da oportunidade.</p>\n\n            <div class=\"text-center my-8\">\n              <a href=\"/oportunidades/op-24\" class=\"inline-block bg-slate-900 text-white font-bold px-8 py-3 rounded-lg hover:bg-slate-800 transition shadow-md\">Ver Dossiê Completo da Oportunidade</a>\n            </div>\n\n            \n<div class=\"mt-10 p-6 bg-slate-50 border border-slate-200 rounded-xl\">\n  <h3 class=\"text-lg font-bold text-slate-900 mb-2\">Quer identificar imóveis com potencial de retrofit no Centro de São Paulo?</h3>\n  <p class=\"text-slate-600 mb-4\">O Radar Retrofit SP monitora dezenas de propriedades com alta viabilidade financeira.</p>\n  <a href=\"/oportunidades\" class=\"inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-700 transition\">Explorar o Radar de Oportunidades</a>\n</div>\n\n          "
-  },
-  {
-    "id": "art-daily-1789605251163",
-    "title": "Radar identifica nova oportunidade de retrofit na região de Sé",
-    "slug": "oportunidade-retrofit-se-op-47",
-    "dataPublicacao": "2026-09-17T00:34:11.139Z",
-    "dataAtualizacao": "2026-09-17T00:34:11.139Z",
-    "descricao": "Nova oportunidade identificada na região de Sé com alto Opportunity Score no Radar Retrofit SP.",
-    "categoria": "Oportunidades",
-    "tags": [
-      "Novas Oportunidades",
-      "Sé",
-      "Análise Indicativa"
+    "conteudo": "\n<p class=\"lead text-lg text-slate-600 mb-6\">Retrato verificável da base do Radar Retrofit SP em 17 de setembro de 2026: 983 imóveis reais da área central, extraídos do Cadastro Imobiliário Fiscal (GeoSampa) e cruzados por geometria com os perímetros oficiais de incentivo. Nenhum número abaixo é estimativa editorial — todos são agregados da base publicada.</p>\n\n<h2 class=\"text-2xl font-bold text-slate-900 mt-8 mb-4\">O que a base contém</h2>\n<ul class=\"list-disc pl-5 space-y-1 mb-4\">\n  <li><strong>983 imóveis publicados</strong>, cada um com SQL cadastral, endereço oficial, geometria do lote e proveniência por campo.</li>\n  <li><strong>99 com Opportunity Score ≥ 85</strong> (análise do Radar sobre dados oficiais — ver metodologia).</li>\n  <li><strong>264 com proteção patrimonial registrada</strong> na camada oficial de bens tombados (CONPRESP/CONDEPHAAT/IPHAN).</li>\n  <li><strong>Data Confidence médio de 100%</strong> (mínimo de publicação: 70%; 25 candidatos retidos internamente por não atingir os critérios).</li>\n  <li><strong>46 registros de subvenção</strong> extraídos das listas oficiais da SMUL (11 habilitados em 2023, 21 na Fase I de 2024, 14 credenciados na Fase II de 2025).</li>\n</ul>\n\n<h2 class=\"text-2xl font-bold text-slate-900 mt-8 mb-4\">Maiores Opportunity Scores da base atual</h2>\n<p class=\"mb-4\">Classificação determinística (score, desempate por confiança e SQL). O score é análise do Radar, não dado da Prefeitura:</p>\n<ul class=\"space-y-4 mb-6\">\n  \n  <li class=\"bg-white p-4 border border-slate-200 rounded-lg shadow-sm\">\n    <a href=\"/oportunidades/rua-capitao-faustino-lima-134-bras-003010\" class=\"font-bold text-blue-700 hover:underline text-lg block mb-1\">Rua Capitão Faustino Lima, 134 — Brás</a>\n    <span class=\"text-sm text-slate-500 block mb-2\">SQL 003.010.0055-7 • 21.916 m² • Score <strong class=\"text-slate-800\">100/100</strong> • Confiança 100%</span>\n    <p class=\"text-sm text-slate-600\">Relação espacial dentro com o perímetro oficial do Requalifica Centro (Perimetro Area Central).</p>\n  </li>\n  <li class=\"bg-white p-4 border border-slate-200 rounded-lg shadow-sm\">\n    <a href=\"/oportunidades/rua-joaquim-carlos-396-belem-026015\" class=\"font-bold text-blue-700 hover:underline text-lg block mb-1\">Rua Joaquim Carlos, 396 — Belém</a>\n    <span class=\"text-sm text-slate-500 block mb-2\">SQL 026.015.0272-1 • 32.247 m² • Score <strong class=\"text-slate-800\">100/100</strong> • Confiança 100%</span>\n    <p class=\"text-sm text-slate-600\">Relação espacial dentro com o perímetro oficial do Requalifica Centro (Setor 026, acrescido ao Perimetro Area Central ).</p>\n  </li>\n  <li class=\"bg-white p-4 border border-slate-200 rounded-lg shadow-sm\">\n    <a href=\"/oportunidades/rua-pedro-vicente-625-pari-017120\" class=\"font-bold text-blue-700 hover:underline text-lg block mb-1\">Rua Pedro Vicente, 625 — Pari</a>\n    <span class=\"text-sm text-slate-500 block mb-2\">SQL 017.120.0001-2 • 31.068 m² • Score <strong class=\"text-slate-800\">97/100</strong> • Confiança 100%</span>\n    <p class=\"text-sm text-slate-600\">Relação espacial dentro com o perímetro oficial do Requalifica Centro (Setor 017, acrescido ao Perimetro Area Central).</p>\n  </li>\n</ul>\n\n<h2 class=\"text-2xl font-bold text-slate-900 mt-8 mb-4\">Movimentações registradas pelo ETL</h2>\n<p class=\"mb-4\">Histórico auditável de execuções do pipeline (antes/depois por campo): 983 publicações, 1.616 alterações de campo e 85 remoções de registros sintéticos legados. Última execução: 17 de setembro de 2026.</p>\n\n<h2 class=\"text-2xl font-bold text-slate-900 mt-8 mb-4\">Limites do que afirmamos</h2>\n<p class=\"mb-4\">Custos de obra e tetos de subvenção por imóvel são <strong>estimativas paramétricas do Radar</strong>, nunca valores oficiais. Ocupação, vacância, situação dominial e condições estruturais não constam das fontes públicas e não são afirmadas. A lista completa de fontes e a metodologia estão linkadas abaixo.</p>\n\n<h2 class=\"text-2xl font-bold text-slate-900 mt-8 mb-4\">Fontes e evidências</h2>\n<ul class=\"list-disc pl-5 space-y-1 mb-4\">\n  <li><a href=\"https://metadados.geosampa.prefeitura.sp.gov.br/geonetwork/srv/api/records/62c1113c-36a4-43d1-b763-81ec63b58116\" class=\"text-blue-700 hover:underline\" target=\"_blank\" rel=\"noopener noreferrer\">Cadastro Imobiliário Fiscal — camada Lote (GeoSampa)</a></li><li><a href=\"https://legislacao.prefeitura.sp.gov.br/leis/lei-17577-de-20-de-julho-de-2021\" class=\"text-blue-700 hover:underline\" target=\"_blank\" rel=\"noopener noreferrer\">Requalifica Centro — Lei nº 17.577/2021</a></li><li><a href=\"https://legislacao.prefeitura.sp.gov.br/leis/lei-18177-de-25-de-julho-de-2024\" class=\"text-blue-700 hover:underline\" target=\"_blank\" rel=\"noopener noreferrer\">Zoneamento — LPUOS Lei nº 18.177/2024</a></li><li><a href=\"https://subvencao.prefeitura.sp.gov.br\" class=\"text-blue-700 hover:underline\" target=\"_blank\" rel=\"noopener noreferrer\">Portal da Subvenção Econômica (SMUL)</a></li><li><a href=\"/metodologia\" class=\"text-blue-700 hover:underline\">Metodologia do Radar</a></li>\n</ul>\n",
+    "fontes": [
+      {
+        "nome": "Cadastro Imobiliário Fiscal — camada Lote (GeoSampa)",
+        "url": "https://metadados.geosampa.prefeitura.sp.gov.br/geonetwork/srv/api/records/62c1113c-36a4-43d1-b763-81ec63b58116"
+      },
+      {
+        "nome": "Requalifica Centro — Lei nº 17.577/2021",
+        "url": "https://legislacao.prefeitura.sp.gov.br/leis/lei-17577-de-20-de-julho-de-2021"
+      },
+      {
+        "nome": "Zoneamento — LPUOS Lei nº 18.177/2024",
+        "url": "https://legislacao.prefeitura.sp.gov.br/leis/lei-18177-de-25-de-julho-de-2024"
+      },
+      {
+        "nome": "Portal da Subvenção Econômica (SMUL)",
+        "url": "https://subvencao.prefeitura.sp.gov.br"
+      },
+      {
+        "nome": "Metodologia do Radar",
+        "url": "/metodologia"
+      }
     ],
-    "conteudo": "\n            <p class=\"lead text-lg text-slate-600 mb-6\">Na atualização mais recente do Radar Retrofit São Paulo, nossa engine identificou um novo imóvel com potencial significativo para requalificação e acesso à subvenção econômica.</p>\n            \n            <h2 class=\"text-2xl font-bold text-slate-900 mt-8 mb-4\">Sobre o Imóvel</h2>\n            <p class=\"mb-4\">Localizado na região de <strong>Sé</strong>, o imóvel possui aproximadamente <strong>1209m²</strong> e uso conhecido atual como <em>Uso Misto</em>. A inteligência do Radar atribuiu a este imóvel um <strong>Opportunity Score de 87/100</strong>.</p>\n            \n            <div class=\"bg-blue-50 border-l-4 border-blue-500 p-4 my-6\">\n              <p class=\"text-blue-900 font-medium\">Motivo do destaque: Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).</p>\n            </div>\n\n            <h2 class=\"text-2xl font-bold text-slate-900 mt-8 mb-4\">Viabilidade Financeira e Regulatória</h2>\n            <p class=\"mb-4\">Estando em zoneamento ZM e inserido no perímetro de Requalifica Centro, o imóvel apresenta potencial máximo de subvenção econômica estimado em <strong>R$ 880.432</strong>, dado um custo de obra projetado de R$ 3.521.728.</p>\n\n            <p class=\"mb-4\">É importante notar os riscos regulatórios e operacionais associados, tais como: Necessidade de reforço estrutural, Atualização de PPCI (Bombeiros). O imóvel possui status de proteção: Nenhuma.</p>\n\n            <p class=\"mb-6\">Para acessar a análise completa, incluindo VGV potencial estimado e isenções fiscais aplicáveis, acesse a página detalhada da oportunidade.</p>\n\n            <div class=\"text-center my-8\">\n              <a href=\"/oportunidades/op-47\" class=\"inline-block bg-slate-900 text-white font-bold px-8 py-3 rounded-lg hover:bg-slate-800 transition shadow-md\">Ver Dossiê Completo da Oportunidade</a>\n            </div>\n\n            \n<div class=\"mt-10 p-6 bg-slate-50 border border-slate-200 rounded-xl\">\n  <h3 class=\"text-lg font-bold text-slate-900 mb-2\">Quer identificar imóveis com potencial de retrofit no Centro de São Paulo?</h3>\n  <p class=\"text-slate-600 mb-4\">O Radar Retrofit SP monitora dezenas de propriedades com alta viabilidade financeira.</p>\n  <a href=\"/oportunidades\" class=\"inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-700 transition\">Explorar o Radar de Oportunidades</a>\n</div>\n\n          "
-  },
-  {
-    "id": "art-weekly-1789605049901",
-    "title": "Oportunidades de Retrofit da Semana — 17 de setembro de 2026",
-    "slug": "oportunidades-retrofit-semana-2026-9-17",
-    "dataPublicacao": "2026-09-17T00:30:49.481Z",
-    "dataAtualizacao": "2026-09-17T00:30:49.481Z",
-    "descricao": "Resumo das principais movimentações da semana no Radar Retrofit SP, incluindo novas oportunidades e projetos.",
-    "categoria": "Semanal",
-    "tags": [
-      "Resumo Semanal",
-      "Oportunidades",
-      "Retrofit Centro"
-    ],
-    "conteudo": "\n          <p class=\"lead text-lg text-slate-600 mb-6\">Resumo das principais movimentações da semana no monitoramento do Radar Retrofit SP. Identificamos novos imóveis com potencial de subvenção e atualizamos o status de projetos no Centro.</p>\n          \n          <h2 class=\"text-2xl font-bold text-slate-900 mt-8 mb-4\">O que mudou esta semana</h2>\n          <p class=\"mb-4\">Na atualização de 17 de setembro de 2026, a base do Radar registra um total de 85 imóveis monitorados e um orçamento disponível de R$ 1.000.000.000.</p>\n\n          <h2 class=\"text-2xl font-bold text-slate-900 mt-8 mb-4\">Maiores Opportunity Scores</h2>\n          <p class=\"mb-4\">Nossa engine destacou os seguintes imóveis com alta aderência aos parâmetros de retrofit:</p>\n          <ul class=\"space-y-4 mb-6\">\n            \n              <li class=\"bg-white p-4 border border-slate-200 rounded-lg shadow-sm\">\n                <a href=\"/oportunidades/op-3\" class=\"font-bold text-blue-700 hover:underline text-lg block mb-1\">Imóvel Potencial 3 (SQL 901-23)</a>\n                <span class=\"text-sm text-slate-500 block mb-2\">Santa Cecília • Score: <strong class=\"text-slate-800\">94/100</strong></span>\n                <p class=\"text-sm text-slate-600\">Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.</p>\n              </li>\n            \n              <li class=\"bg-white p-4 border border-slate-200 rounded-lg shadow-sm\">\n                <a href=\"/oportunidades/op-17\" class=\"font-bold text-blue-700 hover:underline text-lg block mb-1\">Imóvel Potencial 17 (SQL 818-31)</a>\n                <span class=\"text-sm text-slate-500 block mb-2\">República • Score: <strong class=\"text-slate-800\">94/100</strong></span>\n                <p class=\"text-sm text-slate-600\">Laje corporativa obsoleta com forte aderência aos incentivos do Requalifica Centro.</p>\n              </li>\n            \n              <li class=\"bg-white p-4 border border-slate-200 rounded-lg shadow-sm\">\n                <a href=\"/oportunidades/op-34\" class=\"font-bold text-blue-700 hover:underline text-lg block mb-1\">Imóvel Potencial 34 (SQL 919-38)</a>\n                <span class=\"text-sm text-slate-500 block mb-2\">República • Score: <strong class=\"text-slate-800\">94/100</strong></span>\n                <p class=\"text-sm text-slate-600\">Imóvel subutilizado em eixo de transporte de massa (AIU Setor Central).</p>\n              </li>\n            \n          </ul>\n\n          <h2 class=\"text-2xl font-bold text-slate-900 mt-8 mb-4\">Destaques em Projetos e Incentivos</h2>\n          <p class=\"mb-4\">Entre os projetos acompanhados, destacamos movimentações relevantes:</p>\n          <ul class=\"space-y-4 mb-6\">\n            \n              <li class=\"bg-white p-4 border border-slate-200 rounded-lg shadow-sm\">\n                <strong class=\"text-slate-900 block mb-1\">Projeto Requalifica 9 (MI88 EMPREENDIMENTOS E PARTICIPACOES LTDA)</strong>\n                <p class=\"text-sm text-slate-600\">Situado em Bela Vista, o projeto encontra-se <em>Credenciado</em> com valor aprovado estimado em R$ 4.944.617.</p>\n              </li>\n            \n              <li class=\"bg-white p-4 border border-slate-200 rounded-lg shadow-sm\">\n                <strong class=\"text-slate-900 block mb-1\">Projeto Requalifica 1 (SM01 - Edifício Virginia SPE S/A)</strong>\n                <p class=\"text-sm text-slate-600\">Situado em Santa Cecília, o projeto encontra-se <em>Termo de Outorga</em> com valor aprovado estimado em R$ 4.878.873.</p>\n              </li>\n            \n          </ul>\n\n          <p class=\"mb-4\">Continue acompanhando nossa plataforma para mais informações e alertas.</p>\n          \n<div class=\"mt-10 p-6 bg-slate-50 border border-slate-200 rounded-xl\">\n  <h3 class=\"text-lg font-bold text-slate-900 mb-2\">Quer identificar imóveis com potencial de retrofit no Centro de São Paulo?</h3>\n  <p class=\"text-slate-600 mb-4\">O Radar Retrofit SP monitora dezenas de propriedades com alta viabilidade financeira.</p>\n  <a href=\"/oportunidades\" class=\"inline-block bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-700 transition\">Explorar o Radar de Oportunidades</a>\n</div>\n\n        "
+    "evidencias": {
+      "tipo": "snapshot-base",
+      "executadoEm": "2026-09-17T15:51:12.451Z",
+      "totalImoveis": 983,
+      "score85": 99,
+      "protegidos": 264,
+      "confiancaMedia": 100,
+      "eventosPorTipo": {
+        "publicada": 983,
+        "removida_sintetica": 85,
+        "alteracao": 1616
+      },
+      "etlExecutadoEm": "2026-09-17T02:39:04.724Z"
+    }
   }
 ]

@@ -357,6 +357,27 @@ function pickByCentroid(features, lotGeom) {
     });
   }
 
+  // Desambiguação determinística de slugs: lotes distintos podem compartilhar
+  // logradouro+número+distrito. Regra (independente da ordem de resposta do WFS):
+  // agrupa por slug, ordena por SQL; o primeiro mantém o slug, os demais
+  // recebem o sufixo "-" + SQL completo (só dígitos).
+  const porSlug = new Map();
+  for (const cand of candidatos) {
+    if (!porSlug.has(cand.slug)) porSlug.set(cand.slug, []);
+    porSlug.get(cand.slug).push(cand);
+  }
+  for (const grupo of porSlug.values()) {
+    if (grupo.length < 2) continue;
+    grupo.sort((a, b) => a.sql.localeCompare(b.sql));
+    grupo.forEach((cand, idx) => {
+      if (idx === 0) return;
+      const novo = `${cand.slug}-${cand.sql.replace(/\D/g, '')}`;
+      console.log(`  [slug] colisão resolvida: ${cand.sql} -> ${novo}`);
+      cand.slug = novo;
+      cand.id = novo;
+    });
+  }
+
   console.log(`-> ${candidatos.length} imóveis reais normalizados a partir das fontes oficiais`);
 
   fs.mkdirSync(INTERNAL, { recursive: true });

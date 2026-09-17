@@ -4,7 +4,7 @@ import artigos from '../data/artigos.json'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Configured with a placeholder domain that can be overridden by environment variable
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://radar-retrofit.lcfconsulting.com.br'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://radar-retrofit-sp.vercel.app'
 
   const staticRoutes = [
     '',
