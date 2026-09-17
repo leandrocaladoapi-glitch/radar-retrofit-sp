@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import oportunidades from '../data/oportunidades.json'
+import artigos from '../data/artigos.json'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Configured with a placeholder domain that can be overridden by environment variable
@@ -17,7 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/atualizacoes',
     '/relatorio',
     '/metodologia',
-    '/fontes'
+    '/fontes',
+    '/artigos'
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -32,5 +34,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...staticRoutes, ...oportunidadesRoutes]
+  const artigosRoutes = artigos.map((art) => ({
+    url: `${baseUrl}/artigos/${art.slug}`,
+    lastModified: new Date(art.dataAtualizacao),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  return [...staticRoutes, ...oportunidadesRoutes, ...artigosRoutes]
 }
