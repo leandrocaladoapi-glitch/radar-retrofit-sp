@@ -190,18 +190,18 @@ function pickByCentroid(features, lotGeom) {
   const cqlLote = `${bboxLote} AND qt_area_construida>=${REGRAS.areaConstruidaMinima} AND tx_situ_lote='${REGRAS.situacaoLote}'`;
 
   console.log('-> coletando camadas oficiais (GeoSampa WFS)');
-  const [lotes, requalifica, aiu, zoneamento, tombados, distritos] = await Promise.all([
-    fetchLayer('lote', {
+  // Sequencial: o servidor oficial responde melhor sem concorrência pesada.
+  const lotes = await fetchLayer('lote', {
       cqlFilter: cqlLote,
       propertyName: 'ge_poligono,cd_setor_fiscal,cd_quadra_fiscal,cd_lote,cd_digito_sql,cd_condominio,nm_logradouro_completo,cd_numero_porta,tx_complemento_endereco,qt_area_construida,qt_area_terreno,dc_tipo_uso_imovel,tx_situ_lote,cd_cib,tx_situacao_cib',
       maxFeatures: 4000,
-    }),
-    fetchLayer('requalifica'),
-    fetchLayer('aiu'),
-    fetchLayer('zoneamento', { cqlFilter: `BBOX(ge_poligono,${BBOX_CENTRO.join(',')},'EPSG:31983')`, maxFeatures: 4000 }),
-    fetchLayer('tombado', { cqlFilter: `BBOX(ge_poligono,${BBOX_CENTRO.join(',')},'EPSG:31983')`, maxFeatures: 4000 }),
-    fetchLayer('distrito', { cqlFilter: `BBOX(ge_poligono,${BBOX_CENTRO.join(',')},'EPSG:31983')`, maxFeatures: 200 }),
-  ]);
+  });
+  const requalifica = await fetchLayer('requalifica');
+  const aiu = await fetchLayer('aiu');
+  const bboxCql = `BBOX(ge_poligono,${BBOX_CENTRO.join(',')},'EPSG:31983')`;
+  const zoneamento = await fetchLayer('zoneamento', { cqlFilter: bboxCql, maxFeatures: 4000 });
+  const tombados = await fetchLayer('tombado', { cqlFilter: bboxCql, maxFeatures: 4000 });
+  const distritos = await fetchLayer('distrito', { cqlFilter: bboxCql, maxFeatures: 200 });
 
   if (!lotes.length) throw new Error('Fonte oficial retornou zero lotes — pipeline abortado para não degradar a base.');
 
@@ -366,7 +366,7 @@ function pickByCentroid(features, lotGeom) {
 
   console.log('OK — descoberta concluída. Próxima etapa: validate_and_publish.js');
 })().catch((err) => {
-  console.error('FALHA NO PIPELINE:', err.message);
+  console.error('FALHA NO PIPELINE:', err && err.stack ? err.stack : err);
   console.error('Base publicada mantida inalterada (sem fallback sintético).');
   process.exit(1);
 });

@@ -24,9 +24,16 @@ async function wfsGetFeature({ typeName, cqlFilter, propertyName, maxFeatures, s
 
   const url = `${WFS_BASE}?${params.toString()}`;
   let lastErr;
-  for (let attempt = 0; attempt < 4; attempt++) {
+  for (let attempt = 0; attempt < 6; attempt++) {
     try {
-      const res = await fetch(url, { headers: { 'User-Agent': 'RadarRetrofitSP-ETL/1.0' } });
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 180000);
+      let res;
+      try {
+        res = await fetch(url, { headers: { 'User-Agent': 'RadarRetrofitSP-ETL/1.0' }, signal: ctrl.signal });
+      } finally {
+        clearTimeout(timer);
+      }
       const text = await res.text();
       if (!res.ok) throw new Error(`HTTP ${res.status} :: ${text.slice(0, 300)}`);
       if (text.trim().startsWith('<')) throw new Error(`Resposta XML/erro do WFS :: ${text.slice(0, 300)}`);
@@ -34,7 +41,8 @@ async function wfsGetFeature({ typeName, cqlFilter, propertyName, maxFeatures, s
       return { json, url };
     } catch (err) {
       lastErr = err;
-      await new Promise((r) => setTimeout(r, 2000 * (attempt + 1)));
+      console.warn(`  [retry ${attempt + 1}/6] ${typeName}: ${err.message.slice(0, 200)}`);
+      await new Promise((r) => setTimeout(r, 5000 * (attempt + 1)));
     }
   }
   throw new Error(`Falha WFS (${typeName}): ${lastErr && lastErr.message}`);
