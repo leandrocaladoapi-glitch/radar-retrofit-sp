@@ -30,7 +30,7 @@ export default function RetrofitMap() {
       <MapContainer center={center} zoom={14} style={{ height: '100%', width: '100%' }}>
         <TileLayer
           attribution='&copy; <a href="https://carto.com/">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
         />
 
         {/* Render Projetos */}
@@ -60,10 +60,15 @@ export default function RetrofitMap() {
             pathOptions={{ color: '#d97706', fillColor: '#f59e0b', fillOpacity: 0.6, weight: 1 }}
           >
             <Popup>
-               <div className="text-sm">
-                <strong className="block mb-1">Oportunidade Indicativa</strong>
-                <p className="text-slate-600 mb-1">{op.endereco}</p>
-                <div className="font-semibold text-amber-600">Score: {op.score}/100</div>
+               <div className="text-sm space-y-2">
+                <div>
+                  <strong className="block mb-1">Oportunidade Indicativa</strong>
+                  <p className="text-slate-600 mb-1">{op.endereco}</p>
+                  <div className="font-semibold text-amber-600">Score: {op.score}/100</div>
+                </div>
+                <a href={`/oportunidades/${op.id}`} className="inline-block text-blue-600 font-semibold hover:underline text-xs">
+                  Ver detalhes &rarr;
+                </a>
               </div>
             </Popup>
           </CircleMarker>
